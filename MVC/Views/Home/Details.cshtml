@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+}
+<script type="text/javascript">
+    function getDetails() {
+        alert("Hello");
+    }
+</script>
+@using (Html.BeginForm())
+{
+
+}
+<div id="details">
+    <h2>Details</h2>
+    <input type="text" value="Account Workbook" id="workbook" />
+    <input type="text" value="601" id="api" />
+    <button type="button" class="btn btn-info" onclick="getDetails();">Fetch Details</button>
+</div>
+
+

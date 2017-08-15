@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<WorkBookConfiguration Id="AccountWorkbook" ProductId="WMBetaLink" FeatureId="ACTWB" ProductVersion="17.8.0" DisplayText="Account Workbook" AuditLevel="AUDIT" Listens2Contexts="Account|TTSMessage">
+
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList Version="2">
+      <Item Name="ACTWB.Header"/>
+      <Item Name="ACTWB.OpenTaxLots_Efficient"/>
+      <Item Name="ACTWB.OpenTaxLots_Express"/>
+      <Item Name="ACTWB.OpenTaxLots_Full"/>
+      <Item Name="ACTWB.ClosedTaxLots"/>
+      <Item Name="ACTWB.GuideList"/>
+      <Item Name="ACTWB.EstimatedMonthlyIncome"/>
+      <Item Name="ACTWB.OutOfBalanceTAXL"/>
+      <Item Name="ACTWB.AverageCost"/>
+      <Item Name="ACTWB.PositionsAll"/>
+      <Item Name="ACTWB.PositionsExpanded"/>
+      <Item Name="ACTWB.PositionsAnnuities"/>
+      <Item Name="ACTWB.PositionsMFPeriodicInv"/>
+      <Item Name="ACTWB.EditTotalAverageCostHeader"/>
+      <Item Name="ACTWB.EditTotalAverageCost"/>
+      <Item Name="ACTWB.PositionsMFDistributions"/>
+      <Item Name="ACTWB.DividendReinvestment"/>
+      <Item Name="ACTWB.AccountInformation"/>
+      <Item Name="ACTWB.AccountInformationDocuments"/>
+      <Item Name="ACTWB.RetirementPlanHistory"/>
+      <Item Name="ACTWB.ScratchPad"/>
+      <Item Name="ACTWB.AccountInformationAdvisoryFee"/>
+      <Item Name="ACTWB.AccountInformationAdvisoryFeeHistory"/>
+      <Item Name="ACTWB.AccountInformationAdvisoryFeeSchedule"/>
+      <Item Name="ACTWB.AccountInformationRetirementPlanInformation"/>
+      <Item Name="ACTWB.AccountInformation_TaxLotParameters"/>
+      <Item Name="ACTWB.Beneficiaries"/>
+      <Item Name="ACTWB.AssociatedPeople"/>
+      <!--WR36929-->
+      <Item Name="ACTWB.PositionsMaturingSecurities"/>
+      <Item Name="ACTWB.DividendReinvestmentSecurityInformation"/>
+      <Item Name="ACTWB.DividendReinvestmentUpdate"/>
+      <Item Name="ACTWB.DividendReinvestmentVoid"/>
+      <Item Name="ACTWB.DividendReinvestmentAdd"/>
+      <Item Name="ACTWB.DividendReinvestmentModify"/>
+      <Item Name="ACTWB.DividendReinvestmentAddSecurityInformation"/>
+      <Item Name="ACTWB.ChecksInstructions" />
+      <Item Name="ACTWB.ChecksRequests" />
+      <Item Name="ACTWB.MutualFundsCurrent" />
+      <Item Name="ACTWB.MutualFundsHistory"/>
+      <Item Name="ACTWB.MoneyMarket" />
+      <Item Name="ACTWB.IncomeAndExpense"/>
+      <Item Name="ACTWB.Activity"/>
+      <Item Name="ACTWB.MonthEndValues"/>
+      <Item Name="ACTWB.MonthEndValues_View2"/>
+      <Item Name="ACTWB.OtherOrders"/>
+      <Item Name="ACTWB.JournalsAssets"/>
+      <Item Name="ACTWB.JournalsCash"/>
+      <Item Name="ACTWB.ACHInstructions"/>
+      <Item Name="ACTWB.ACHRequests"/>
+      <Item Name="ACTWB.WiresInstructions"/>
+      <Item Name="ACTWB.WiresRequests"/>
+      <Item Name="ACTWB.TodaysExecution"/>
+      <Item Name="ACTWB.AlternateInvestments"/>
+      <Item Name="ACTWB.Periodic"/>
+      <Item Name="ACTWB.PeriodicInvestments"/>
+      <Item Name="ACTWB.AccountBalance"/>
+      <Item Name="ACTWB.CashManagementAccountBalances"/>
+      <Item Name="ACTWB.TradingDollarsBalances"/>
+      <Item Name="ACTWB.MoneyMarketChecking"/>
+      <Item Name="ACTWB.CommissionsDetails"/>
+      <Item Name="ACTWB.CommissionsSummary"/>
+      <Item Name="ACTWB.BordRestricted"/>
+      <Item Name="ACTWB.MandatoryAmmount"/>
+      <Item Name="ACTWB.BeneficiaryInformation"/>
+      <Item Name="ACTWB.ACHDailyInstructions"/>
+      <Item Name="ACTWB.PrintBordRestricted"/>
+      <Item Name="ACTWB.AccountTransfersOpenTransfers"/>
+      <Item Name="ACTWB.AccountTransfersSettledClosed"/>
+    
+    </TTSPreferenceList>
+  </PageConfiguration>
+
+  <PageConfiguration Id="CustomizationEditorUiMap" >
+    <CustomizationEditorUiMap>
+      <Guide>
+        <CustomizableItem Type="Field" Id="ACTWB.GuideList" />
+      </Guide>
+      <Account_Summary>
+        <CustomizableItem Type="Static" Id="ACTWB.Header" />
+      </Account_Summary>
+      <Open_Tax_Lots>
+        <Open_Tax_Lots>
+          <Efficient>
+            <CustomizableItem Type="Field" Id="ACTWB.OpenTaxLots_Efficient" />
+            <CustomizableItem Type="HeaderFooter" Id="ACTWB.OpenTaxLots_Efficient" />
+          </Efficient>
+          <Express>
+            <CustomizableItem Type="Field" Id="ACTWB.OpenTaxLots_Express" />
+            <CustomizableItem Type="HeaderFooter" Id="ACTWB.OpenTaxLots_Express" />
+          </Express>
+          <Full>
+            <CustomizableItem Type="Field" Id="ACTWB.OpenTaxLots_Full" />
+            <CustomizableItem Type="HeaderFooter" Id="ACTWB.OpenTaxLots_Full" />
+          </Full>
+        </Open_Tax_Lots>
+        <Estimated_Monthly_Income>
+          <CustomizableItem Type="Field" Id="ACTWB.EstimatedMonthlyIncome" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.EstimatedMonthlyIncome" />
+        </Estimated_Monthly_Income>
+        <Out_Of_Balance>
+          <CustomizableItem Type="Field" Id="ACTWB.OutOfBalanceTAXL" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.OutOfBalanceTAXL" />
+        </Out_Of_Balance>
+        <Average_Cost>
+          <CustomizableItem Type="Field" Id="ACTWB.AverageCost" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.AverageCost" />
+        </Average_Cost>
+      </Open_Tax_Lots>
+      <Closed_Tax_Lots>
+        <CustomizableItem Type="Field" Id="ACTWB.ClosedTaxLots" />
+        <CustomizableItem Type="HeaderFooter" Id="ACTWB.ClosedTaxLots" />
+      </Closed_Tax_Lots>
+      <Positions>
+        <All>
+          <CustomizableItem Type="Field" Id="ACTWB.PositionsAll" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.PositionsAll" />
+        </All>
+        <Expanded>
+          <CustomizableItem Type="Field" Id="ACTWB.PositionsExpanded" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.PositionsExpanded" />
+        </Expanded>
+        <Annuitites>
+          <CustomizableItem Type="Field" Id="ACTWB.PositionsAnnuities" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.PositionsAnnuities" />
+        </Annuitites>
+        <MF_Periodic_Inv>
+          <CustomizableItem Type="Field" Id="ACTWB.PositionsMFPeriodicInv" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.PositionsMFPeriodicInv" />
+        </MF_Periodic_Inv>
+        <MF_Distributions>
+          <CustomizableItem Type="Field" Id="ACTWB.PositionsMFDistributions" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.PositionsMFDistributions" />
+        </MF_Distributions>
+        <!--<MF_Distributions_Edit_Header>
+          <CustomizableItem Type="Field" Id="ACTWB.PositionsMFDistributionEditHeader" />
+        </MF_Distributions_Edit_Header>-->
+        <!--<MF_Distributions_Update>
+          <CustomizableItem Type="Field" Id="ACTWB.PositionsMFDistributionUpdate" />
+        </MF_Distributions_Update>-->
+        <Dividend_Reinvestment>
+          <CustomizableItem Type="Field" Id="ACTWB.DividendReinvestment" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.DividendReinvestment" />
+        </Dividend_Reinvestment>
+        <Dividend_Reinvestment_Modify>
+          <CustomizableItem Type="Field" Id="ACTWB.DividendReinvestmentModify" />
+        </Dividend_Reinvestment_Modify>
+        <Maturing_Securities>
+          <CustomizableItem Type="Field" Id="ACTWB.PositionsMaturingSecurities" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.PositionsMaturingSecurities" />
+        </Maturing_Securities>
+      </Positions>
+      <Account_Information>
+        <Account_Information>
+          <CustomizableItem Type="Static" Id="ACTWB.AccountInformation" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.AccountInformation" />
+        </Account_Information>
+        <Associated_People>
+          <CustomizableItem Type="Static" Id="ACTWB.AssociatedPeople" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.AssociatedPeople" />
+        </Associated_People>
+        <Documents>
+          <CustomizableItem Type="Field" Id="ACTWB.AccountInformationDocuments" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.AccountInformationDocuments" />
+        </Documents>
+        <Scratch_Pad>
+          <CustomizableItem Type="Field" Id="ACTWB.ScratchPad" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.ScratchPad" />
+        </Scratch_Pad>
+        <Advisory_Fee_Information>
+          <Advisory_Fee_Information>
+            <CustomizableItem Type="Static" Id="ACTWB.AccountInformationAdvisoryFee" />
+            <CustomizableItem Type="HeaderFooter" Id="ACTWB.AccountInformationAdvisoryFee" />
+          </Advisory_Fee_Information>
+          <Advisory_Fee_Schedule>
+            <CustomizableItem Type="Static" Id="ACTWB.AccountInformationAdvisoryFeeSchedule" />
+          </Advisory_Fee_Schedule>
+          <Advisory_Fee_History>
+            <CustomizableItem Type="Static" Id="ACTWB.AccountInformationAdvisoryFeeHistory" />
+          </Advisory_Fee_History>
+        </Advisory_Fee_Information>
+        <Retirement_Plan_Information>
+          <CustomizableItem Type="Static" Id="ACTWB.AccountInformationRetirementPlanInformation" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.AccountInformationRetirementPlanInformation" />
+        </Retirement_Plan_Information>
+        <Retirement_Plan_History>
+          <CustomizableItem Type="Field" Id="ACTWB.RetirementPlanHistory" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.RetirementPlanHistory" />
+        </Retirement_Plan_History>
+        <Tax_Lot_Parameters>
+          <CustomizableItem Type="Static" Id="ACTWB.AccountInformation_TaxLotParameters" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.AccountInformation_TaxLotParameters" />
+        </Tax_Lot_Parameters>
+        <TOD_Beneficiary_Information>
+          <CustomizableItem Type="Static" Id="ACTWB.Beneficiaries" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.Beneficiaries" />
+        </TOD_Beneficiary_Information>
+      </Account_Information>
+      <Balances>
+        <Balances>
+          <Account_Balances>
+            <CustomizableItem Type="Static" Id="ACTWB.AccountBalance" />
+            <CustomizableItem Type="HeaderFooter" Id="ACTWB.AccountBalance" />
+          </Account_Balances>
+          <Trading_Dollars_Balances>
+            <CustomizableItem Type="Static" Id="ACTWB.TradingDollarsBalances" />
+          </Trading_Dollars_Balances>
+          <Cash_Management_Account_Balances>
+            <CustomizableItem Type="Static" Id="ACTWB.CashManagementAccountBalances" />
+          </Cash_Management_Account_Balances>
+        </Balances>
+        <Money_Market>
+          <CustomizableItem Type="Static" Id="ACTWB.MoneyMarket" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.MoneyMarket" />
+        </Money_Market>
+        <Income_And_Expense>
+          <CustomizableItem Type="Static" Id="ACTWB.IncomeAndExpense" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.IncomeAndExpense" />
+        </Income_And_Expense>
+        <Month_End_Values>
+          <CustomizableItem Type="Static" Id="ACTWB.MonthEndValues" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.MonthEndValues" />
+        </Month_End_Values>
+      </Balances>
+      <Cash_Mgmt>
+        <Checks_Instructions>
+          <CustomizableItem Type="Static" Id="ACTWB.ChecksInstructions" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.ChecksInstructions" />
+        </Checks_Instructions>
+        <Checks_Requests>
+          <CustomizableItem Type="Field" Id="ACTWB.ChecksRequests" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.ChecksRequests" />
+        </Checks_Requests>
+        <ACH_Instructions>
+          <CustomizableItem Type="Static" Id="ACTWB.ACHInstructions" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.ACHInstructions" />
+        </ACH_Instructions>
+        <ACH_Requests>
+          <CustomizableItem Type="Field" Id="ACTWB.ACHRequests" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.ACHRequests" />
+        </ACH_Requests>
+        <Wires_Instructions>
+          <CustomizableItem Type="Static" Id="ACTWB.WiresInstructions" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.WiresInstructions" />
+        </Wires_Instructions>
+        <Wires_Requests>
+          <CustomizableItem Type="Field" Id="ACTWB.WiresRequests" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.WiresRequests" />
+        </Wires_Requests>
+        <Journals_Assets>
+          <CustomizableItem Type="Field" Id="ACTWB.JournalsAssets" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.JournalsAssets" />
+        </Journals_Assets>
+        <Journals_Cash>
+          <CustomizableItem Type="Field" Id="ACTWB.JournalsCash" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.JournalsCash" />
+        </Journals_Cash>
+        <Periodic_Distributions>
+          <CustomizableItem Type="Static" Id="ACTWB.Periodic" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.Periodic" />
+        </Periodic_Distributions>
+        <Periodic_Investments>
+          <CustomizableItem Type="Static" Id="ACTWB.PeriodicInvestments" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.PeriodicInvestments" />
+        </Periodic_Investments>
+      </Cash_Mgmt>
+      <Order_Inquiry>
+        <Mutual_Funds_Current>
+          <CustomizableItem Type="Field" Id="ACTWB.MutualFundsCurrent" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.MutualFundsCurrent" />
+        </Mutual_Funds_Current>
+        <Mutual_Funds_History>
+          <CustomizableItem Type="Field" Id="ACTWB.MutualFundsHistory" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.MutualFundsHistory" />
+        </Mutual_Funds_History>
+        <Other_Orders>
+          <CustomizableItem Type="Field" Id="ACTWB.OtherOrders" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.OtherOrders" />
+        </Other_Orders>
+        <Todays_Execution>
+          <CustomizableItem Type="Field" Id="ACTWB.TodaysExecution" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.TodaysExecution" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.PrintTradeDrop" />
+        </Todays_Execution>
+        <Alternative_Investments>
+          <CustomizableItem Type="Field" Id="ACTWB.AlternateInvestments" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.AlternateInvestments" />
+        </Alternative_Investments>
+      </Order_Inquiry>
+      <Activity>
+        <Activity>
+          <CustomizableItem Type="Field" Id="ACTWB.Activity" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.Activity" />
+        </Activity>
+        <Money_Market_Checking>
+          <CustomizableItem Type="Field" Id="ACTWB.MoneyMarketChecking" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.MoneyMarketChecking" />
+        </Money_Market_Checking>
+      </Activity>
+      <Account_Transfers>
+        <Open_Transfers>
+          <CustomizableItem Type="Field" Id="ACTWB.AccountTransfersOpenTransfers" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.AccountTransfersOpenTransfers" />
+        </Open_Transfers>
+        <Settled_Closed_Transfers>
+          <CustomizableItem Type="Field" Id="ACTWB.AccountTransfersSettledClosed" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.AccountTransfersSettledClosed" />
+        </Settled_Closed_Transfers>
+      </Account_Transfers>
+      <Commisions>
+        <Summary>
+          <CustomizableItem Type="Static" Id="ACTWB.CommissionsSummary" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.CommissionsSummary" />
+        </Summary>
+        <Details>
+          <CustomizableItem Type="Field" Id="ACTWB.CommissionsDetails" />
+          <CustomizableItem Type="HeaderFooter" Id="ACTWB.CommissionsDetails" />
+        </Details>
+      </Commisions>
+    </CustomizationEditorUiMap>
+  </PageConfiguration>
+
+  <PageConfiguration Id="ReportMetadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ReportMapping Name="AccountWorkbook.Web" HeaderWorkbookTitle="Account Workbook">
+      <Report Id="ACTWB-OpenTaxLotsExpress" ReportTitle="Open Tax Lots Express" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Open Tax Lots">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="OpenTaxLotsExpress" Title="OPEN TAX LOTS EXPRESS" Type="Grid" LayoutDataIDs="601" ReportDesignFile="OpenTaxLotsExpressGrid.rptdesign" PrefName="ACTWB.OpenTaxLots_Express" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" ChildRowIdentifierField="_2357" ChildRowIdentifierExpression="{0} == 2" DataSourceMode="xmlfile" DefaultBoundListColumns="CRS"  />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-OpenTaxLotsEfficient" ReportTitle="Open Tax Lots Efficient" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Open Tax Lots">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="OpenTaxLotsEfficient" Title="OPEN TAX LOTS EFFICIENT" Type="Grid" LayoutDataIDs="601" ReportDesignFile="OpenTaxLotsEfficientGrid.rptdesign" PrefName="ACTWB.OpenTaxLots_Efficient" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" ChildRowIdentifierField="_2357" ChildRowIdentifierExpression="{0} == 2" DataSourceMode="xmlfile" DefaultBoundListColumns="CRS" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-OpenTaxLotsFull" ReportTitle="Open Tax Lots Full" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Open Tax Lots">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="OpenTaxLotsFull" Title="OPEN TAX LOTS FULL" Type="Grid" LayoutDataIDs="601" ReportDesignFile="OpenTaxLotsFullGrid.rptdesign" DefaultBoundListColumns="_5751|_5752|_5753|CRS" PrefName="ACTWB.OpenTaxLots_Full" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" ChildRowIdentifierField="_2357" ChildRowIdentifierExpression="{0} == 2" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-EstimatedMonthlyIncome" ReportTitle="Estimated Monthly Income" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Estimated Monthly Income">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="EstimatedMonthlyIncome" Title="ESTIMATED MONTHLY INCOME" Type="Grid" LayoutDataIDs="601" ReportDesignFile="EstimatedMonthlyIncomeGrid.rptdesign" PrefName="ACTWB.EstimatedMonthlyIncome" DefaultBoundListColumns="_20045_1|CRS" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" ChildRowIdentifierField="_2357" ChildRowIdentifierExpression="{0} == 2" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-OutOfBalance" ReportTitle="Out Of Balance" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Out Of Balance">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="OutOfBalance" Title="OUT OF BALANCE" Type="Grid" LayoutDataIDs="610" ReportDesignFile="OutOfBalanceGrid.rptdesign" PrefName="ACTWB.OutOfBalanceTAXL" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-AverageCost" ReportTitle="Average Cost" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Average Cost">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AverageCost" Title="AVERAGE COST" Type="Grid" LayoutDataIDs="601" ReportDesignFile="AverageCostGrid.rptdesign" PrefName="ACTWB.AverageCost" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-ClosedTaxLots" ReportTitle="Closed Tax Lots" HeaderTabTitle="Closed Tax Lots" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="1" Name="ClosedTaxLots" Title="CLOSED TAX LOTS" Type="Grid" LayoutDataIDs="604" ReportDesignFile="ClosedTaxLotsGrid.rptdesign" PrefName="ACTWB.ClosedTaxLots" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-PositionsAll" ReportTitle="Positions All" HeaderTabTitle="Positions" HeaderSubTabTitle="All">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="PositionsAll" Title="POSITIONS ALL" Type="Grid" LayoutDataIDs="206" ReportDesignFile="PositionsAllGrid.rptdesign" PrefName="ACTWB.PositionsAll" DefaultBoundListColumns="_5751|_5752|_5753" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-PositionsExpanded" ReportTitle="Positions Expanded" HeaderTabTitle="Positions" HeaderSubTabTitle="Expanded">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="PositionsExpanded" Title="POSITIONS EXPANDED" Type="Grid" LayoutDataIDs="206" ReportDesignFile="PositionsExpandedGrid.rptdesign" PrefName="ACTWB.PositionsExpanded" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" ParentRowIdentifierField="rowlevel" DefaultBoundListColumns="GK|_106|rowCounter|CRS" ParentRowIdentifierVisibilityExpression="{0} == 2 || {0} == 4 || {0} == 6" ChildRowIdentifierField="rowlevel" ChildRowIdentifierExpression="{0} == 4 || {0} == 6"  DataSourceMode="xmlfile"  />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-PositionsAnnuities" ReportTitle="Annuities" HeaderTabTitle="Positions" HeaderSubTabTitle="Annuities">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="Annuities" Title="ANNUITIES" Type="Grid" LayoutDataIDs="275" ReportDesignFile="AnnuitiesGrid.rptdesign" PrefName="ACTWB.PositionsAnnuities" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MFPeriodicInv" ReportTitle="MF Periodic Inv" HeaderTabTitle="Positions" HeaderSubTabTitle="MF Periodic Inv.">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MfPeriodicInv" Title="MF PERIODIC INV" Type="Grid" LayoutDataIDs="278" ReportDesignFile="MfPeriodicInvGrid.rptdesign" PrefName="ACTWB.PositionsMFPeriodicInv" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MFDistributions" ReportTitle="MF Distributions" HeaderTabTitle="Positions" HeaderSubTabTitle="MF Distributions">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MfDistributions" Title="MF DISTRIBUTIONS" Type="Grid" LayoutDataIDs="265" ReportDesignFile="MfDistributionsGrid.rptdesign" PrefName="ACTWB.PositionsMFDistributions" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-DividendReinvestment" ReportTitle="Dividend Reinvestment" HeaderTabTitle="Positions" HeaderSubTabTitle="Dividend Reinvestment">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="DividendReinvestment" Title="DIVIDEND REINVESTMENT" Type="Grid" LayoutDataIDs="609" ReportDesignFile="DividendReinvestmentGrid.rptdesign" PrefName="ACTWB.DividendReinvestment" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MaturingSecurities" ReportTitle="Maturing Securities" HeaderTabTitle="Positions" HeaderSubTabTitle="Maturing Securities">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MaturingSecurities" Title="MATURING SECURITIES" Type="Grid" LayoutDataIDs="219" ReportDesignFile="MaturingSecuritiesGrid.rptdesign" PrefName="ACTWB.PositionsMaturingSecurities" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-Documents" ReportTitle="Documents" HeaderTabTitle="Account Information" HeaderSubTabTitle="Documents">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="Documents" Title="DOCUMENTS" Type="Grid" LayoutDataIDs="263" ReportDesignFile="DocumentsGrid.rptdesign" PrefName="ACTWB.AccountInformationDocuments" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-ScratchPad" ReportTitle="Scratch Pad" HeaderTabTitle="Account Information" HeaderSubTabTitle="Scratch Pad">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="ScratchPad" Title="SCRATCH PAD" Type="Grid" LayoutDataIDs="270" ReportDesignFile="ScratchPadGrid.rptdesign" PrefName="ACTWB.ScratchPad" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile"  />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-RetirementPlanHistory" ReportTitle="Retirement Plan History" HeaderTabTitle="Account Information" HeaderSubTabTitle="Retirement Plan History">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="RetirementPlanHistory" Title="RETIREMENT PLAN HISTORY" Type="Grid" LayoutDataIDs="262" ReportDesignFile="RetirementPlanHistoryGrid.rptdesign" PrefName="ACTWB.RetirementPlanHistory" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-ChecksRequests" ReportTitle="Checks Requests" HeaderTabTitle="Cash Mgmt" HeaderSubTabTitle="Checks">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="ChecksRequests" Title="CHECKS REQUESTS" Type="Grid" LayoutDataIDs="268" ReportDesignFile="ChecksRequestsGrid.rptdesign" PrefName="ACTWB.ChecksRequests" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" ChildRowIdentifierField="_2346" ChildRowIdentifierExpression="{0} == 'D'" DefaultBoundListColumns="CRS" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-ACHRequests" ReportTitle="ACH Requests" HeaderTabTitle="Cash Mgmt" HeaderSubTabTitle="ACH">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AchRequests" Title="ACH REQUESTS" Type="Grid" LayoutDataIDs="247" ReportDesignFile="AchRequestsGrid.rptdesign" PrefName="ACTWB.ACHRequests" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-WiresRequests" ReportTitle="Wires Requests" HeaderTabTitle="Cash Mgmt" HeaderSubTabTitle="Wires">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="WiresRequests" Title="WIRES REQUESTS" Type="Grid" LayoutDataIDs="299" ReportDesignFile="WiresRequestsGrid.rptdesign" PrefName="ACTWB.WiresRequests" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-JournalsAssets" ReportTitle="Journals Assets" HeaderTabTitle="Cash Mgmt" HeaderSubTabTitle="Journals">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="JournalsAssets" Title="JOURNALS ASSETS" Type="Grid" LayoutDataIDs="202" ReportDesignFile="JournalsAssetsGrid.rptdesign" PrefName="ACTWB.JournalsAssets" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-JournalsCash" ReportTitle="Journals Cash" HeaderTabTitle="Cash Mgmt" HeaderSubTabTitle="Journals">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="JournalsCash" Title="JOURNALS CASH" Type="Grid" LayoutDataIDs="202" ReportDesignFile="JournalsCashGrid.rptdesign" PrefName="ACTWB.JournalsCash" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MutualFundsCurrent" ReportTitle="Mutual Funds Current" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="Mutual Funds">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MutualFundsCurrent" Title="MUTUAL FUNDS CURRENT" Type="Grid" LayoutDataIDs="225" ReportDesignFile="MutualFundsCurrentGrid.rptdesign" PrefName="ACTWB.MutualFundsCurrent" DataSourceMode="xmlfile" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MutualFundsHistory" ReportTitle="Mutual Funds History" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="Mutual Funds">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MutualFundsHistory" Title="MUTUAL FUNDS HISTORY" Type="Grid" LayoutDataIDs="632" ReportDesignFile="MutualFundsHistoryGrid.rptdesign" PrefName="ACTWB.MutualFundsHistory" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-OtherOrders" ReportTitle="Other Orders" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="Other Orders">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="OtherOrders" Title="OTHER ORDERS" Type="Grid" LayoutDataIDs="251" ReportDesignFile="OtherOrdersGrid.rptdesign" PrefName="ACTWB.OtherOrders" isPreProcessed="N" DataSourceMode="xmlfile" ErrorTemplate="ErrorTemplate.rptDesign" ChildRowIdentifierField="_2357" ChildRowIdentifierExpression="{0} == 2"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-TodayExecution" ReportTitle="Todays Execution" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="Todays Execution">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="TodaysExecution" Title="TODAYS EXECUTION" Type="Grid" LayoutDataIDs="607" ReportDesignFile="TodaysExecutionGrid.rptdesign" PrefName="ACTWB.TodaysExecution" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-PrintTradeDrop" HeaderReportTitle="TRADE DROP" ReportTitle="" HeaderTabTitle="" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="PrintTradeDrop" Title="Print Trade Drop" Type="Static" LayoutDataIDs="605" ReportDesignFile="PrintTradeDrop.rptDesign" PrefName="" HeaderFooterIdentifier="ACTWB.PrintTradeDrop" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-AlternativeInvestments" ReportTitle="Alternative Investments" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="Alternative Investments">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AlternativeInvestments" Title="ALTERNATIVE INVESTMENTS" Type="Grid" LayoutDataIDs="640" ReportDesignFile="AlternativeInvestmentsGrid.rptdesign" PrefName="ACTWB.AlternateInvestments" isPreProcessed="N" DataSourceMode="xmlfile" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-Activity" ReportTitle="Activity" HeaderTabTitle="Activity" HeaderSubTabTitle="Activity">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="Activity" Title="ACTIVITY" Type="Grid" LayoutDataIDs="017" ReportDesignFile="ActivityGrid.rptdesign" PrefName="ACTWB.Activity" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile"  />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MoneyMarketChecking" ReportTitle="Money Market Checking" HeaderTabTitle="Activity" HeaderSubTabTitle="Money Market Checking">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MoneyMarketChecking" Title="MONEY MARKET CHECKING" Type="Grid" LayoutDataIDs="017" ReportDesignFile="MoneyMarketCheckingGrid.rptdesign" PrefName="ACTWB.MoneyMarketChecking" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-CommissionsDetail" ReportTitle="Commissions Detail" HeaderTabTitle="Commissions" HeaderSubTabTitle="Details">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="CommissionsDetails" Title="COMMISSIONS DETAILS" Type="Grid" LayoutDataIDs="241" ReportDesignFile="CommissionsDetailsGrid.rptdesign" PrefName="ACTWB.CommissionsDetails" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-AccountInformation" ReportTitle="Account Information" HeaderTabTitle="Account Information" HeaderSubTabTitle="Account Information">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AccountInformation" Title="ACCOUNT INFORMATION" Type="Dynamic" LayoutDataIDs="224_0" ReportDesignFile="AccountInformationList.rptdesign" PrefName="ACTWB.AccountInformation" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-ChecksInstructions" ReportTitle="Checks Instructions" HeaderTabTitle="Cash Mgmt" HeaderSubTabTitle="Checks">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="ChecksInstructions" Title="CHECKS INSTRUCTIONS" Type="Dynamic" LayoutDataIDs="296" ReportDesignFile="ChecksInstructionsList.rptdesign" PrefName="ACTWB.ChecksInstructions" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-CommissionsSummary" ReportTitle="Commissions Summary" HeaderTabTitle="Commissions" HeaderSubTabTitle="Summary">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="CommissionsSummary" Title="COMMISSIONS SUMMARY" Type="Dynastatic" LayoutDataIDs="256" ReportDesignFile="CommissionsSummaryList.rptdesign" PrefName="ACTWB.CommissionsSummary" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-IncomeAndExpense" ReportTitle="Income And Expense" HeaderTabTitle="Balances" HeaderSubTabTitle="Income and Expense">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="IncomeAndExpense" Title="INCOME AND EXPENSE" Type="Dynastatic" LayoutDataIDs="255" ReportDesignFile="IncomeAndExpenseList.rptdesign" PrefName="ACTWB.IncomeAndExpense" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MoneyMarket" ReportTitle="Money Market" HeaderTabTitle="Balances" HeaderSubTabTitle="Money Market">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MoneyMarket" Title="MONEY MARKET SUMMARY" Type="Dynastatic" LayoutDataIDs="257" ReportDesignFile="MoneyMarketList.rptdesign" PrefName="ACTWB.MoneyMarket" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="MoneyMarket1" Title="BALANCE LISTING AND ALLOCATION BY BANK INQUIRY" Type="Dynastatic" LayoutDataIDs="289" ReportDesignFile="MoneyMarketList1.rptdesign" PrefName="ACTWB.MoneyMarket" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <!--<Report Id="ACTWB-MoneyMarket" ReportTitle="Money Market" HeaderTabTitle="Balances" HeaderSubTabTitle="Money Market">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MoneyMarketIncome" Title="MONEY MARKET SUMMARY" Type="Dynastatic" LayoutDataIDs="257" ReportDesignFile="MoneyMarketIncomeList.rptdesign" PrefName="ACTWB.MoneyMarket" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="MoneyMarketBankBalances" Title="MONEY MARKET BANK BALANCES" Type="Dynastatic" LayoutDataIDs="289" ReportDesignFile="MoneyMarketBankBalancesList.rptdesign" PrefName="ACTWB.MoneyMarket" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>-->
+      <Report Id="ACTWB-MonthEndValues" ReportTitle="Month End Values" HeaderTabTitle="Balances" HeaderSubTabTitle="Month End Values" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MonthEndValues1" HeaderFooterIdentifier="ACTWB.MonthEndValues" Title="MONTH END VALUES" Type="Dynamic" LayoutDataIDs="207_0" ReportDesignFile="MonthEndValuesList_1.rptdesign" PrefName="ACTWB.MonthEndValues" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="MonthEndValues2" Title="MONTH END VALUES" Type="Dynamic" LayoutDataIDs="207_0" ReportDesignFile="MonthEndValuesList_2.rptdesign" PrefName="ACTWB.MonthEndValues" isPreProcessed="N" RenderingType="SideBySide" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MonthEndValues_1" ReportTitle="Month End Values" HeaderTabTitle="Balances" HeaderSubTabTitle="Month End Values" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="MonthEndValues1" HeaderFooterIdentifier="ACTWB.MonthEndValues" Title="MONTH END VALUES" Type="Dynamic" LayoutDataIDs="207_0" ReportDesignFile="MonthEndValuesList_3.rptdesign" PrefName="ACTWB.MonthEndValues_View2" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="MonthEndValues2" Title="MONTH END VALUES" Type="Dynamic" LayoutDataIDs="207_0" ReportDesignFile="MonthEndValuesList_4.rptdesign" PrefName="ACTWB.MonthEndValues_View2" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <!--<Report Id="ACTWB-RetirementPlanInformation" ReportTitle="Retirement Plan Information" HeaderTabTitle="Account Information" HeaderSubTabTitle="Retirement Plan Information">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="RetirementPlanInformation" Title="RETIREMENT PLAN INFORMATION" Type="Dynamic" LayoutDataIDs="224_0`281" ReportDesignFile="RetirementPlanInformationList.rptdesign" PrefName="ACTWB.AccountInformationRetirementPlanInformation" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="MinimumMandatoryAmount" Title="MINIMUM MANDATORY AMOUNT" Type="Static" LayoutDataIDs="229" ReportDesignFile="MinimumMandatoryAmountList.rptdesign" PrefName="" isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="3" Name="BeneficiaryInformation" Title="BENEFICIARY INFORMATION" Type="Static" LayoutDataIDs="229_0" ReportDesignFile="BeneficiaryInformationList.rptdesign" PrefName="" isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>-->
+      <Report Id="ACTWB-RetirementPlanInformation" ReportTitle="Retirement Plan Information" HeaderTabTitle="Account Information" HeaderSubTabTitle="Retirement Plan Information">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="RetirementPlanInformation" Title="RETIREMENT PLAN INFORMATION" Type="Dynamic" LayoutDataIDs="224_0`281`229" ReportDesignFile="RetirementPlanInformationList.rptdesign" PrefName="ACTWB.AccountInformationRetirementPlanInformation" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+		<Widget Id="2" Name="RetirementPlanBene" Title="RETIREMENT PLAN INFORMATION" Type="Static" LayoutDataIDs="229_0" ReportDesignFile="RetirementPlanBeneficiary.rptdesign" PrefName="ACTWB.AccountInformationRetirementPlanInformation" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-TaxLotParameters" ReportTitle="Tax Lot Parameters" HeaderTabTitle="Account Information" HeaderSubTabTitle="Tax Lot Parameters">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="TaxLotParameters" Title="TAX LOT PARAMETERS" Type="Dynamic" LayoutDataIDs="603" ReportDesignFile="TaxLotParametersList.rptdesign" PrefName="ACTWB.AccountInformation_TaxLotParameters" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-WiresInstructions" ReportTitle="Wires Instructions" HeaderTabTitle="Cash Mgmt" HeaderSubTabTitle="Wires">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="WiresInstructions" Title="WIRES INSTRUCTIONS" Type="Dynamic" LayoutDataIDs="203" ReportDesignFile="WiresInstructionsList.rptdesign" PrefName="ACTWB.WiresInstructions" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-Balances" ReportTitle="Balances" HeaderTabTitle="Balances" HeaderSubTabTitle="Balances">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AccountBalances" Title="ACCOUNT BALANCES" Type="Dynamic" LayoutDataIDs="207_0" ReportDesignFile="AccountBalancesList.rptdesign" PrefName="ACTWB.AccountBalance" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="TradingDollarsBalances" Title="TRADING DOLLARS BALANCES" Type="Dynamic" LayoutDataIDs="297`224_0" ReportDesignFile="TradingDollarsBalancesList.rptdesign" PrefName="ACTWB.TradingDollarsBalances" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DefaultError="INSUFFICIENT TRADING DOLLARS AVAILABLE" />
+        <Widget Id="3" Name="CashManagementAccountBalances" Title="CASH MANAGEMENT ACCOUNT BALANCES" Type="Dynamic" LayoutDataIDs="285" ReportDesignFile="CashManagementAccountBalancesList.rptdesign" PrefName="ACTWB.CashManagementAccountBalances" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-Balances-NoTTDOL" ReportTitle="Balances" HeaderTabTitle="Balances" HeaderSubTabTitle="Balances">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AccountBalances" Title="ACCOUNT BALANCES" Type="Dynamic" LayoutDataIDs="207_0" ReportDesignFile="AccountBalancesList.rptdesign" PrefName="ACTWB.AccountBalance" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="CashManagementAccountBalances" Title="CASH MANAGEMENT ACCOUNT BALANCES" Type="Dynamic" LayoutDataIDs="285" ReportDesignFile="CashManagementAccountBalancesList.rptdesign" PrefName="ACTWB.CashManagementAccountBalances" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-AchInstructions" ReportTitle="ACH Instructions" HeaderTabTitle="Cash Mgmt" HeaderSubTabTitle="ACH">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AchManualInstructions" Title="ACH MANUAL INSTRUCTIONS" Type="Dynamic" LayoutDataIDs="208" ReportDesignFile="AchManualInstructionsList.rptdesign" PrefName="ACTWB.ACHInstructions" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="AchDailyInstructions" Title="ACH DAILY INSTRUCTIONS" Type="Dynamic" LayoutDataIDs="279" ReportDesignFile="AchDailyInstructionsList.rptdesign" PrefName="ACTWB.ACHDailyInstructions" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-Periodic" ReportTitle="Periodic" HeaderTabTitle="Cash Mgmt" HeaderSubTabTitle="Periodic">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="PeriodicDistributions" Title="PERIODIC DISTRIBUTIONS" Type="Dynamic" LayoutDataIDs="249" ReportDesignFile="PeriodicDistributionsList.rptdesign" PrefName="ACTWB.Periodic" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="PeriodicInvestments" Title="PERIODIC INVESTMENTS" Type="Dynamic" LayoutDataIDs="252`249" ReportDesignFile="PeriodicInvestmentsList.rptdesign" PrefName="ACTWB.PeriodicInvestments" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-Beneficiaries" ReportTitle="Beneficiaries" HeaderTabTitle="Account Information" HeaderSubTabTitle="TOD Beneficiary Information">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="Beneficiaries" Title="TOD BENEFICIARY INFORMATION" Type="Dynamic" LayoutDataIDs="212" ReportDesignFile="BeneficiariesList.rptdesign" PrefName="ACTWB.Beneficiaries" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-AccountInformationAdvisoryFee" ReportTitle="Advisory Fee Information" HeaderTabTitle="Account Information" HeaderSubTabTitle="Advisory Fee Information">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AdvisoryInformation" Title="ADVISORY FEE INFORMATION" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="AdvisoryInformation.rptdesign" PrefName="ACTWB.AccountInformationAdvisoryFee" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="2" Name="AdvisorySchedule" Title="ADVISORY FEE SCHEDULE" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="AdvisorySchedule.rptdesign" PrefName="ACTWB.AccountInformationAdvisoryFeeSchedule" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="3" Name="AdvisoryHistory" Title="LAST PERIODIC FEE DETAIL" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="AdvisoryHistory.rptdesign" PrefName="ACTWB.AccountInformationAdvisoryFeeHistory" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-NonAccountInformationAdvisoryFee" ReportTitle="Advisory Fee Information" HeaderTabTitle="Account Information" HeaderSubTabTitle="Advisory Fee Information">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AdvisoryInformation" Title="ADVISORY FEE INFORMATION" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="AdvisoryInformation.rptdesign" PrefName="ACTWB.AccountInformationAdvisoryFee" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-AssociatedPeople" ReportTitle="Associated People" HeaderTabTitle="Account Information" HeaderSubTabTitle="Associated People">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AssociatedPeople" Title="Associated People" Type="Dynamic" LayoutDataIDs="248" ReportDesignFile="AssociatedPeople.rptdesign" PrefName="ACTWB.AssociatedPeople" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+	  <Report Id="ACTWB-AccountTransfersOpenTransfersIn" ReportTitle="Account Transfers" HeaderTabTitle="Account Transfers" HeaderSubTabTitle="Open Transfers">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AccountTransfersOpenTransfers" Title="OPEN TRANSFERS IN" Type="Grid" LayoutDataIDs="213" ReportDesignFile="AccountTransfersOpenTransfersIn.rptdesign" PrefName="ACTWB.AccountTransfersOpenTransfers" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="xmlfile" DefaultBoundListColumns="CRS" ChildRowIdentifierField="_2346" ChildRowIdentifierExpression="{0} != 'A'"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+	   <Report Id="ACTWB-AccountTransfersOpenTransfersOut" ReportTitle="Account Transfers" HeaderTabTitle="Account Transfers" HeaderSubTabTitle="Open Transfers">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AccountTransfersOpenTransfers" Title="OPEN TRANSFERS OUT" Type="Grid" LayoutDataIDs="213" ReportDesignFile="AccountTransfersOpenTransfersOut.rptdesign" PrefName="ACTWB.AccountTransfersOpenTransfers" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DefaultBoundListColumns="CRS" DataSourceMode="xmlfile" ChildRowIdentifierField="_2346" ChildRowIdentifierExpression="{0} != 'A'"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+	  <Report Id="ACTWB-AccountTransfersSettledClosedIn" ReportTitle="Account Transfers" HeaderTabTitle="Account Transfers" HeaderSubTabTitle="Settled or Closed Transfers">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AccountTransfersClosedTransfers" Title="CLOSED TRANSFERS IN" Type="Grid" LayoutDataIDs="644" ReportDesignFile="AccountTransfersClosedTransfersIn.rptdesign" PrefName="ACTWB.AccountTransfersSettledClosed" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DefaultBoundListColumns="CRS" DataSourceMode="xmlfile" ChildRowIdentifierField="_2346" ChildRowIdentifierExpression="{0} != 'A'"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+	  <Report Id="ACTWB-AccountTransfersSettledClosedOut" ReportTitle="Account Transfers" HeaderTabTitle="Account Transfers" HeaderSubTabTitle="Settled or Closed Transfers">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="ActDynamicHeader" Title="ACCOUNT SUMMARY" Type="Dynamic" LayoutDataIDs="224`207" ReportDesignFile="ActDynamicHeader.rptDesign" PrefName="ACTWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="AccountTransfersClosedTransfers" Title="CLOSED TRANSFERS OUT" Type="Grid" LayoutDataIDs="644" ReportDesignFile="AccountTransfersClosedTransfersOut.rptdesign" PrefName="ACTWB.AccountTransfersSettledClosed" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DefaultBoundListColumns="CRS" DataSourceMode="xmlfile" ChildRowIdentifierField="_2346" ChildRowIdentifierExpression="{0} != 'A'"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-OpenTaxLotsExpress-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.OpenTaxLots_Express" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-OpenTaxLotsEfficient-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.OpenTaxLots_Efficient" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-OpenTaxLotsFull-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.OpenTaxLots_Full" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-EstimatedMonthlyIncome-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.EstimatedMonthlyIncome" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-OutOfBalance-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.OutOfBalanceTAXL" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-AverageCost-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.AverageCost" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-ClosedTaxLots-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.ClosedTaxLots" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-PositionsAll-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.PositionsAll" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-PositionsExpanded-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.PositionsExpanded" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-PositionsAnnuities-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.PositionsAnnuities" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MFPeriodicInv-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.PositionsMFPeriodicInv" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MFDistributions-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.PositionsMFDistributions" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-DividendReinvestment-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.DividendReinvestment" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MaturingSecurities-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.PositionsMaturingSecurities" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-ScratchPad-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.ScratchPad" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-Documents-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.AccountInformationDocuments" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-RetirementPlanHistory-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.RetirementPlanHistory" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-ChecksRequests-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.ChecksRequests" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-ACHRequests-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.ACHRequests" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-WiresRequests-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.WiresRequests" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-JournalsAssets-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.JournalsAssets" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-JournalsCash-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.JournalsCash" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MutualFundsCurrent-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.MutualFundsCurrent" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MutualFundsHistory-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.MutualFundsHistory" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-OtherOrders-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.OtherOrders" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-TodayExecution-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.TodaysExecution" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-AlternativeInvestments-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.AlternateInvestments" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-Activity-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.Activity" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-MoneyMarketChecking-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.MoneyMarketChecking" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="ACTWB-CommissionsDetail-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.CommissionsDetails" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+	  <Report Id="ACTWB-AccountTransfersOpenTransfersIn-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.AccountTransfersOpenTransfers" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+	  <Report Id="ACTWB-AccountTransfersOpenTransfersOut-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.AccountTransfersOpenTransfers" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+	  <Report Id="ACTWB-AccountTransfersSettledClosedIn-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.AccountTransfersSettledClosed" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+	  <Report Id="ACTWB-AccountTransfersSettledClosedOut-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="ACTWB.AccountTransfersSettledClosed" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+
+    </ReportMapping>
+  </PageConfiguration>
+
+  <EntitlementEvaluators>
+    <EntitlementEvaluator Key="Default" Evaluator="AccountWorkbook.Web.Entitlements.EntitlementEvaluator"/>
+  </EntitlementEvaluators>
+
+</WorkBookConfiguration>
+
