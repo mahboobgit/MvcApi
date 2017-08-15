@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
 
 namespace MVC.Models
 {
+
+    using System.Collections.Generic;
+
     public class WbInfoBasedOnApiCall
     {
         public string Workbook { get; set; }
