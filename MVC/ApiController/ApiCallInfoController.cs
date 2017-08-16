@@ -14,9 +14,9 @@ namespace MVC.Controllers
     using Newtonsoft.Json.Linq;
     using MVC.Infrastructure;
     using System.Threading.Tasks;
+    using MVC.Models.Viewmodels;
 
-
-
+    [RoutePrefix("api/callinfo")]
     public class CallInfoController : ApiController
     {
 
@@ -42,26 +42,25 @@ namespace MVC.Controllers
 
 
         [HttpGet, AllowAnonymous, Route("allpreferences")]
-        public async Task<HttpResponseMessage> GetAllPreferences(string workbook)
+        public async Task<HttpResponseMessage> GetAllPreferences(string wb)
         {
             
             WorkbookManager manager = new WorkbookManager();
             try
             {
-                Dictionary<string, string> allWbPreferences = await manager.GetPreferenceDetailAsync(workbook);
-                ApiInfoBasedOnWbResponse response = new ApiInfoBasedOnWbResponse { IsError = false };
+                Dictionary<string, string> allWbPreferences = await manager.GetPreferenceDetailAsync(wb);
+                ApiAllDetailsResponse response = new ApiAllDetailsResponse { IsError = false };
                 
                 if (allWbPreferences.Count > 0)
                 {
-                    WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
-                    info.WbPreferences = allWbPreferences.Keys.ToList();
-                    info.Workbook = workbook;
-                    info.Api = "";
+                    ApiAllDetails info = new ApiAllDetails();
+                    info.Workbook = wb;
+                    info.WbPreferencesAndApiCalls = allWbPreferences;
                     response.Content.Add(info);
                     response.StatusCode = HttpStatusCode.OK;
                 }   
 
-                return Request.CreateResponse<ApiInfoBasedOnWbResponse>(HttpStatusCode.OK, response);
+                return Request.CreateResponse<ApiAllDetailsResponse>(HttpStatusCode.OK, response);
             }
             catch(Exception ex)
             {
@@ -69,71 +68,34 @@ namespace MVC.Controllers
                 {
                     IsError = true,
                     StatusCode = HttpStatusCode.InternalServerError,
-                    Content = new List<Error>() { { new Error { Message = ex.Message } } }
+                    Content = new List<Error>() { { new Error { Message = ex.Message, Workbook = wb } } }
                 };
                 
-                return Request.CreateResponse<ErrorResponse>(HttpStatusCode.OK, errorResponse);
+                return Request.CreateResponse<ErrorResponse>(HttpStatusCode.InternalServerError, errorResponse);
             }
         }
 
 
 
         [HttpPost, AllowAnonymous, Route("apicall")]
-        public async Task<HttpResponseMessage> GetApiCallForPreferences(string workbook, List<string> preferenceList)
+        public async Task<HttpResponseMessage> GetApiCallForPreferences(SearchCriteria searchCeiteria)
         {
+            //string workbook, List<string> preferenceList
 
             WorkbookManager manager = new WorkbookManager();
             try
             {
-                Dictionary<string, string> apiList = await manager.GetApiCallForPreferences(workbook, preferenceList);
-                
-                ApiInfoBasedOnWbResponse response = new ApiInfoBasedOnWbResponse { IsError = false };
-
-                if (apiList.Count > 0)
-                {
-                    WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
-                    info.WbPreferences = apiList.Keys.ToList();
-                    info.Workbook = workbook;
-                    info.Api = "";
-                    response.Content.Add(info);
-                    response.StatusCode = HttpStatusCode.OK;
-                }
-
-                return Request.CreateResponse<ApiInfoBasedOnWbResponse>(HttpStatusCode.OK, response);
-            }
-            catch (Exception ex)
-            {
-                var errorResponse = new ErrorResponse
-                {
-                    IsError = true,
-                    StatusCode = HttpStatusCode.InternalServerError,
-                    Content = new List<Error>() { { new Error { Message = ex.Message } } }
-                };
-
-                return Request.CreateResponse<ErrorResponse>(HttpStatusCode.OK, errorResponse);
-            }
-        }
-
-
-
-        [HttpPost, AllowAnonymous, Route("preferences")]
-        public async Task<HttpResponseMessage> GetPreferencesForApiCall (string workbook, List<string> lstApi)
-        {
-
-            WorkbookManager manager = new WorkbookManager();
-            try
-            {
-                Dictionary<string, List<string>> apiList = await manager.GetPreferencesForApiCall(workbook, lstApi);
+                Dictionary<string, List<string>> apiList = await manager.GetPreferencesForApiCall(searchCeiteria.Workbook, searchCeiteria.SearchList);
 
                 ApiInfoBasedOnWbResponse response = new ApiInfoBasedOnWbResponse { IsError = false };
 
                 if (apiList.Count > 0)
                 {
-                    foreach(string api in apiList.Keys)
+                    foreach (string api in apiList.Keys)
                     {
                         WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
                         info.WbPreferences = apiList[api];
-                        info.Workbook = workbook;
+                        info.Workbook = searchCeiteria.Workbook;
                         info.Api = api;
                         response.Content.Add(info);
                     }
@@ -148,10 +110,50 @@ namespace MVC.Controllers
                 {
                     IsError = true,
                     StatusCode = HttpStatusCode.InternalServerError,
-                    Content = new List<Error>() { { new Error { Message = ex.Message } } }
+                    Content = new List<Error>() { { new Error { Message = ex.Message, Workbook = searchCeiteria.Workbook } } }
                 };
 
-                return Request.CreateResponse<ErrorResponse>(HttpStatusCode.OK, errorResponse);
+                return Request.CreateResponse<ErrorResponse>(HttpStatusCode.InternalServerError, errorResponse);
+            }
+        }
+
+
+        [HttpPost, AllowAnonymous, Route("preferences")]
+        public async Task<HttpResponseMessage> GetPreferencesForApiCall (SearchCriteria searchCeiteria) //string workbook, List<string> lstApi)
+        {
+
+            WorkbookManager manager = new WorkbookManager();
+            try
+            {
+                Dictionary<string, List<string>> apiList = await manager.GetPreferencesForApiCall(searchCeiteria.Workbook, searchCeiteria.SearchList);
+
+                ApiInfoBasedOnWbResponse response = new ApiInfoBasedOnWbResponse { IsError = false };
+
+                if (apiList.Count > 0)
+                {
+                    foreach(string api in apiList.Keys)
+                    {
+                        WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
+                        info.WbPreferences = apiList[api];
+                        info.Workbook = searchCeiteria.Workbook;
+                        info.Api = api;
+                        response.Content.Add(info);
+                    }
+                    response.StatusCode = HttpStatusCode.OK;
+                }
+
+                return Request.CreateResponse<ApiInfoBasedOnWbResponse>(HttpStatusCode.OK, response);
+            }
+            catch (Exception ex)
+            {
+                var errorResponse = new ErrorResponse
+                {
+                    IsError = true,
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Content = new List<Error>() { { new Error { Message = ex.Message, Workbook = searchCeiteria.Workbook } } }
+                };
+
+                return Request.CreateResponse<ErrorResponse>(HttpStatusCode.InternalServerError, errorResponse);
             }
         }
 

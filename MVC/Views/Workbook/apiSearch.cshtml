@@ -1,0 +1,52 @@
+﻿@model MVC.Models.WbInfoBasedOnApiCall
+
+@{
+    ViewBag.Title = "Api Search View";
+}
+<style type="text/css">
+    ol {
+        counter-reset: item
+    }
+    li {
+        display: block
+    }
+
+    li:before {
+        content: counters(item, ".") " ";
+        counter-increment: item
+    }
+</style>
+@{
+    if (Model != null)
+    {
+        <div>
+            <h1 class="jumbotron">Api call usage</h1>
+            <div class="page-header">
+                <h4>@Html.DisplayNameFor(model => model.Workbook) : <span class="badge" style="background-color:lightcoral">@Html.DisplayFor(model => model.Workbook)</span></h4>
+                <h4>@Html.DisplayNameFor(model => model.Api) : <span class="badge" style="background-color:lightcoral"> @Html.DisplayFor(model => model.Api)</span> is used with following preference file</h4>
+            </div>
+            <div class="alert-info">
+                @using(Html.BeginForm("search", "workbook", FormMethod.Post))
+                {
+                    @Html.Hidden("SearchOn1", "preferences")
+                    @Html.Hidden("workbook", Model.Workbook)
+                    if (Model.WbPreferences != null)
+                    {
+                        int i = 0;
+                        <ol>
+                            @foreach (string preference in Model.WbPreferences)
+                            {
+                                @Html.Hidden("SearchList[" + i++ + "]", preference);
+                                string name = string.Format($"chkbox[{i}]");
+                                <li>@Html.CheckBox(name, false) @preference</li>
+                            }
+                        </ol>
+                        <input type="submit" class="btn btn-info" value="Submit Button">
+                    }
+                }
+            </div>
+
+        </div>
+
+    }
+}

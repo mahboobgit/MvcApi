@@ -24,24 +24,26 @@ namespace MVC.Helper
             
         }
 
-        public async Task<HttpResponseMessage> CallService(bool IsWebApiCall, string urlEndpoint, HttpMethod method, Dictionary<string,string> querystring = null)
+        public async Task<HttpResponseMessage> CallService(bool IsWebApiCall, string urlEndpoint, HttpMethod method, Dictionary<string,string> contentToPassToServer = null)
         {
-            string urlruntime = urlEndpoint;
+            //string urlruntime = urlEndpoint;
             
             HttpResponseMessage responseMessage;
             HttpClient client = new HttpClient();
-            url = IsWebApiCall ? string.Format($"{url}/api/") : url;
-            client.BaseAddress = new Uri(url);
+            string urlruntime = IsWebApiCall ? string.Format($"{url}/api") : url;
+            client.BaseAddress = new Uri(urlruntime);
 
+            urlruntime = string.Format($"{urlruntime}/{urlEndpoint}");
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
+            
             if(method == HttpMethod.Get)
             {
-                if (querystring != null && querystring.Count > 0)
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                if (contentToPassToServer != null && contentToPassToServer.Count > 0)
                 {
                     var qs = new StringBuilder();
-                    foreach(var kvp in querystring)
+                    foreach(var kvp in contentToPassToServer)
                     {
                         qs.AppendFormat($"{kvp.Key}={kvp.Value}&");
                     }
@@ -50,16 +52,32 @@ namespace MVC.Helper
                                                           : "";
                                                 
                     if(qsFinal.Length > 0)
-                        urlruntime = string.Format($"{url}/{urlruntime}?{qsFinal}");
+                        urlruntime = string.Format($"{urlruntime}?{qsFinal}");
+
+
                 }
-               
+
                 responseMessage = await client.GetAsync(urlruntime);
                 return responseMessage;
             }
+            if(method == HttpMethod.Post)
+            {
 
-            
+                var postContent = new List<KeyValuePair<string, string>>();
+                foreach (var kvp in contentToPassToServer)
+                {
+                    postContent.Add(new KeyValuePair<string, string>(kvp.Key, kvp.Value));
+                }
 
-            ErrorResponse errorResponse = new ErrorResponse
+                //POST 
+                var content = new FormUrlEncodedContent(postContent);
+
+                responseMessage = await client.PostAsync(urlruntime, content);
+                return responseMessage;
+            }
+
+
+            var errorResponse = new ErrorResponse
             {
                 IsError = true,
                 StatusCode = HttpStatusCode.BadRequest,

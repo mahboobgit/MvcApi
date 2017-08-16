@@ -5,6 +5,8 @@
 
     public class Error
     {
+        public string Workbook { get; set; }
+
         public string Message { get; set; }
     }
 

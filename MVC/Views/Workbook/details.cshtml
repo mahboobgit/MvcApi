@@ -1,0 +1,74 @@
+﻿@model MVC.Models.ApiAllDetails
+@using System.Text;
+@using MVC.Models.Viewmodels;
+
+@{
+
+    string url = "http://localhost:50839";
+
+    if (Model != null)
+    {
+        <h3 class="jumbotron">Workbook Details: <span class=".bg-primary">@Model.Workbook</span></h3>
+        if (Model.WbPreferencesAndApiCalls != null)
+        {
+
+
+        <table class="table table-striped">
+            <thead>
+                <tr class="row">
+                    <th class = "col-sm-6">Preferences</th>
+                    <th class = "col-sm-6">Api Calls</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (KeyValuePair<string, string> kvp in Model.WbPreferencesAndApiCalls)
+                {
+                    <tr class="row">
+                        <td>@Html.Label(kvp.Key, new { @class = "col-sm-6" })</td>
+                        <td>
+                            @if (kvp.Value != null)
+                            {
+                                List<string> apis = kvp.Value.Split(new char[] { '`' }).ToList();
+                                StringBuilder sb = new StringBuilder();
+                                foreach (string api in apis)
+                                {
+                                    var criteria = new SearchCriteria
+                                    {
+                                        Workbook = Model.Workbook,
+                                        SearchOn = "api",
+                                        SearchList = new List<string> { { api } }
+                                    };
+                                    using (Html.BeginForm("search", "workbook", FormMethod.Post, new { @style = "display:inline-block;" }))
+                                    {
+                                        <span>&nbsp;</span>
+                                        @Html.Hidden("workbook", Model.Workbook);
+                                        @Html.Hidden("searchOn", "apicall");
+
+                                        for (int i = 0; i < criteria.SearchList.Count; i++)
+                                        {
+                                            var sApi = criteria.SearchList[i];
+                                            @Html.Hidden("SearchList[" + i + "]", sApi);
+                                        }
+
+
+                                        <button type="submit" class="badge" style="background-color:lightcoral; border:none" >@api</button>
+                                        //@Html.ActionLink(api, "preferences", criteria, new { @class = "badge", @style = "background-color: lightcoral" });
+
+                                    }
+
+                                }
+
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+         </table>
+            }
+        }
+        else
+        {
+            Html.Display("<p>No Data to Display</p>");
+        }
+
+    }

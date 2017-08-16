@@ -1,0 +1,36 @@
+﻿@model MVC.Models.Workbook
+@{
+    ViewBag.Title = "WM Api Info";
+    string url = "http://localhost:50839";
+
+    //var obj = new { workbook = "Account Workbook", api = new[] { 601, 242 }  };
+
+}
+
+<div>
+
+    <div class="jumbotron dropdown">
+        @Html.Label("Workbooks: ")
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Select Workbook..
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            @foreach (string wb in Model.Workbooks)
+            {
+                <li><a href='@string.Format(@"{0}/workbook/details/{1}", url, wb)'>@wb</a></li>
+            }
+        </ul>
+    </div>
+</div>
+
+
+@*<div class="row">
+    <div class="col-md-6">
+        <h2>API Details</h2>
+        @{
+            Html.RenderPartial("details");
+        }
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+</div>*@

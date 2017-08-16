@@ -1,13 +1,36 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
-</head>
-<body>
-    <hgroup>
-        <h1>Error.</h1>
-        <h2>An error occurred while processing your request.</h2>
-    </hgroup>
-</body>
-</html>
+﻿@model IEnumerable<MVC.Models.Error>
+@{ 
+    int i = 1;
+}
+<div class="jumbotron">
+    <h1>Error..</h1>
+</div>
+<div class="page-header">
+    
+</div>
+<h2>An error occurred while processing your request.</h2>
+<div class="table-condensed">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Info</th>
+                <th>Error Messaga</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var error in Model)
+            {
+                <tr>
+                    <td class="info">@Html.Label(i++.ToString())</td>
+                    <td class="Success">Workbook: @error.Workbook</td>
+                    <td class="danger">@error.Message</td>
+                </tr>
+             }
+
+</tbody>
+</table>
+</div>
+
+
