@@ -19,16 +19,19 @@
             </tr>
         </thead>
         <tbody>
-
-            @foreach (var error in Model)
-            {
-                <tr>
-                    <td class="info">@Html.Label(i++.ToString())</td>
-                    <td class="Success">Workbook: @error.Workbook</td>
-                    <td class="danger">@error.Message</td>
-                </tr>
-             }
-
+            @{ 
+                if (Model != null)
+                {
+                    foreach (var error in Model)
+                    {
+                        <tr>
+                            <td class="info">@Html.Label(i++.ToString())</td>
+                            <td class="Success">Workbook: @error.Workbook</td>
+                            <td class="danger">@error.Message</td>
+                        </tr>
+                    }
+                }
+            }
 </tbody>
 </table>
 </div>

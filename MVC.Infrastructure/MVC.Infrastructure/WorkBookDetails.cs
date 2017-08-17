@@ -171,7 +171,7 @@ namespace MVC.Infrastructure
             {
                 foreach (string api in apiCallValues)
                 {
-                    var match = apicalls_with_preference.Values.FirstOrDefault(k => k.Contains(api));
+                    var match = apicalls_with_preference.Values.FirstOrDefault(k => k != null && k.Contains(api));
                     if (match != null)
                     {
 

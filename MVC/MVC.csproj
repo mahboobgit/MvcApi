@@ -225,8 +225,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Workbook\Index.cshtml" />
     <Content Include="Views\Workbook\details.cshtml" />
-    <Content Include="Views\Workbook\apiSearch.cshtml" />
+    <Content Include="Views\Workbook\searchapi.cshtml" />
     <Content Include="Views\Workbook\View.cshtml" />
+    <Content Include="Views\Workbook\searchpreferences.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

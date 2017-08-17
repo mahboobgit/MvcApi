@@ -25,10 +25,10 @@
                 <h4>@Html.DisplayNameFor(model => model.Workbook) : <span class="badge" style="background-color:lightcoral">@Html.DisplayFor(model => model.Workbook)</span></h4>
                 <h4>@Html.DisplayNameFor(model => model.Api) : <span class="badge" style="background-color:lightcoral"> @Html.DisplayFor(model => model.Api)</span> is used with following preference file</h4>
             </div>
-            <div class="alert-info">
-                @using(Html.BeginForm("search", "workbook", FormMethod.Post))
+            <div class="alert-info">                
+                @using (Html.BeginForm("searchpreferences", "workbook", FormMethod.Post))
                 {
-                    @Html.Hidden("SearchOn1", "preferences")
+                    @Html.Hidden("SearchOn", "preferences")
                     @Html.Hidden("workbook", Model.Workbook)
                     if (Model.WbPreferences != null)
                     {
@@ -36,9 +36,10 @@
                         <ol>
                             @foreach (string preference in Model.WbPreferences)
                             {
-                                @Html.Hidden("SearchList[" + i++ + "]", preference);
-                                string name = string.Format($"chkbox[{i}]");
+                                @Html.Hidden("SearchList[" + i + "]", preference);
+                                string name = string.Format($"chkBox[{i++}]");
                                 <li>@Html.CheckBox(name, false) @preference</li>
+
                             }
                         </ol>
                         <input type="submit" class="btn btn-info" value="Submit Button">

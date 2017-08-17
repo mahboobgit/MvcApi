@@ -13,14 +13,15 @@ using MVC.Models.Viewmodels;
 
 namespace MVC.Controllers
 {
+
+    [OutputCacheAttribute(VaryByParam = "*", Duration = 0, NoStore = true)]
     public class WorkbookController : Controller
     {
 
         [HttpGet, AllowAnonymous, Route("index")]
         public async Task<ActionResult> Index()
         {
-            //string url = "http://localhost:50839/api/callinfo";
-           
+            
             WebHelper helper = new WebHelper();
             HttpResponseMessage responseMessage = await helper.CallService(IsWebApiCall: true, urlEndpoint: "callinfo", method: HttpMethod.Get, contentToPassToServer: null);
 
@@ -85,13 +86,13 @@ namespace MVC.Controllers
                     return View("Error", errorList);
                 }
             }
-            return View("Error");
+            return ParameterError();
         }
 
 
 
-        [AllowAnonymous, HttpPost, Route("search")]
-        public async Task<ActionResult> Search(SearchCriteria apis)
+        [AllowAnonymous, HttpPost, Route("searchapi")]
+        public async Task<ActionResult> SearchApi(SearchCriteria apis)
         {
 
             if(apis != null)
@@ -125,47 +126,149 @@ namespace MVC.Controllers
                 if (responseMessage.IsSuccessStatusCode)
                 {
                     var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+                    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
+                    var workbookInfo = JsonConvert.DeserializeObject<WbInfoBasedOnApiCallResponse>(responseData, settings);
+                    WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
 
-                    if (apis.SearchOn == "apicall")
+
+                    if (workbookInfo.Content.Count > 0)
                     {
-                        JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include};
-                        var workbookInfo = JsonConvert.DeserializeObject<WbInfoBasedOnApiCallResponse>(responseData, settings);
-                        WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
-                        
-                            
-                        if (workbookInfo.Content.Count > 0)
-                        {
-                            info = workbookInfo.Content[0];
-                        }
-
-                        return View("apiSearch", info);
+                        info = workbookInfo.Content[0];
                     }
-                    else
+                    ModelState.Clear();
+                    return View(info);                    
+                }
+                else
+                {
+                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+
+                    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
+                    var errorInfo = JsonConvert.DeserializeObject<ErrorResponse>(responseData, settings);
+
+                    List<Error> errorList = new List<Error>();
+                    if (errorInfo.Content.Count > 0)
                     {
-                        JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                        var workbookInfo = JsonConvert.DeserializeObject<WorkbookInfoResponse>(responseData, settings);
-
-                        Workbook workbooks = new Workbook();
-                        if (workbookInfo.Content.Count > 0)
-                        {
-                            workbooks = workbookInfo.Content[0];
-                        }
-
-                        return View(workbooks);
+                        errorList = errorInfo.Content;
                     }
 
-                    
+                    return View("Error", errorList);
+                }
+            }
+
+            return ParameterError();
+        }
+
+
+        [AllowAnonymous, HttpPost, Route("searchpreferences")]
+        public async Task<ActionResult> searchpreferences(SearchCriteria apis)
+        {
+
+            if (apis != null)
+            {
+                string urlendpoint = "";
+                Dictionary<string, string> content = new Dictionary<string, string>();
+
+                content.Add("Workbook", apis.Workbook);
+
+                if (apis.SearchOn == "apicall")
+                    urlendpoint = "callinfo/apicall";
+                else
+                    urlendpoint = "callinfo/preferences";
+
+
+                for (int i = 0; i < apis.SearchList.Count; i++)
+                {
+                    string key = string.Format($"SearchList[{i}]");
+                    content.Add(key, apis.SearchList[i]);
+                }
+
+
+
+
+                WebHelper helper = new WebHelper();
+                HttpResponseMessage responseMessage = await helper.CallService(IsWebApiCall: true
+                                                                                , urlEndpoint: urlendpoint
+                                                                                , method: HttpMethod.Post
+                                                                                , contentToPassToServer: content);
+
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+                    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
+                    var workbookInfo = JsonConvert.DeserializeObject<WorkbookInfoResponse>(responseData, settings);
+
+                    Workbook workbooks = new Workbook();
+                    if (workbookInfo.Content.Count > 0)
+                    {
+                        workbooks = workbookInfo.Content[0];
+                    }
+
+                    return View(workbooks);
+
+                    //if (apis.SearchOn == "apicall")
+                    //{
+                    //    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
+                    //    var workbookInfo = JsonConvert.DeserializeObject<WbInfoBasedOnApiCallResponse>(responseData, settings);
+                    //    WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
+
+
+                    //    if (workbookInfo.Content.Count > 0)
+                    //    {
+                    //        info = workbookInfo.Content[0];
+                    //    }
+
+                    //    return View("apiSearch", info);
+                    //}
+                    //else
+                    //{
+                    //    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
+                    //    var workbookInfo = JsonConvert.DeserializeObject<WorkbookInfoResponse>(responseData, settings);
+
+                    //    Workbook workbooks = new Workbook();
+                    //    if (workbookInfo.Content.Count > 0)
+                    //    {
+                    //        workbooks = workbookInfo.Content[0];
+                    //    }
+
+                    //    return View(workbooks);
+                    //}
+
+
+                }
+
+                else
+                {
+                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+
+                    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
+                    var errorInfo = JsonConvert.DeserializeObject<ErrorResponse>(responseData, settings);
+
+                    List<Error> errorList = new List<Error>();
+                    if (errorInfo.Content.Count > 0)
+                    {
+                        errorList = errorInfo.Content;
+                    }
+
+                    return View("Error", errorList);
                 }
 
             }
 
-            
-            return View("Error");
+            return ParameterError();
         }
 
 
 
+        private ActionResult ParameterError()
+        {
+            var error = new Error
+            {
+                Workbook = "Not Set",
+                Message = "Input Parameter missing"
+            };
+            return View("Error", new List<Error> { { error } });
 
+        }
 
 
     }
