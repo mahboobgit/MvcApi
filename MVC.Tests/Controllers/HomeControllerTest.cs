@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MVC;
 using MVC.Controllers;
+using System.Threading.Tasks;
 
 namespace MVC.Tests.Controllers
 {
@@ -13,16 +14,13 @@ namespace MVC.Tests.Controllers
     public class HomeControllerTest
     {
         [TestMethod]
-        public void Index()
+        public async void Index()
         {
-            //// Arrange
-            //HomeController controller = new HomeController();
 
-            //// Act
-            //ViewResult result = controller.Index() as ViewResult;
-
-            //// Assert
-            //Assert.IsNotNull(result);
+            WorkbookController controller = new WorkbookController();
+            ViewResult result = await controller.Index() as ViewResult;
+            Assert.IsNotNull(result);
+           
         }
 
     }
