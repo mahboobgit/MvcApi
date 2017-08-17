@@ -1,20 +1,15 @@
-﻿using MVC.Models;
-
-namespace MVC.Controllers
+﻿namespace MVC.Controllers
 {
 
+    using MVC.Infrastructure;
+    using MVC.Models;
+    using MVC.Models.Viewmodels;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Net;
     using System.Net.Http;
-    using System.Web.Http;
-    using MVC.Models;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
-    using MVC.Infrastructure;
     using System.Threading.Tasks;
-    using MVC.Models.Viewmodels;
+    using System.Web.Http;
 
     [RoutePrefix("api/callinfo")]
     public class CallInfoController : ApiController

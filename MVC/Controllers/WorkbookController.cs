@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using MVC.Models;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using Newtonsoft.Json;
-using System.Threading.Tasks;
-using MVC.Helper;
-using MVC.Models.Viewmodels;
+﻿
 
 namespace MVC.Controllers
 {
+    using MVC.Helper;
+    using MVC.Models;
+    using MVC.Models.Viewmodels;
+    using Newtonsoft.Json;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Threading.Tasks;
+    using System.Web.Mvc;
 
     //[OutputCacheAttribute(VaryByParam = "*", Duration = 0, NoStore = true)]
     public class WorkbookController : Controller
