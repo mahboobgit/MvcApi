@@ -15,9 +15,14 @@ namespace MVC
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+               name: "ActionApi",
+               routeTemplate: "api/{controller}/{action}/{wb}"
+           );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "api/{controller}/{wb}",
+                defaults: new { wb = RouteParameter.Optional }
             );
         }
     }
