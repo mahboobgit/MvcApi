@@ -14,7 +14,7 @@ using MVC.Models.Viewmodels;
 namespace MVC.Controllers
 {
 
-    [OutputCacheAttribute(VaryByParam = "*", Duration = 0, NoStore = true)]
+    //[OutputCacheAttribute(VaryByParam = "*", Duration = 0, NoStore = true)]
     public class WorkbookController : Controller
     {
 
@@ -72,18 +72,7 @@ namespace MVC.Controllers
                 }
                 else
                 {
-                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-
-                    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                    var errorInfo = JsonConvert.DeserializeObject<ErrorResponse>(responseData, settings);
-
-                    List<Error> errorList = new List<Error>();
-                    if (errorInfo.Content.Count > 0)
-                    {
-                        errorList = errorInfo.Content;
-                    }
-
-                    return View("Error", errorList);
+                    ParameterError(responseMessage.Content.ReadAsStringAsync().Result);
                 }
             }
             return ParameterError();
@@ -101,11 +90,12 @@ namespace MVC.Controllers
                 Dictionary<string, string> content = new Dictionary<string, string>();
 
                 content.Add("Workbook", apis.Workbook);
+                urlendpoint = "callinfo/apicall";
 
-                if (apis.SearchOn == "apicall")
-                    urlendpoint = "callinfo/apicall";                
-                else                
-                    urlendpoint = "callinfo/preferences";
+                //if (apis.SearchOn == "apicall")
+                //    urlendpoint = "callinfo/apicall";                
+                //else                
+                //    urlendpoint = "callinfo/preferences";
                 
 
                 for (int i = 0; i < apis.SearchList.Count; i++)
@@ -140,18 +130,7 @@ namespace MVC.Controllers
                 }
                 else
                 {
-                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-
-                    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                    var errorInfo = JsonConvert.DeserializeObject<ErrorResponse>(responseData, settings);
-
-                    List<Error> errorList = new List<Error>();
-                    if (errorInfo.Content.Count > 0)
-                    {
-                        errorList = errorInfo.Content;
-                    }
-
-                    return View("Error", errorList);
+                    ParameterError(responseMessage.Content.ReadAsStringAsync().Result);                    
                 }
             }
 
@@ -169,11 +148,12 @@ namespace MVC.Controllers
                 Dictionary<string, string> content = new Dictionary<string, string>();
 
                 content.Add("Workbook", apis.Workbook);
+                urlendpoint = "callinfo/preferences";
 
-                if (apis.SearchOn == "apicall")
-                    urlendpoint = "callinfo/apicall";
-                else
-                    urlendpoint = "callinfo/preferences";
+                //if (apis.SearchOn == "apicall")
+                //    urlendpoint = "callinfo/apicall";
+                //else
+                //    urlendpoint = "callinfo/preferences";
 
 
                 for (int i = 0; i < apis.SearchList.Count; i++)
@@ -205,51 +185,10 @@ namespace MVC.Controllers
 
                     return View(workbooks);
 
-                    //if (apis.SearchOn == "apicall")
-                    //{
-                    //    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                    //    var workbookInfo = JsonConvert.DeserializeObject<WbInfoBasedOnApiCallResponse>(responseData, settings);
-                    //    WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
-
-
-                    //    if (workbookInfo.Content.Count > 0)
-                    //    {
-                    //        info = workbookInfo.Content[0];
-                    //    }
-
-                    //    return View("apiSearch", info);
-                    //}
-                    //else
-                    //{
-                    //    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                    //    var workbookInfo = JsonConvert.DeserializeObject<WorkbookInfoResponse>(responseData, settings);
-
-                    //    Workbook workbooks = new Workbook();
-                    //    if (workbookInfo.Content.Count > 0)
-                    //    {
-                    //        workbooks = workbookInfo.Content[0];
-                    //    }
-
-                    //    return View(workbooks);
-                    //}
-
-
                 }
-
                 else
                 {
-                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-
-                    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                    var errorInfo = JsonConvert.DeserializeObject<ErrorResponse>(responseData, settings);
-
-                    List<Error> errorList = new List<Error>();
-                    if (errorInfo.Content.Count > 0)
-                    {
-                        errorList = errorInfo.Content;
-                    }
-
-                    return View("Error", errorList);
+                    ParameterError(responseMessage.Content.ReadAsStringAsync().Result);
                 }
 
             }
@@ -259,15 +198,31 @@ namespace MVC.Controllers
 
 
 
-        private ActionResult ParameterError()
+        private ActionResult ParameterError(string errorResponse = null)
         {
-            var error = new Error
-            {
-                Workbook = "Not Set",
-                Message = "Input Parameter missing"
-            };
-            return View("Error", new List<Error> { { error } });
 
+            List<Error> errorList = new List<Error>();
+
+            if (string.IsNullOrEmpty(errorResponse))
+            {
+                var error = new Error
+                {
+                    Workbook = "Not Set",
+                    Message = "Input Parameter missing"
+                };
+                errorList.Add(error);
+            }
+            else
+            {
+                JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
+                var errorInfo = JsonConvert.DeserializeObject<ErrorResponse>(errorResponse, settings);
+
+                if (errorInfo.Content.Count > 0)
+                {
+                    errorList = errorInfo.Content;
+                }
+            }
+            return View("Error", errorList);
         }
 
 
