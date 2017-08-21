@@ -1,4 +1,5 @@
 ﻿@model MVC.Models.WbInfoBasedOnApiCall
+@using MVC.Models;
 
 @{
     ViewBag.Title = "Api Search View";
@@ -45,11 +46,11 @@
                     {
                         int i = 0;
                         <ol>
-                            @foreach (string preference in Model.WbPreferences)
+                            @foreach (Preference preference in Model.WbPreferences)
                             {
-                                @Html.Hidden("SearchList[" + i + "]", preference);
+                                @Html.Hidden("SearchList[" + i + "]", preference.PreferenceName);
                                 string name = string.Format($"chkBox[{i++}]");
-                                <li>@Html.CheckBox(name, false, new { @onclick = "clicked(this)"}) @preference</li>
+                                <li>@Html.CheckBox(name, false, new { @onclick = "clicked(this)"}) @preference.PreferenceName</li>
 
                             }
                         </ol>
