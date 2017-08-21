@@ -89,7 +89,14 @@
                     foreach (string api in apiList.Keys)
                     {
                         WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
-                        info.WbPreferences = apiList[api];
+
+                        List<Preference> preferences = new List<Preference>();
+                        foreach(string preference in apiList[api])
+                        {
+                            preferences.Add(new Preference { PreferenceName = preference});
+                        }
+
+                        info.WbPreferences = preferences;
                         info.Workbook = searchCeiteria.Workbook;
                         info.Api = api;
                         response.Content.Add(info);

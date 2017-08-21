@@ -9,7 +9,7 @@ namespace MVC.Models
     {
         public string Workbook { get; set; }
         public string Api { get; set; }
-        public List<string> WbPreferences { get; set; }
+        public List<Preference> WbPreferences { get; set; }
     }
 
 

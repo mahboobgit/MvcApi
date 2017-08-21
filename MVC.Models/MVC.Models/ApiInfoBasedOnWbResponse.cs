@@ -8,7 +8,7 @@ namespace MVC.Models
     public class ApiInfoBasedOnWb
     {
         string Api { get; set; }
-        public List<string> WbPreferences { get; set; }
+        public List<Preference> WbPreferences { get; set; }
     }
 
 

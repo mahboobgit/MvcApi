@@ -9,6 +9,5 @@ namespace MVC.Models
     public class Preference
     {
         public string PreferenceName { get; set; }
-        public string PreferenceDesc { get; set; }
     }
 }
