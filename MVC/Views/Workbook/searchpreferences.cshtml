@@ -9,20 +9,16 @@
     {
         <div>
             <h1 class="jumbotron">Preference Search Result</h1>
-            
-
+            <a href="javascript:void(0);" onclick="history.go(-1);">Back to Details</a>
             @foreach (ApiBasedOnPreference apiBasedOnPref in Model)
             {
                 <div class="page-header">
                     <h4>@apiBasedOnPref.Workbook : <span class="badge" style="background-color:lightcoral">@apiBasedOnPref.Workbook</span></h4>                    
                 </div>
-                
-
                 <div>
                     @foreach (var prefkvp in apiBasedOnPref.PreferenceApiDetails)
                     {   
-                        <span>Preference:</span><span class="badge" style="background-color:lightcoral">@prefkvp.Key</span>
-                        
+                        <span>Preference:</span><span class="badge" style="background-color:lightcoral">@prefkvp.Key</span>                        
                         foreach (Api api in prefkvp.Value)
                         {
                             <div class="row">
@@ -34,10 +30,6 @@
                     }
                 </div>
              }
-
-
-            <br />
-            <a href="javascript:void(0);" onclick="history.go(-1);">Back to Details</a>
         </div>
 
     }
