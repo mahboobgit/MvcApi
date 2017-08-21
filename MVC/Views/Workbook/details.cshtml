@@ -12,72 +12,72 @@
         if (Model.WbPreferencesAndApiCalls != null)
         {
 
-
-                <table class="table table-striped">
-                    <thead>
-                        <tr class="row">
-                            <th class="col-sm-6">Preferences</th>
-                            <th class="col-sm-6">Api Calls</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <a href="javascript:void(0);" onclick="history.go(-1);">Back to Details</a>
+            <br /><br />
+            <table class="table table-striped">
+                <thead>
+                    <tr class="row">
+                        <th class="col-sm-6">Preferences</th>
+                        <th class="col-sm-6">Api Calls</th>
+                    </tr>
+                </thead>
+                <tbody>
 
 
                         
 
-                        @foreach (KeyValuePair<string, string> kvp in Model.WbPreferencesAndApiCalls)
-                        {
-                            <tr class="row">
-                                <td>@Html.Label(kvp.Key, new { @class = "col-sm-6" })</td>
-                                <td>
-                                    @if (kvp.Value != null)
+                    @foreach (KeyValuePair<string, string> kvp in Model.WbPreferencesAndApiCalls)
+                    {
+                        <tr class="row">
+                            <td>@Html.Label(kvp.Key, new { @class = "col-sm-6" })</td>
+                            <td>
+                                @if (kvp.Value != null)
+                                {
+                                    List<string> apis = kvp.Value.Split(new char[] { '`' }).ToList();
+                                    StringBuilder sb = new StringBuilder();
+
+
+                                    foreach (string api in apis)
                                     {
-                                        List<string> apis = kvp.Value.Split(new char[] { '`' }).ToList();
-                                        StringBuilder sb = new StringBuilder();
-
-
-                                        foreach (string api in apis)
+                                        var criteria = new SearchCriteria
                                         {
-                                            var criteria = new SearchCriteria
+                                            Workbook = Model.Workbook,
+                                            SearchOn = "api",
+                                            SearchList = new List<string> { { api } }
+                                        };
+                                        <span>&nbsp;</span>
+
+                                        using (Html.BeginForm("searchapi", "workbook", FormMethod.Post, new { @style = "display:inline-block;" }))
+                                        {
+
+                                            @Html.Hidden("workbook", Model.Workbook);
+                                            @Html.Hidden("searchOn", "apicall");
+
+
+                                            for (int i = 0; i < criteria.SearchList.Count; i++)
                                             {
-                                                Workbook = Model.Workbook,
-                                                SearchOn = "api",
-                                                SearchList = new List<string> { { api } }
-                                            };
-                                            <span>&nbsp;</span>
-
-                                            using (Html.BeginForm("searchapi", "workbook", FormMethod.Post, new { @style = "display:inline-block;" }))
-                                            {
-
-                                                @Html.Hidden("workbook", Model.Workbook);
-                                                @Html.Hidden("searchOn", "apicall");
-
-
-                                                for (int i = 0; i < criteria.SearchList.Count; i++)
-                                                {
-                                                    var sApi = criteria.SearchList[i];
-                                                    @Html.Hidden("SearchList[" + i + "]", sApi);
-                                                }
-
-
-                                                <button type="submit" class="badge" style="background-color:lightcoral; border:none">@api</button>
-                                                //@Html.ActionLink(api, "preferences", criteria, new { @class = "badge", @style = "background-color: lightcoral" });
+                                                var sApi = criteria.SearchList[i];
+                                                @Html.Hidden("SearchList[" + i + "]", sApi);
                                             }
-                                        }
 
+
+                                            <button type="submit" class="badge" style="background-color:lightcoral; border:none">@api</button>
+                                            //@Html.ActionLink(api, "preferences", criteria, new { @class = "badge", @style = "background-color: lightcoral" });
+                                        }
                                     }
 
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+                                }
 
-            }
-            else
-            {
-                Html.Display("<p>No Data to Display</p>");
-            }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
 
         }
+        else
+        {
+            Html.Display("<p>No Data to Display</p>");
+        }
     }
+}

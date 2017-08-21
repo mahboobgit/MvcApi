@@ -33,11 +33,13 @@
     {
         <div>
             <h1 class="jumbotron">Preference Details for API's</h1>
-            <div class="page-header">
+            <a href="javascript:void(0);" onclick="history.go(-1);">Back to Details</a>
+            @*<div class="page-header">*@
                 <h4>@Html.DisplayNameFor(model => model.Workbook) : <span class="badge" style="background-color:lightcoral">@Html.DisplayFor(model => model.Workbook)</span></h4>
                 <h4>@Html.DisplayNameFor(model => model.Api) : <span class="badge" style="background-color:lightcoral"> @Html.DisplayFor(model => model.Api)</span> is used with following preference file</h4>
-            </div>
-            <div class="alert-info">                
+            @*</div>*@
+            <div class="alert-info">
+                <br />
                 @using (Html.BeginForm("searchpreferences", "workbook", FormMethod.Post))
                 {
                     @Html.Hidden("SearchOn", "preferences")
@@ -54,13 +56,18 @@
 
                             }
                         </ol>
-                        <input type="submit" class="btn btn-info" value="Submit Button">
+
+                        
+                            <div class="row">
+                                <div class="col-md-1 col-md-offset-5">
+                                    <input type="submit" class="btn btn-info" value="Submit Button">
+                                </div>
+                            </div>
+                        
+                        <br />
                     }
                 }
             </div>
-            <br />
-            <a href="javascript:void(0);" onclick="history.go(-1);">Back to Details</a>
-
         </div>
 
     }
