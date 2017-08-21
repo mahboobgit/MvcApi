@@ -3,6 +3,17 @@
 @{
     ViewBag.Title = "Api Search View";
 }
+
+<script>
+    function clicked(obj) {
+        var re = /(?:(?!chkBox\[))\d+(?=\])/
+        var id = obj.name.match(re);
+
+        $("[name='SearchList[" + id + "]']").name = "_SearchList[" + id + "]";
+        //alert($("[name='SearchList[" + id + "]']").val());
+
+    }
+</script>
 <style type="text/css">
     ol {
         counter-reset: item
@@ -20,7 +31,7 @@
     if (Model != null)
     {
         <div>
-            <h1 class="jumbotron">Api call usage</h1>
+            <h1 class="jumbotron">Preference Details for API's</h1>
             <div class="page-header">
                 <h4>@Html.DisplayNameFor(model => model.Workbook) : <span class="badge" style="background-color:lightcoral">@Html.DisplayFor(model => model.Workbook)</span></h4>
                 <h4>@Html.DisplayNameFor(model => model.Api) : <span class="badge" style="background-color:lightcoral"> @Html.DisplayFor(model => model.Api)</span> is used with following preference file</h4>
@@ -38,7 +49,7 @@
                             {
                                 @Html.Hidden("SearchList[" + i + "]", preference);
                                 string name = string.Format($"chkBox[{i++}]");
-                                <li>@Html.CheckBox(name, false) @preference</li>
+                                <li>@Html.CheckBox(name, false, new { @onclick = "clicked(this)"}) @preference</li>
 
                             }
                         </ol>
@@ -46,6 +57,8 @@
                     }
                 }
             </div>
+            <br />
+            <a href="javascript:void(0);" onclick="history.go(-1);">Back to Details</a>
 
         </div>
 

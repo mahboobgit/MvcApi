@@ -112,7 +112,7 @@
             }
         }
 
-
+       
         [HttpPost, AllowAnonymous, Route("preferences")]
         public async Task<HttpResponseMessage> GetPreferencesForApiCall (SearchCriteria searchCeiteria) //string workbook, List<string> lstApi)
         {
@@ -120,24 +120,59 @@
             WorkbookManager manager = new WorkbookManager();
             try
             {
-                Dictionary<string, List<string>> apiList = await manager.GetPreferencesForApiCall(searchCeiteria.Workbook, searchCeiteria.SearchList);
+                Dictionary<string, string> preferenceDetails = await manager.GetApiCallForPreferences(searchCeiteria.Workbook, searchCeiteria.SearchList);
 
-                ApiInfoBasedOnWbResponse response = new ApiInfoBasedOnWbResponse { IsError = false };
+                ApiBasedOnPreferenceResponse response = new ApiBasedOnPreferenceResponse { IsError = false };
 
-                if (apiList.Count > 0)
+                if (preferenceDetails.Count > 0)
                 {
-                    foreach(string api in apiList.Keys)
+                    foreach(string preference in preferenceDetails.Keys)
                     {
-                        WbInfoBasedOnApiCall info = new WbInfoBasedOnApiCall();
-                        info.WbPreferences = apiList[api];
-                        info.Workbook = searchCeiteria.Workbook;
-                        info.Api = api;
-                        response.Content.Add(info);
+                        bool newWorkBookInfo = false;
+
+                        ApiBasedOnPreference info = null;
+                        info = response.SearchBasedOnWb(searchCeiteria.Workbook);
+                        if(info == null)
+                        {
+                            newWorkBookInfo = true;
+                            info = new ApiBasedOnPreference();
+                        }
+                        
+                        
+                        var apisForPreference = new Dictionary<string, List<Api>>();
+                        if (!newWorkBookInfo)
+                            apisForPreference = info.PreferenceApiDetails;
+
+
+                        if (!apisForPreference.ContainsKey(preference))
+                        {
+                            List<string> apiList = new List<string>(preferenceDetails[preference].Split('`'));
+                            var apicalls = new List<Api>();
+                            foreach(string apiNumber in apiList)
+                            {
+                                if (!string.IsNullOrEmpty(preference))
+                                {   
+                                    Api details = ApiDetails.Get(apiNumber);
+                                    apicalls.Add(new Api { ApiNumber = apiNumber, ApiDescription = details != null ? details.ApiDescription : string.Empty });
+                                }
+                                    
+                            }                     
+                            apisForPreference.Add(preference, apicalls);
+                        }
+
+                        if (newWorkBookInfo)
+                        {
+                            info.PreferenceApiDetails = apisForPreference;
+                            info.Workbook = searchCeiteria.Workbook;
+                            response.Content.Add(info);
+                        }
+
+                        
                     }
                     response.StatusCode = HttpStatusCode.OK;
                 }
 
-                return Request.CreateResponse<ApiInfoBasedOnWbResponse>(HttpStatusCode.OK, response);
+                return Request.CreateResponse<ApiBasedOnPreferenceResponse>(HttpStatusCode.OK, response);
             }
             catch (Exception ex)
             {

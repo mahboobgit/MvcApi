@@ -172,15 +172,15 @@ namespace MVC.Controllers
                 {
                     var responseData = responseMessage.Content.ReadAsStringAsync().Result;
                     JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                    var workbookInfo = JsonConvert.DeserializeObject<WorkbookInfoResponse>(responseData, settings);
+                    var workbookInfo = JsonConvert.DeserializeObject<ApiBasedOnPreferenceResponse>(responseData, settings);
 
-                    Workbook workbooks = new Workbook();
+                    List<ApiBasedOnPreference> apiCall = new List<ApiBasedOnPreference>();
                     if (workbookInfo.Content.Count > 0)
                     {
-                        workbooks = workbookInfo.Content[0];
+                        apiCall = workbookInfo.Content;
                     }
 
-                    return View(workbooks);
+                    return View(apiCall);
 
                 }
                 else
