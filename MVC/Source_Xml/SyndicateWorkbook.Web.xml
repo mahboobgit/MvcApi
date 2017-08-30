@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<WorkBookConfiguration Id="SyndicateWorkbook" ProductId="WMBetaLink" FeatureId="SYNWB" ProductVersion="17.11.0" DisplayText="Syndicate Workbook" AuditLevel="AUDIT" Listens2Contexts="Account|TTSMessage">
+
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList Version="2">
+      <Item Name="SYNWB.Header"/>
+      <Item Name="SYNWB.HeaderAllDeals"/>
+      <Item Name="SYNWB.HeaderFirstRequest"/>
+      <Item Name="SYNWB.Totals"/>
+      <Item Name="SYNWB.OrderInquiry"/>
+      <Item Name="SYNWB.UnpendOrder" />
+      <Item Name="SYNWB.UnpendOrderInformation" />
+      <Item Name="SYNWB.UndeleteOrder" />
+	    <Item Name="SYNWB.RequestedSyndicateShares" />
+      <Item Name="SYNWB.GuideIssuesList" />
+      <Item Name="SYNWB.GuideIssuesListAll" />
+      <Item Name="SYNWB.GuideAutoAllotDeals" />
+      <Item Name="SYNWB.GuideAutoAllotDealsAll" />
+      <Item Name="SYNWB.AllocatedSyndicateShares" />      
+    </TTSPreferenceList>
+  </PageConfiguration>
+
+  <PageConfiguration Id="CustomizationEditorUiMap" >
+    <CustomizationEditorUiMap>
+      <Guide>
+        <Issues_List>
+          <CustomizableItem Type="Field" Id="SYNWB.GuideIssuesList" />  
+        </Issues_List>
+        <Issues_List_All>
+          <CustomizableItem Type="Field" Id="SYNWB.GuideIssuesListAll" />
+        </Issues_List_All>
+        <Auto_Allot_Deals>
+          <CustomizableItem Type="Field" Id="SYNWB.GuideAutoAllotDeals" />
+        </Auto_Allot_Deals>
+        <Auto_Allot_Deals_All>
+          <CustomizableItem Type="Field" Id="SYNWB.GuideAutoAllotDealsAll" />
+        </Auto_Allot_Deals_All>
+      </Guide>
+      <Syndicate_Summary>
+        <Syndicate_Info>
+          <CustomizableItem Type="Static" Id="SYNWB.Header" />
+        </Syndicate_Info>
+        <Syndicate_Info_All_Deals>
+          <CustomizableItem Type="Static" Id="SYNWB.HeaderAllDeals" />
+        </Syndicate_Info_All_Deals>
+        <Syndicate_Info_First_Request>
+          <CustomizableItem Type="Static" Id="SYNWB.HeaderFirstRequest" />
+        </Syndicate_Info_First_Request>
+      </Syndicate_Summary>
+      <Totals>
+          <CustomizableItem Type="Field" Id="SYNWB.Totals" />
+		  <CustomizableItem Type="HeaderFooter" Id="SYNWB.Totals" />
+      </Totals>
+      <Order_Inquiry>
+          <CustomizableItem Type="Field" Id="SYNWB.OrderInquiry" />
+		  <CustomizableItem Type="HeaderFooter" Id="SYNWB.OrderInquiry" />
+      </Order_Inquiry>
+    </CustomizationEditorUiMap>
+  </PageConfiguration>
+
+  <PageConfiguration Id="ReportMetadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ReportMapping Name="SyndicateWorkbook.Web" HeaderWorkbookTitle="Syndicate Workbook">
+      <!-- Totals -->
+      <Report Id="SYNWB-Totals" ReportTitle="Totals" HeaderTabTitle="Totals" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="SynDynamicHeader" Title="SYNDICATE SUMMARY" Type="Dynamic" LayoutDataIDs="620" ReportDesignFile="SynDynamicHeader.rptdesign" PrefName="SYNWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="Totals" Title="TOTALS" Type="Grid" ScopeAPI="214" LayoutDataIDs="620_0" DataSourceMode="xmlfile" ReportDesignFile="TotalsGrid.rptdesign" PrefName="SYNWB.Totals" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="SYNWB-Totals-AllDeals" ReportTitle="Totals" HeaderTabTitle="Totals" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="SynDynamicHeader" Title="SYNDICATE SUMMARY" Type="Dynamic" LayoutDataIDs="620" ReportDesignFile="SynDynamicHeader.rptdesign" PrefName="SYNWB.HeaderAllDeals" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="Totals" Title="TOTALS" Type="Grid" ScopeAPI="214" LayoutDataIDs="620_0" DataSourceMode="xmlfile" ReportDesignFile="TotalsGrid.rptdesign" PrefName="SYNWB.Totals" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="SYNWB-Totals-FirstRequest" ReportTitle="Totals" HeaderTabTitle="Totals" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="SynDynamicHeader" Title="SYNDICATE SUMMARY" Type="Dynamic" LayoutDataIDs="620" ReportDesignFile="SynDynamicHeader.rptdesign" PrefName="SYNWB.HeaderFirstRequest" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="Totals" Title="TOTALS" Type="Grid" ScopeAPI="214" LayoutDataIDs="620_0" DataSourceMode="xmlfile" ReportDesignFile="TotalsGrid.rptdesign" PrefName="SYNWB.Totals" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <!-- Order Inquiry -->
+      <Report Id="SYNWB-OrderInquiry" ReportTitle="Order Inquiry" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="SynDynamicHeader" Title="SYNDICATE SUMMARY" Type="Dynamic" LayoutDataIDs="620" ReportDesignFile="SynDynamicHeader.rptdesign" PrefName="SYNWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="OrderInquiry" Title="ORDER INQUIRY" Type="Grid" ScopeAPI="214" LayoutDataIDs="621" DataSourceMode="xmlfile" ReportDesignFile="OrderInquiryGrid.rptdesign" PrefName="SYNWB.OrderInquiry" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="SYNWB-OrderInquiry-AllDeals" ReportTitle="Order Inquiry" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="SynDynamicHeader" Title="SYNDICATE SUMMARY" Type="Dynamic" LayoutDataIDs="620" ReportDesignFile="SynDynamicHeader.rptdesign" PrefName="SYNWB.HeaderAllDeals" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="OrderInquiry" Title="ORDER INQUIRY" Type="Grid" ScopeAPI="214" LayoutDataIDs="621" DataSourceMode="xmlfile" ReportDesignFile="OrderInquiryGrid.rptdesign" PrefName="SYNWB.OrderInquiry" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="SYNWB-OrderInquiry-FirstRequest" ReportTitle="Order Inquiry" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="SynDynamicHeader" Title="SYNDICATE SUMMARY" Type="Dynamic" LayoutDataIDs="620" ReportDesignFile="SynDynamicHeader.rptdesign" PrefName="SYNWB.HeaderFirstRequest" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="1" Name="OrderInquiry" Title="ORDER INQUIRY" Type="Grid" ScopeAPI="214" LayoutDataIDs="621" DataSourceMode="xmlfile" ReportDesignFile="OrderInquiryGrid.rptdesign" PrefName="SYNWB.OrderInquiry" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <!-- Details -->
+      <Report Id="SYNWB-Totals-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SYNWB.Totals" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="SYNWB-OrderInquiry-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SYNWB.OrderInquiry" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+    </ReportMapping>
+  </PageConfiguration>
+
+  <FieldValidation Enabled="false"/>
+
+  <EntitlementEvaluators>
+    <EntitlementEvaluator Key="Default" Evaluator="SyndicateWorkbook.Web.Entitlements.EntitlementEvaluator"/>
+  </EntitlementEvaluators>
+</WorkBookConfiguration>

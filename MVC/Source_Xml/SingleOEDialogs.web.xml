@@ -1,0 +1,92 @@
+﻿<?xml version="1.0"?>
+<WorkBookConfiguration Id="SingleOEDialogs.Web" ProductId="SOED" FeatureId="SOE" DisplayText="Single Order Entry Dialogs" ProductVersion="15.2.0" AuditLevel="AUDIT">
+  
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList Version="2">
+    </TTSPreferenceList>
+  </PageConfiguration>
+
+  <PageConfiguration Id="CustomizationEditorUiMap" >
+    <CustomizationEditorUiMap>
+      <Account_Info>
+        <CustomizableItem Type="Field" Id="SOE.AcctInfoBalS"/>
+      </Account_Info>
+      <Security_Info>
+        <CustomizableItem Type="Field" Id="SOE.EquitySecurityInfoQuoteS" />
+      </Security_Info>
+      <Equity_Order>
+        <Required_Fields>
+          <CustomizableItem Type="Field" Id="SOE.EquityOrderS" Group="Required_Fields" />
+        </Required_Fields>
+        <Commission_Override>
+          <CustomizableItem Type="Field" Id="SOE.EquityOrderS" Group="Commission_Override" />
+        </Commission_Override>
+        <Books_And_Records>
+          <CustomizableItem Type="Field" Id="SOE.EquityOrderS" Group="Books_And_Records" />
+        </Books_And_Records>
+        <Additional_Details>
+          <CustomizableItem Type="Field" Id="SOE.EquityOrderS" Group="Additional_Details" />
+        </Additional_Details>
+        <Order_Summary>
+          <CustomizableItem Type="Field" Id="SOE.EquityOrderS" Group="Order_Summary" />
+        </Order_Summary>
+        <Overrides>
+          <CustomizableItem Type="Field" Id="SOE.EquityOrderS" Group="Overrides" />
+        </Overrides>
+      </Equity_Order>
+      <Mutual_Fund_Order>
+        <Required_Fields>
+          <CustomizableItem Type="Field" Id="SOE.MutualFundOrderS" Group="Required_Fields" />
+        </Required_Fields>
+        <Commission_Override>
+          <CustomizableItem Type="Field" Id="SOE.MutualFundOrderS" Group="Commission_Override" />
+        </Commission_Override>
+        <Books_And_Records>
+          <CustomizableItem Type="Field" Id="SOE.MutualFundOrderS" Group="Books_And_Records" />
+        </Books_And_Records>
+        <Additional_Details>
+          <CustomizableItem Type="Field" Id="SOE.MutualFundOrderS" Group="Additional_Details" />
+        </Additional_Details>
+        <Order_Summary>
+          <CustomizableItem Type="Field" Id="SOE.MutualFundOrderS" Group="Order_Summary" />
+        </Order_Summary>
+        <Overrides>
+          <CustomizableItem Type="Field" Id="SOE.MutualFundOrderS" Group="Overrides" />
+        </Overrides> 
+      </Mutual_Fund_Order>
+      <Widgets>
+        <CustomizableItem Type="Widget" Id="equityWidgetPanel" Group="Widgets">
+          <AvailableWidgets DisplayNode="False">
+            <Widget Id="pane_OrderEntry" DisplayName="Order Entry" Column="0" Row="0" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_CommissionOverride" DisplayName="Commission Override" Column="0" Row="1" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_BooksRecords" DisplayName="Books and Records" Column="0" Row="2" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_ErrorsWarnings" DisplayName="Errors and Warning" Column="0" Row="3" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_VerifyClear" DisplayName="Verify Clear" Column="0" Row="4" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_AdditionalOrder" DisplayName="Additional Order" Column="0" Row="5" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_ChangeValidationSummary" DisplayName="Change Validation" Column="1" Row="0" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_SecurityDetails" DisplayName="Security Details" Column="1" Row="1" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_AccountDetails" DisplayName="Account Details" Column="1" Row="2" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_EstimatedCommission" DisplayName="Estimated Commission" Column="1" Row="3" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_CommissionCheck" DisplayName="Commission Check" Column="1" Row="4" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_OrderValidationSummary" DisplayName="Order Validation Summary" Column="1" Row="5" IsExpanded="1" HeaderText=""/>
+          </AvailableWidgets>
+        </CustomizableItem>
+        <CustomizableItem Type="Widget" Id="mutualFundWidgetPanel" Group="Widgets">
+          <AvailableWidgets DisplayNode="False">
+            <Widget Id="pane_OrderEntry" DisplayName="Order Entry" Column="0" Row="0" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_CommissionOverride" DisplayName="Commission Override" Column="0" Row="1" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_BooksRecords" DisplayName="Books and Records" Column="0" Row="2" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_ErrorsWarnings" DisplayName="Errors and Warning" Column="0" Row="3" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_VerifyClear" DisplayName="Verify Clear" Column="0" Row="4" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_AdditionalOrder" DisplayName="Additional Order" Column="0" Row="5" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_ChangeValidationSummary" DisplayName="Change Validation" Column="1" Row="0" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_SecurityDetails" DisplayName="Security Details" Column="1" Row="1" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_MFAccountDetails" DisplayName="Account Details" Column="1" Row="2" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_EstimatedCommission" DisplayName="Estimated Commission" Column="1" Row="3" IsExpanded="1" HeaderText=""/>
+            <Widget Id="pane_MFOrderValidated" DisplayName="Order Validation Summary" Column="1" Row="4" IsExpanded="1" HeaderText=""/>
+          </AvailableWidgets>
+        </CustomizableItem>
+      </Widgets>
+    </CustomizationEditorUiMap>
+  </PageConfiguration>
+</WorkBookConfiguration>

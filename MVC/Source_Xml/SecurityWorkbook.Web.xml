@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkBookConfiguration Id="SecurityWorkbook" ProductId="WMBetaLink" FeatureId="SECWB" ProductVersion="17.11.0" DisplayText="Security Workbook" AuditLevel="AUDIT" Listens2Contexts="Security|TTSMessage">
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList Version="2">
+      <Item Name="SECWB.Header" />
+      <Item Name="SECWB.GuideList" />
+      <Item Name="SECWB.OutOfBalance" />
+      <Item Name="SECWB.OpenTaxLots_Efficient" />
+      <Item Name="SECWB.OpenTaxLots_Express" />
+      <Item Name="SECWB.OpenTaxLots_Full" />
+      <Item Name="SECWB.TaxLots_Update" />
+      <Item Name="SECWB.TaxLots_Update_MultiRows" />
+      <Item Name="SECWB.TaxLotsEditHeader" />
+      <Item Name="SECWB.TaxLotsMoveGrid" />
+      <Item Name="SECWB.ClosedTaxLots" />
+      <Item Name="SECWB.Dividends" />
+      <Item Name="SECWB.SecurityInformation" />
+      <Item Name="SECWB.Positions" />
+      <Item Name="SECWB.OtherOrders" />
+      <Item Name="SECWB.MutualFunds" />
+      <Item Name="SECWB.AlternateInvestments" />
+    </TTSPreferenceList>
+  </PageConfiguration>
+  <PageConfiguration Id="CustomizationEditorUiMap">
+    <CustomizationEditorUiMap>
+      <Guide>
+        <CustomizableItem Type="Field" Id="SECWB.GuideList" />
+      </Guide>
+      <Security_Summary>
+        <CustomizableItem Type="Static" Id="SECWB.Header" />
+      </Security_Summary>
+      <Open_Tax_Lots>
+        <Efficient>
+          <CustomizableItem Type="Field" Id="SECWB.OpenTaxLots_Efficient" />
+          <CustomizableItem Type="HeaderFooter" Id="SECWB.OpenTaxLots_Efficient" />
+        </Efficient>
+        <Express>
+          <CustomizableItem Type="Field" Id="SECWB.OpenTaxLots_Express" />
+          <CustomizableItem Type="HeaderFooter" Id="SECWB.OpenTaxLots_Express" />
+        </Express>
+        <Full>
+          <CustomizableItem Type="Field" Id="SECWB.OpenTaxLots_Full" />
+          <CustomizableItem Type="HeaderFooter" Id="SECWB.OpenTaxLots_Full" />
+        </Full>
+        <Out_Of_Balance>
+          <CustomizableItem Type="Field" Id="SECWB.OutOfBalance" />
+          <CustomizableItem Type="HeaderFooter" Id="SECWB.OutOfBalance" />
+        </Out_Of_Balance>
+      </Open_Tax_Lots>
+      <Closed_Tax_Lots>
+        <CustomizableItem Type="Field" Id="SECWB.ClosedTaxLots" />
+        <CustomizableItem Type="HeaderFooter" Id="SECWB.ClosedTaxLots" />
+      </Closed_Tax_Lots>
+      <Positions>
+        <CustomizableItem Type="Field" Id="SECWB.Positions" />
+        <CustomizableItem Type="HeaderFooter" Id="SECWB.Positions" />
+      </Positions>
+      <Dividents>
+        <CustomizableItem Type="Field" Id="SECWB.Dividends" />
+        <CustomizableItem Type="HeaderFooter" Id="SECWB.Dividends" />
+      </Dividents>
+      <Security_Info>
+        <CustomizableItem Type="Static" Id="SECWB.SecurityInformation" />
+        <CustomizableItem Type="HeaderFooter" Id="SECWB.SecurityInformation" />
+      </Security_Info>
+      <Order_Inquiry>
+        <Mutual_Funds>
+          <CustomizableItem Type="Field" Id="SECWB.MutualFunds" />
+          <CustomizableItem Type="HeaderFooter" Id="SECWB.MutualFunds" />
+        </Mutual_Funds>
+        <Other_Orders>
+          <CustomizableItem Type="Field" Id="SECWB.OtherOrders" />
+          <CustomizableItem Type="HeaderFooter" Id="SECWB.OtherOrders" />
+        </Other_Orders>
+        <Alternate_Investments>
+          <CustomizableItem Type="Field" Id="SECWB.AlternateInvestments" />
+          <CustomizableItem Type="HeaderFooter" Id="SECWB.AlternateInvestments" />
+        </Alternate_Investments>
+      </Order_Inquiry>
+    </CustomizationEditorUiMap>
+  </PageConfiguration>
+  <PageConfiguration Id="ReportMetadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ReportMapping Name="SecurityWorkbook.Web" HeaderWorkbookTitle="Security Workbook">
+      <Report Id="SECWB-OpenTaxLotsExpress" ReportTitle="Open Tax Lots Express" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Open Tax Lots">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="OpenTaxLotsExpress" Title="OPEN TAX LOTS EXPRESS" Type="Grid" LayoutDataIDs="601" DataSourceMode="xmlfile" ReportDesignFile="OpenTaxLotsExpressGrid.rptdesign" PrefName="SECWB.OpenTaxLots_Express" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" ChildRowIdentifierField="_2357" ChildRowIdentifierExpression="{0} == 2" DefaultBoundListColumns="CRS" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-OpenTaxLotsEfficient" ReportTitle="Open Tax Lots Efficient" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Open Tax Lots">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="OpenTaxLotsEfficient" Title="OPEN TAX LOTS EFFICIENT" Type="Grid" LayoutDataIDs="601" DataSourceMode="xmlfile" ReportDesignFile="OpenTaxLotsEfficientGrid.rptdesign" PrefName="SECWB.OpenTaxLots_Efficient" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" ChildRowIdentifierField="_2357" ChildRowIdentifierExpression="{0} == 2" DefaultBoundListColumns="CRS" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-OpenTaxLotsFull" ReportTitle="Open Tax Lots Full" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Open Tax Lots">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="OpenTaxLotsFull" Title="OPEN TAX LOTS FULL" Type="Grid" LayoutDataIDs="601" DataSourceMode="xmlfile" ReportDesignFile="OpenTaxLotsFullGrid.rptdesign" PrefName="SECWB.OpenTaxLots_Full" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" ChildRowIdentifierField="_2357" ChildRowIdentifierExpression="{0} == 2" DefaultBoundListColumns="CRS" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-OutOfBalance" ReportTitle="Out Of Balance" HeaderTabTitle="Open Tax Lots" HeaderSubTabTitle="Out Of Balance">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="OutOfBalance" Title="OUT OF BALANCE" Type="Grid" DataSourceMode="xmlfile" LayoutDataIDs="610" ReportDesignFile="OutOfBalanceGrid.rptdesign" PrefName="SECWB.OutOfBalance" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-ClosedTaxLots" ReportTitle="Closed Tax Lots" HeaderTabTitle="Closed Tax Lots" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="ClosedTaxLots" Title="CLOSED TAX LOTS" Type="Grid" DataSourceMode="xmlfile" LayoutDataIDs="604" ReportDesignFile="ClosedTaxLotsGrid.rptdesign" PrefName="SECWB.ClosedTaxLots" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-Positions" ReportTitle="Positions" HeaderTabTitle="Positions" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="Positions" Title="POSITIONS" Type="Grid" LayoutDataIDs="002" DataSourceMode="xmlfile" ReportDesignFile="PositionsGrid.rptdesign" PrefName="SECWB.Positions" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-Dividends" ReportTitle="Dividends" HeaderTabTitle="Dividends" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="Dividends" Title="DIVIDENDS" Type="Grid" LayoutDataIDs="031" DataSourceMode="xmlfile" ReportDesignFile="DividendsGrid.rptdesign" PrefName="SECWB.Dividends" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-MutualFunds" ReportTitle="Order Inquiry Mutual Funds" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="MutualFunds" Title="ORDER INQUIRY" Type="Grid" LayoutDataIDs="225" DataSourceMode="xmlfile" ReportDesignFile="MutualFundsGrid.rptdesign" PrefName="SECWB.MutualFunds" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-OtherOrders" ReportTitle="Order Inquiry Other Orders" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="OtherOrders" Title="ORDER INQUIRY" Type="Grid" DataSourceMode="xmlfile" LayoutDataIDs="251" ReportDesignFile="OtherOrdersGrid.rptdesign" PrefName="SECWB.OtherOrders" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" ChildRowIdentifierField="_2357" ChildRowIdentifierExpression="{0} == 2" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-AlternativeInvestments" ReportTitle="Order Inquiry Alternative Investments" HeaderTabTitle="Order Inquiry" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="AlternativeInvestments" Title="ORDER INQUIRY" Type="Grid" LayoutDataIDs="640" DataSourceMode="xmlfile" ReportDesignFile="AlternativeInvestmentsGrid.rptdesign" PrefName="SECWB.AlternateInvestments" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-SecurityInfo" ReportTitle="Security Info" HeaderTabTitle="Security Info" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="SecDynamicHeader" Title="SECURITY SUMMARY" Type="Dynamic" LayoutDataIDs="201" ReportDesignFile="SecDynamicHeader.rptdesign" PrefName="SECWB.Header" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="SecurityInfo" Title="SECURITY INFO" Type="Dynamic" LayoutDataIDs="201_0" ReportDesignFile="SecurityInfoList.rptdesign" PrefName="SECWB.SecurityInformation" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <!-- Detail Pane Section-->
+      <Report Id="SECWB-OpenTaxLotsExpress-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.OpenTaxLots_Express" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-OpenTaxLotsEfficient-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.OpenTaxLots_Efficient" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-OpenTaxLotsFull-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.OpenTaxLots_Full" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-OutOfBalance-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.OutOfBalance" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-ClosedTaxLots-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.ClosedTaxLots" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-Positions-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.Positions" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-Dividends-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.Dividends" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-MutualFunds-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.MutualFunds" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-OtherOrders-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.OtherOrders" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="SECWB-AlternativeInvestments-Detail" ReportTitle="Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" PrefName="SECWB.AlternateInvestments" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <!-- End of Detail Pane Section-->
+    </ReportMapping>
+  </PageConfiguration>
+  <EntitlementEvaluators>
+    <EntitlementEvaluator Key="Default" Evaluator="SecurityWorkbook.Web.Entitlements.EntitlementEvaluator" />
+  </EntitlementEvaluators>
+</WorkBookConfiguration>

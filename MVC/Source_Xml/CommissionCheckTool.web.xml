@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WorkBookConfiguration Id="CommissionCheck" ProductId="CommissionCheck" FeatureId="CC" ProductVersion="17.1.0" AuditLevel="AUDIT" Listens2Contexts="Account|TTSMessage">
+
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList>
+    </TTSPreferenceList>
+  </PageConfiguration>
+
+  <PageConfiguration Id="SystemStatus" ThomletId="" WbThomletId="" AuditLevel="AUDIT">
+    <Functionals xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <XMLInputFunctionalBase Id="SystemStatus" MessageId="24000017" AsyncMode="false" AllowEmptyDisplayFields="true" BufferedResponse="true" AuditLevel="AUDIT">
+        <InputSequences>
+          <InputSequence Id="1" Optional="false" Primary="true" ExtraResultFields="" MultiStep="false" ValidateInput="false" IgnoreResponseData="false" GetAllResultFields="true">
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="true">
+            </InputFields>
+          </InputSequence>
+        </InputSequences>
+      </XMLInputFunctionalBase>
+    </Functionals>
+    <EntitlementSpecification Name="RequiredEntitlements" Value="J27" Source="ATHENA" FailurePage="NotEntitled.aspx" Type="System.String" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+  </PageConfiguration>
+
+  <PageConfiguration Id="PriceMetrixDataQuery" ThomletId="" WbThomletId="" AuditLevel="AUDIT">
+    <Functionals xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <XMLInputFunctionalBase Id="PriceMetrixDataQuery" MessageId="11170017" AsyncMode="false" AllowEmptyDisplayFields="true" BufferedResponse="true" AuditLevel="AUDIT" PlayBackFieldsMap="20162~RowKey|">
+        <InputSequences>
+          <InputSequence Id="5" Optional="false" Primary="true" MultiStep="true" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true">
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="false">
+              <!--<InputField Id="_107" Override="true" Required="true" />
+              <InputField Id="_113" Override="true" Required="true" />
+              <InputField Id="_117" Override="false" Required="true" />
+              <InputField Id="_158" Override="false" Required="true" />
+              <InputField Id="_136" Override="false" Required="true" />
+              <InputField Id="_191" Override="false" Required="true" />
+              <InputField Id="_968" Override="false" Required="true" />
+              <InputField Id="_3906" Override="false" Required="true" />
+              <InputField Id="_5302" Override="false" Required="true" />-->
+
+              <!--<root>
+                <Requests QueryType="PriceMetrixDataQuery">
+                  <Request>
+                    <_9070>Units`Price`MarketOrFirm`ScheduledCommission`ProposedCommission`AdvisorId`LanguageId`WithLabels</_9070>
+                    <_9071>1500`15`1`550`225`11`1`false</_9071>
+                    <_113>4000</_113>
+                  </Request>
+                </Requests>
+              </root>-->
+
+              <!-- TOKEN FOR THIS SEQUENCE WILL BE DERIVED FROM SEQUENCE 2 -->
+              <!--<InputField Id="_9070" Override="true" Required="false" Value="Units`Price`MarketOrFirm`ScheduledCommission`ProposedCommission`AdvisorId`LanguageId`WithLabels"/>
+              <InputField Id="_9071" Override="true" Required="false" Value="1500`15`1`550`225`11`1`false"/>-->
+              <InputField Id="_9070" Override="false" Required="false" />
+              <InputField Id="_9071" Override="false" Required="false" />
+              <InputField Id="_21114" Override="true" Required="true" Value="CC_Eq_US_USD"/>
+              <InputField Id="_20162" Override="false" Required="false" />
+
+
+            </InputFields>
+          </InputSequence>
+          <InputSequence Id="10" Optional="false" Primary="true" ExtraResultFields="" MultiStep="false" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true">
+            <LinkedFunctions>
+              <Function>*</Function>
+            </LinkedFunctions>
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="false">
+              <InputField Id="_6" Override="true" Required="false" Value="$RUNTIME"/>
+            </InputFields>
+          </InputSequence>
+          <InputSequence Id="15" Optional="false" Primary="true" ExtraResultFields="" MultiStep="false" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true">
+            <LinkedFunctions>
+              <Function>*</Function>
+            </LinkedFunctions>
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="false">
+              <!-- ALL DATA FOR THIS STEP WILL BE DERIVED FROM SEQUENCE 1 -->
+            </InputFields>
+          </InputSequence>
+          <InputSequence Id="20" Optional="false" Primary="true" ExtraResultFields="" MultiStep="true" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true"  PlayBackFieldsMap="_21114~_21114|">
+            <LinkedFunctions>
+              <Function>*</Function>
+            </LinkedFunctions>
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="false">
+
+              <!-- TOKEN FOR THIS SEQUENCE WILL BE DERIVED FROM SEQUENCE 2 -->
+              <!--<InputField Id="_9070" Override="true" Required="false" Value="Units`Price`MarketOrFirm`ScheduledCommission`ProposedCommission`AdvisorId`LanguageId`WithLabels"/>
+              <InputField Id="_9071" Override="true" Required="false" Value="1500`15`1`550`225`11`1`true"/>
+              <InputField Id="_21114" Override="true" Required="false" Value="CC_Eq_US_USD"/>-->
+            </InputFields>
+          </InputSequence>
+          <InputSequence Id="25" Optional="false" Primary="true" ExtraResultFields="" MultiStep="false" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true">
+            <LinkedFunctions>
+              <Function>*</Function>
+            </LinkedFunctions>
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="false">
+
+              <!-- TOKEN FOR THIS SEQUENCE WILL BE DERIVED FROM SEQUENCE 1 | 2 -->
+            </InputFields>
+          </InputSequence>
+          <InputSequence Id="30" Optional="false" Primary="true" ExtraResultFields="" MultiStep="true" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true"  PlayBackFieldsMap="_21114~_21114|">
+            <LinkedFunctions>
+              <Function>*</Function>
+            </LinkedFunctions>
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="false">
+              <!-- TOKEN FOR THIS SEQUENCE WILL BE DERIVED FROM SEQUENCE 2 -->
+            </InputFields>
+          </InputSequence>
+          <InputSequence Id="35" Optional="false" Primary="true" ExtraResultFields="" MultiStep="false" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true">
+            <LinkedFunctions>
+              <Function>*</Function>
+            </LinkedFunctions>
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="false">
+              <!-- TOKEN FOR THIS SEQUENCE WILL BE DERIVED FROM SEQUENCE 2 -->
+            </InputFields>
+          </InputSequence>
+          <InputSequence Id="40" Optional="false" Primary="true" ExtraResultFields="" MultiStep="true" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true"  PlayBackFieldsMap="_21114~_21114|">
+            <LinkedFunctions>
+              <Function>*</Function>
+            </LinkedFunctions>
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="false">
+              <!-- TOKEN FOR THIS SEQUENCE WILL BE DERIVED FROM SEQUENCE 2 -->
+            </InputFields>
+          </InputSequence>
+          <InputSequence Id="45" Optional="false" Primary="true" ExtraResultFields="" MultiStep="false" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true">
+            <LinkedFunctions>
+              <Function>*</Function>
+            </LinkedFunctions>
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="false">
+              <!-- TOKEN FOR THIS SEQUENCE WILL BE DERIVED FROM SEQUENCE 2 -->
+            </InputFields>
+          </InputSequence>
+        </InputSequences>
+      </XMLInputFunctionalBase>
+    </Functionals>
+    <EntitlementSpecification Name="RequiredEntitlements" Value="J27" Source="ATHENA" FailurePage="NotEntitled.aspx" Type="System.String" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+  </PageConfiguration>
+
+</WorkBookConfiguration>

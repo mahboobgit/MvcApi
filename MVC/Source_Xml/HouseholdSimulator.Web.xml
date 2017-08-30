@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WorkBookConfiguration Id="HouseholdSimulator.Web" ProductId="CSFS" FeatureId="CSFS" ProductVersion="15.1.0" AuditLevel="AUDIT" Listens2Contexts="Account|TTSMessage">
+
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList>
+
+    </TTSPreferenceList>
+  </PageConfiguration>
+
+</WorkBookConfiguration>

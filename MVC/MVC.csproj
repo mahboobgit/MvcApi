@@ -210,6 +210,22 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Source_Xml\AccountGrouping.Web.xml" />
+    <Content Include="Source_Xml\AccountMaintenanceWB.Web.xml" />
+    <Content Include="Source_Xml\accountworkbook.web.xml" />
+    <Content Include="Source_Xml\AnnuityWorkbook.Web.xml" />
+    <Content Include="Source_Xml\CommissionCheckTool.web.xml" />
+    <Content Include="Source_Xml\ContextSubfunctionSimulator.Web.xml" />
+    <Content Include="Source_Xml\HouseholdSimulator.Web.xml" />
+    <Content Include="Source_Xml\InventoryWorkbook.web.xml" />
+    <Content Include="Source_Xml\ReorgWorkbook.Web.xml" />
+    <Content Include="Source_Xml\ReportWorkbook.Web.xml" />
+    <Content Include="Source_Xml\repworkbook.web.xml" />
+    <Content Include="Source_Xml\RulesEngineWB.Web.xml" />
+    <Content Include="Source_Xml\SameFundsFamily.Web.xml" />
+    <Content Include="Source_Xml\SecurityWorkbook.Web.xml" />
+    <Content Include="Source_Xml\SingleOEDialogs.web.xml" />
+    <Content Include="Source_Xml\SyndicateWorkbook.Web.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkBookConfiguration Id="AccountGrouping" ProductId="WMBETALINK" FeatureId="ACTGRP" ProductVersion="17.11.0" DisplayText="Account Grouping" AuditLevel="AUDIT" Listens2Contexts="Account|TTSMessage">
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList Version="2">
+      <Item Name="ACTGRP.AccountDetails" />
+      <Item Name="ACTGRP.AccountGroup" />
+      <Item Name="ACTGRP.SectionHeader" />
+    </TTSPreferenceList>
+  </PageConfiguration>
+  <PageConfiguration Id="CustomizationEditorUiMap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- Valid 'Types' are Field, Static, HeaderFooter-->
+    <!-- 'Id' is the FuncAdmin PrefName for Field and Static editors -->
+    <!-- 'Id' is arbirary for HeaderFooter editor -->
+    <CustomizationEditorUiMap>
+      <AccountDetails>
+        <CustomizableItem Type="Field" Id="ACTGRP.AccountDetails" />
+        <!--<CustomizableItem Type="HeaderFooter" Id="ACTGRP.AccountDetails" />-->
+      </AccountDetails>
+      <AccountCategory>
+        <CustomizableItem Type="Field" Id="ACTGRP.SectionHeader" />
+      </AccountCategory>
+      <AccountGroup>
+        <CustomizableItem Type="Field" Id="ACTGRP.AccountGroup" />
+        <!--<CustomizableItem Type="HeaderFooter" Id="ACTGRP.AccountGroup" />-->
+      </AccountGroup>
+    </CustomizationEditorUiMap>
+  </PageConfiguration>
+  <EntitlementEvaluators>
+    <EntitlementEvaluator Key="Default" Evaluator="AccountGrouping.Web.Entitlements.EntitlementEvaluator" />
+  </EntitlementEvaluators>
+</WorkBookConfiguration>

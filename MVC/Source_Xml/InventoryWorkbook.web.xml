@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<WorkBookConfiguration Id="InventoryWorkbook" ProductId="WMBetaLink" FeatureId="INVWB" ProductVersion="17.11.0" DisplayText="Inventory Workbook" AuditLevel="AUDIT" Listens2Contexts="Security|TTSMessage">
+
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList Version="2">
+      <!--ToDo: add preferences here-->
+      <Item Name="INVWB.ProductType"/>
+      <Item Name="INVWB.Agency"/>
+      <Item Name="INVWB.BuilderBond"/>
+      <Item Name="INVWB.CertificateOfDeposit"/>
+      <Item Name="INVWB.CMO"/>
+      <Item Name="INVWB.CorporateBond"/>
+      <Item Name="INVWB.CorporateConvertibleBond"/>
+      <Item Name="INVWB.CorporateUIT"/>
+      <Item Name="INVWB.Equity"/>
+      <Item Name="INVWB.EquityUIT"/>
+      <Item Name="INVWB.ForeignBond"/>
+      <Item Name="INVWB.HighYieldBond"/>
+      <Item Name="INVWB.Miscellaneous"/>
+      <Item Name="INVWB.MunicipalBond"/>
+      <Item Name="INVWB.MunicipalInsuredBond"/>
+      <Item Name="INVWB.MunicipalQualifiedBond"/>
+      <Item Name="INVWB.MunicipalTaxableBond"/>
+      <Item Name="INVWB.MunicipalUIT"/>
+      <Item Name="INVWB.MunicipalZero"/>
+      <Item Name="INVWB.PassThru"/>
+      <Item Name="INVWB.PreferredStock"/>
+      <Item Name="INVWB.REMIC"/>
+      <Item Name="INVWB.TreasuryBill"/>
+      <Item Name="INVWB.TreasuryBondOrNote"/>
+      <Item Name="INVWB.ZeroAndOtherCorporateBond"/>
+      <Item Name="INVWB.ZeroBondAndOtherTreasury"/>
+      <Item Name="INVWB.InventoryFilter"/>      
+      <Item Name="INVWB.CirclePref"/>
+      <Item Name="INVWB.StoryPref"/>
+    </TTSPreferenceList>
+  </PageConfiguration>
+
+  <PageConfiguration Id="CustomizationEditorUiMap" >
+    <CustomizationEditorUiMap>
+      <Product_Type>
+        <CustomizableItem Type="Field" Id="INVWB.ProductType" />
+      </Product_Type>
+      <Agency>
+        <CustomizableItem Type="Field" Id="INVWB.Agency" />
+		 <CustomizableItem Type="HeaderFooter" Id="INVWB.Agency" />
+      </Agency>
+      <Builder_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.BuilderBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.BuilderBond" />
+      </Builder_Bond>
+      <Certificate_Of_Deposit>
+        <CustomizableItem Type="Field" Id="INVWB.CertificateOfDeposit" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.CertificateOfDeposit" />
+      </Certificate_Of_Deposit>
+      <CMO>
+        <CustomizableItem Type="Field" Id="INVWB.CMO" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.CMO" />
+      </CMO>
+      <Corporate_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.CorporateBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.CorporateBond" />
+      </Corporate_Bond>
+      <Corporate_Convertible_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.CorporateConvertibleBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.CorporateConvertibleBond" />
+      </Corporate_Convertible_Bond>
+      <Corporate_UIT>
+        <CustomizableItem Type="Field" Id="INVWB.CorporateUIT" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.CorporateUIT" />
+      </Corporate_UIT>
+      <Equity>
+        <CustomizableItem Type="Field" Id="INVWB.Equity" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.Equity" />
+      </Equity>
+      <Equity_UIT>
+        <CustomizableItem Type="Field" Id="INVWB.EquityUIT" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.EquityUIT" />
+      </Equity_UIT>
+      <Foreign_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.ForeignBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.ForeignBond" />
+      </Foreign_Bond>
+      <High_Yield_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.HighYieldBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.HighYieldBond" />
+      </High_Yield_Bond>
+      <Miscellaneous>
+        <CustomizableItem Type="Field" Id="INVWB.Miscellaneous" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.Miscellaneous" />
+      </Miscellaneous>
+      <Municipal_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.MunicipalBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.MunicipalBond" />
+      </Municipal_Bond>
+      <Municipal_Insured_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.MunicipalInsuredBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.MunicipalInsuredBond" />
+      </Municipal_Insured_Bond>
+      <Municipal_Qualified_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.MunicipalQualifiedBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.MunicipalQualifiedBond" />
+      </Municipal_Qualified_Bond>
+      <Municipal_Taxable_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.MunicipalTaxableBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.MunicipalTaxableBond" />
+      </Municipal_Taxable_Bond>
+      <Municipal_UIT>
+        <CustomizableItem Type="Field" Id="INVWB.MunicipalUIT" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.MunicipalUIT" />
+      </Municipal_UIT>
+      <Municipal_Zero>
+        <CustomizableItem Type="Field" Id="INVWB.MunicipalZero" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.MunicipalZero" />
+      </Municipal_Zero>
+      <Pass_Thru>
+        <CustomizableItem Type="Field" Id="INVWB.PassThru" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.PassThru" />
+      </Pass_Thru>
+      <Preferred_Stock>
+        <CustomizableItem Type="Field" Id="INVWB.PreferredStock" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.PreferredStock" />
+      </Preferred_Stock>
+      <REMIC>
+        <CustomizableItem Type="Field" Id="INVWB.REMIC" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.REMIC" />
+      </REMIC>
+      <Treasury_Bill>
+        <CustomizableItem Type="Field" Id="INVWB.TreasuryBill" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.TreasuryBill" />
+      </Treasury_Bill>
+      <Treasury_Bond_Or_Note>
+        <CustomizableItem Type="Field" Id="INVWB.TreasuryBondOrNote" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.TreasuryBondOrNote" />
+      </Treasury_Bond_Or_Note>
+      <Zero_And_Other_Corporate_Bond>
+        <CustomizableItem Type="Field" Id="INVWB.ZeroAndOtherCorporateBond" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.ZeroAndOtherCorporateBond" />
+      </Zero_And_Other_Corporate_Bond>
+      <Zero_Bond_And_Other_Treasury>
+        <CustomizableItem Type="Field" Id="INVWB.ZeroBondAndOtherTreasury" />
+		<CustomizableItem Type="HeaderFooter" Id="INVWB.ZeroBondAndOtherTreasury" />
+      </Zero_Bond_And_Other_Treasury>
+	  <Inventory_Story>
+	    <CustomizableItem Type="HeaderFooter" Id="INVWB.StoryPref" />
+	  </Inventory_Story>
+  </CustomizationEditorUiMap>
+  </PageConfiguration>
+
+  <PageConfiguration Id="ReportMetadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ReportMapping Name="InventoryWorkbook.Web" HeaderWorkbookTitle="Inventory Workbook">
+      <Report Id="INVWB-InventoryStory" ReportTitle="Inventory Story">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryStory" Title="Inventory Story" Type="Dynamic" LayoutDataIDs="036" ReportDesignFile="InventoryStory.rptDesign" PrefName="INVWB.StoryPref" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      
+      <!--Subtabs-->
+      <Report Id="INVWB-InventoryAgency" ReportTitle="Agency" HeaderTabTitle="Agency" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Agency" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.Agency" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryBuilderBond" ReportTitle="Builder Bond" HeaderTabTitle="Builder Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Builder Bond" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.BuilderBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryCertificateOfDeposit" ReportTitle="Certificate Of Deposit" HeaderTabTitle="Certificate Of Deposit" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Certificate Of Deposit" Type="Grid" LayoutDataIDs="235"  DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.CertificateOfDeposit" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryCMO" ReportTitle="CMO" HeaderTabTitle="CMO" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="CMO" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.CMO" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryCorporateBond" ReportTitle="Corporate Bond" HeaderTabTitle="Corporate Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Corporate Bond" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.CorporateBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryCorporateConvertibleBond" ReportTitle="Corporate Convertible Bond" HeaderTabTitle="Corporate Convertible Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Corporate Convertible Bond" Type="Grid" DataSourceMode="xmlfile" LayoutDataIDs="235" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.CorporateConvertibleBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+		<Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>       
+	   <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryCorporateUIT" ReportTitle="Corporate UIT" HeaderTabTitle="Corporate UIT" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Corporate UIT" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.CorporateUIT" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryEquity" ReportTitle="Equity" HeaderTabTitle="Equity" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Equity" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.Equity" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryEquityUIT" ReportTitle="Equity UIT" HeaderTabTitle="Equity UIT" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Equity UIT" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.EquityUIT" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryForeignBond" ReportTitle="Foreign Bond" HeaderTabTitle="Foreign Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Foreign Bond" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.ForeignBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryHighYieldBond" ReportTitle="High Yield Bond" HeaderTabTitle="High Yield Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="High Yield Bond" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.HighYieldBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryMiscellaneous" ReportTitle="Miscellaneous" HeaderTabTitle="Miscellaneous" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Miscellaneous" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.Miscellaneous" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryMunicipalBond" ReportTitle="Municipal Bond" HeaderTabTitle="Municipal Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Municipal Bond" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.MunicipalBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryMunicipalInsuredBond" ReportTitle="Municipal Insured Bond" HeaderTabTitle="Municipal Insured Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Municipal Insured Bond" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.MunicipalInsuredBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryMunicipalQualifiedBond" ReportTitle="Municipal Qualified Bond" HeaderTabTitle="Municipal Qualified Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Municipal Qualified Bond" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.MunicipalQualifiedBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryMunicipalTaxableBond" ReportTitle="Municipal Taxable Bond" HeaderTabTitle="Municipal Taxable Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Municipal Taxable Bond" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.MunicipalTaxableBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryMunicipalUIT" ReportTitle="Municipal UIT" HeaderTabTitle="Municipal UIT" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Municipal UIT" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.MunicipalUIT" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryMunicipalZero" ReportTitle="Municipal Zero" HeaderTabTitle="Municipal Zero" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Municipal Zero" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.MunicipalZero" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryPassThru" ReportTitle="Pass Thru" HeaderTabTitle="Pass Thru" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+    	<Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Pass-Thru" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.PassThru" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryPreferredStock" ReportTitle="Preferred Stock" HeaderTabTitle="Preferred Stock" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Preferred Stock" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.PreferredStock" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryREMIC" ReportTitle="REMIC" HeaderTabTitle="REMIC" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="REMIC" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.REMIC" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryTreasuryBill" ReportTitle="Treasury Bill" HeaderTabTitle="Treasury Bill" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Treasury Bill" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.TreasuryBill" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryTreasuryBondOrNote" ReportTitle="Treasury Bond Or Note" HeaderTabTitle="Treasury Bond Or Note" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Treasury Bond Or Note" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.TreasuryBondOrNote" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryZeroAndOtherCorporateBond" ReportTitle="Zero And Other Corporate Bond" HeaderTabTitle="Zero And Other Corporate Bond" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Zero And Other Corporate Bond" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile" ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.ZeroAndOtherCorporateBond" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="INVWB-InventoryZeroBondAndOtherTreasury" ReportTitle="Zero Bond And Other Treasury" HeaderTabTitle="Zero Bond And Other Treasury" HeaderSubTabTitle="">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+        <Widget Id="0" Name="InventoryGrid" Title="Zero Bond And Other Treasury" Type="Grid" LayoutDataIDs="235" DataSourceMode="xmlfile"  ReportDesignFile="InventoryGrid.rptDesign" PrefName="INVWB.ZeroBondAndOtherTreasury" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+
+      <!--Detail-->
+      <Report ReportTitle="Detail" Id="INVWB-InventoryAgency-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.Agency"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryBuilderBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.BuilderBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryCertificateOfDeposit-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.CertificateOfDeposit"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryCMO-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.CMO"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryCorporateBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.CorporateBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryCorporateConvertibleBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.CorporateConvertibleBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryCorporateUIT-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.CorporateUIT"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryEquity-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.Equity"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryEquityUIT-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.EquityUIT"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryForeignBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.ForeignBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryHighYieldBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.HighYieldBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryMiscellaneous-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.Miscellaneous"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryMunicipalBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.MunicipalBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryMunicipalInsuredBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.MunicipalInsuredBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryMunicipalQualifiedBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.MunicipalQualifiedBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryMunicipalTaxableBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.MunicipalTaxableBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryMunicipalUIT-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.MunicipalUIT"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryMunicipalZero-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.MunicipalZero"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryPassThru-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.PassThru"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryPreferredStock-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.PreferredStock"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryREMIC-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.REMIC"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryTreasuryBill-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.TreasuryBill"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryTreasuryBondOrNote-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.TreasuryBondOrNote"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryZeroAndOtherCorporateBond-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.ZeroAndOtherCorporateBond"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report ReportTitle="Detail" Id="INVWB-InventoryZeroBondAndOtherTreasury-Detail">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="0" Name="DetailPane" Title="SELECTED ROW DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="DetailPane.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" PrefName="INVWB.ZeroBondAndOtherTreasury"/>
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>    </ReportMapping>
+  </PageConfiguration>
+
+  <EntitlementEvaluators>
+    <EntitlementEvaluator Key="Default" Evaluator="InventoryWorkbook.Web.Entitlements.EntitlementEvaluator"/>
+  </EntitlementEvaluators>
+  
+</WorkBookConfiguration>

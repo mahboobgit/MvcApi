@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<WorkBookConfiguration Id="SameFundsFamily" ProductId="TTSLinkWeb" FeatureId="SFF" ProductVersion="0.0.0" AuditLevel="AUDIT" Listens2Contexts="">
+  
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList>
+      <Item Name="SFF.Information" />
+    </TTSPreferenceList>
+  </PageConfiguration>
+
+  <PageConfiguration Id="SameFundsFamily" ThomletId="" WbThomletId="" AuditLevel="AUDIT">
+    <Functionals xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <XMLInputFunctionalBase Id="SameFundsFamily" MessageId="11000001" AsyncMode="false" AllowEmptyDisplayFields="true" BufferedResponse="true" AuditLevel="AUDIT">
+        <InputSequences>
+          <InputSequence Id="1" Optional="false" Primary="true" ExtraResultFields="" MultiStep="false" ValidateInput="true" IgnoreResponseData="false" GetAllResultFields="true">
+            <LinkedFunctions>
+              <Function>*</Function>
+            </LinkedFunctions>
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <!--<InputParam Name="WhereUsedContext" Value="AccountGrouping" />-->
+            </InputParams>
+            <InputFields Allowall="true">
+              <InputField Id="_1091" Override="false" Required="true" />
+              <InputField Id="_2121" Override="false" Required="true" />
+              <InputField Id="_3192" Override="false" Required="true" />
+              <InputField Id="_5205" Override="false" Required="true" />
+            </InputFields>
+          </InputSequence>
+        </InputSequences>
+      </XMLInputFunctionalBase>
+    </Functionals>
+    <EntitlementSpecification Name="RequiredEntitlements" Value="J01" Source="ATHENA" FailurePage="NotEntitled.aspx" Type="System.String" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+  </PageConfiguration>
+
+  <PageConfiguration Id="SystemStatus" ThomletId="" WbThomletId="" AuditLevel="AUDIT">
+    <Functionals xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <XMLInputFunctionalBase Id="SystemStatus" MessageId="11170010" AsyncMode="false" AllowEmptyDisplayFields="true" BufferedResponse="true" AuditLevel="AUDIT">
+        <InputSequences>
+          <InputSequence Id="1" Optional="false" Primary="true" ExtraResultFields="" MultiStep="false" ValidateInput="false" IgnoreResponseData="false" GetAllResultFields="true">
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+              <InputParam Name="NumberOfPages" Value="1" />
+            </InputParams>
+            <InputFields Allowall="true">
+            </InputFields>
+          </InputSequence>
+        </InputSequences>
+      </XMLInputFunctionalBase>
+    </Functionals>
+    <EntitlementSpecification Name="RequiredEntitlements" Value="J03" Source="ATHENA" FailurePage="NotEntitled.aspx" Type="System.String" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+  </PageConfiguration>
+  
+</WorkBookConfiguration>  

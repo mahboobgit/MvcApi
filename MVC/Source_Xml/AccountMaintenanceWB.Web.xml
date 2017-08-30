@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkBookConfiguration Id="AccountMaintenanceWB" ProductId="WMBetaLink" FeatureId="AMTWB" ProductVersion="17.11.0" DisplayText="Account Maintenance Workbook" AuditLevel="AUDIT" Listens2Contexts="Account|TTSMessage">
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList Version="2">
+      <Item Name="AMTWB.AssocPeople_AddUpdate" />
+      <Item Name="AMTWB.Info_Demo_AccountTypes" />
+      <Item Name="AMTWB.Info_Demo_AddUpdate" />
+      <Item Name="AMTWB.Info_Demo_Edit" />
+      <Item Name="AMTWB.Info_Demo_FarmSwitches" />
+    </TTSPreferenceList>
+  </PageConfiguration>
+  <PageConfiguration Id="CustomizationEditorUiMap">
+    <CustomizationEditorUiMap>
+      <Add_Account>
+        <Account_Type>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Account_Type" />
+        </Account_Type>
+        <Rep_Code>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Rep_Code" />
+        </Rep_Code>
+        <Name_and_Address>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Name_and_Address" />
+        </Name_and_Address>
+        <Contact_Information>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Contact_Information" />
+        </Contact_Information>
+        <Account_Details>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Account_Details" />
+        </Account_Details>
+        <Account_Details_Continued>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Account_Details_Continued" />
+        </Account_Details_Continued>
+        <Name_Keys>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Name_Keys" />
+        </Name_Keys>
+        <Personal_Information>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Personal_Information" />
+        </Personal_Information>
+        <Spouse_Information>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Spouse_Information" />
+        </Spouse_Information>
+        <Financial_Information>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Financial_Information" />
+        </Financial_Information>
+        <Investment_Experience>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Investment_Experience" />
+        </Investment_Experience>
+        <Tax_Information>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Tax_Information" />
+        </Tax_Information>
+        <Time_Horizon>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Time_Horizon" />
+        </Time_Horizon>
+        <Alpha_Keys>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Alpha_Keys" />
+        </Alpha_Keys>
+        <Liquidity_Needs>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Liquidity_Needs" />
+        </Liquidity_Needs>
+        <Relationship>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Relationship" />
+        </Relationship>
+        <Special_Handling>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Special Handling" />
+        </Special_Handling>
+        <Documents>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Documents" />
+        </Documents>
+        <Notes>
+          <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_AddUpdate" Group="Notes" />
+        </Notes>
+      </Add_Account>
+      <Edit_Account>
+        <Edit_Demographics>
+          <Edit_Demographics1>
+            <CustomizableItem Type="HeaderFooter" Id="AMTWB.Info_Demo_Edit" />
+          </Edit_Demographics1>
+          <Name_and_Address>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Name_and_Address" />
+          </Name_and_Address>
+          <Contact_Information>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Contact_Information" />
+          </Contact_Information>
+          <Account_Details>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Account_Details" />
+          </Account_Details>
+          <Account_Details_Continued>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Account_Details_Continued" />
+          </Account_Details_Continued>
+          <Personal_Information>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Personal_Information" />
+          </Personal_Information>
+          <Spouse_Information>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Spouse_Information" />
+          </Spouse_Information>
+          <Financial_Information>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Financial_Information" />
+          </Financial_Information>
+          <Investment_Experience>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Investment_Experience" />
+          </Investment_Experience>
+          <Tax_Information>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Tax_Information" />
+          </Tax_Information>
+          <Time_Horizon>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Time_Horizon" />
+          </Time_Horizon>
+          <Alpha_Keys>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Alpha_Keys" />
+          </Alpha_Keys>
+          <Liquidity_Needs>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Liquidity_Needs" />
+          </Liquidity_Needs>
+          <Relationship>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Relationship" />
+          </Relationship>
+          <Special_Handling>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Special Handling" />
+          </Special_Handling>
+          <Documents>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Documents" />
+          </Documents>
+          <Notes>
+            <CustomizableItem Type="Field" Id="AMTWB.Info_Demo_Edit" Group="Notes" />
+          </Notes>
+        </Edit_Demographics>
+        <Edit_Assoc_People>
+          <Edit_Assoc_People1>
+            <CustomizableItem Type="HeaderFooter" Id="AMTWB.AssocPeople_AddUpdate" />
+          </Edit_Assoc_People1>
+          <Entity_Selection>
+            <CustomizableItem Type="Field" Id="AMTWB.AssocPeople_AddUpdate" Group="Entity_Selection" />
+          </Entity_Selection>
+          <Status_Panel>
+            <CustomizableItem Type="Field" Id="AMTWB.AssocPeople_AddUpdate" Group="Status_Panel" />
+          </Status_Panel>
+          <Association>
+            <CustomizableItem Type="Field" Id="AMTWB.AssocPeople_AddUpdate" Group="Association" />
+          </Association>
+          <Financial>
+            <CustomizableItem Type="Field" Id="AMTWB.AssocPeople_AddUpdate" Group="Financial" />
+          </Financial>
+          <Identification>
+            <CustomizableItem Type="Field" Id="AMTWB.AssocPeople_AddUpdate" Group="Identification" />
+          </Identification>
+          <Phone>
+            <CustomizableItem Type="Field" Id="AMTWB.AssocPeople_AddUpdate" Group="Phone" />
+          </Phone>
+          <Name_and_Address>
+            <CustomizableItem Type="Field" Id="AMTWB.AssocPeople_AddUpdate" Group="Name_and_Address" />
+          </Name_and_Address>
+          <Employer>
+            <CustomizableItem Type="Field" Id="AMTWB.AssocPeople_AddUpdate" Group="Employer" />
+          </Employer>
+        </Edit_Assoc_People>
+      </Edit_Account>
+      <Widgets>
+        <CustomizableItem Type="Widget" Id="AddAccountWidgetPanel" Group="Widgets">
+          <AvailableWidgets DisplayNode="False">
+            <Widget Id="pane_AddAccountTypeSection" DisplayName="Account Type" Column="0" Row="0" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddRepCodeSection" DisplayName="Rep code" Column="1" Row="0" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddNameAddressSection" DisplayName="Name &amp; Address" Column="0" Row="1" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddContactInformationSection" DisplayName="Contact Information" Column="1" Row="1" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddAccountDetailsSection" DisplayName="Account Details" Column="0" Row="2" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddAccountDetailsContdSection" DisplayName="Account Details Contd" Column="1" Row="2" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddNameKeys" DisplayName="Name Keys" Column="0" Row="3" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddSpouseInfoSection" DisplayName="Spouse Information" Column="1" Row="3" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddPersonalInfoSection" DisplayName="Personal Information" Column="0" Row="4" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddInvestmentExperienceSection" DisplayName="Investment Experience" Column="1" Row="4" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddFinancialInfoSection" DisplayName="Financial Information" Column="0" Row="5" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddTimeHorizonSection" DisplayName="Time Horizon" Column="1" Row="5" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddTaxInfoSection" DisplayName="Tax Information" Column="0" Row="6" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddLiquidityNeedsSection" DisplayName="Liquidity Needs" Column="1" Row="6" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddAlphaKeysSection" DisplayName="Alpha Keys" Column="0" Row="7" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddRelationshipSection" DisplayName="Relationship" Column="1" Row="7" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddNotesSection" DisplayName="Notes" Column="0" Row="8" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddSpecialHandlingSection" DisplayName="Special Handling Records" Column="1" Row="8" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddDocumentsSection" DisplayName="Documents" Column="0" Row="9" IsExpanded="1" HeaderText="" />
+          </AvailableWidgets>
+        </CustomizableItem>
+        <CustomizableItem Type="Widget" Id="EditAccountWidgetPanel" Group="Widgets">
+          <AvailableWidgets DisplayNode="False">
+            <Widget Id="pane_AddNameAddressSection" DisplayName="Name &amp; Address" Column="0" Row="0" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddContactInformationSection" DisplayName="Contact Information" Column="1" Row="0" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddAccountDetailsSection" DisplayName="Account Details" Column="0" Row="1" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddAccountDetailsContdSection" DisplayName="Account Details Contd" Column="1" Row="1" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddPersonalInfoSection" DisplayName="Personal Information" Column="0" Row="2" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddSpouseInfoSection" DisplayName="Spouse Information" Column="1" Row="2" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddFinancialInfoSection" DisplayName="Financial Information" Column="0" Row="3" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddInvestmentExperienceSection" DisplayName="Investment Experience" Column="1" Row="3" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddTaxInfoSection" DisplayName="Tax Information" Column="0" Row="4" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddTimeHorizonSection" DisplayName="Time Horizon" Column="1" Row="4" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddAlphaKeysSection" DisplayName="Alpha Keys" Column="0" Row="5" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddLiquidityNeedsSection" DisplayName="Liquidity Needs" Column="1" Row="5" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddNotesSection" DisplayName="Notes" Column="0" Row="6" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddRelationshipSection" DisplayName="Relationship" Column="1" Row="6" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddDocumentsSection" DisplayName="Documents" Column="0" Row="7" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_AddSpecialHandlingSection" DisplayName="Special Handling Records" Column="1" Row="7" IsExpanded="1" HeaderText="" />
+          </AvailableWidgets>
+        </CustomizableItem>
+        <CustomizableItem Type="Widget" Id="EditAssocPeopleWidgetPanel" Group="Widgets">
+          <AvailableWidgets DisplayNode="False">
+            <Widget Id="pane_EditAPEntitySelectionSection" DisplayName="Entity Selection" Column="0" Row="0" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_EditAPStatusPanelSection" DisplayName="Status Panel" Column="1" Row="0" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_EditAPRepAssociationSection" DisplayName="Association" Column="0" Row="1" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_EditAPFinancialSection" DisplayName="Financial" Column="1" Row="1" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_EditAPIdentificationSection" DisplayName="Identification" Column="0" Row="2" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_EditAPPhoneSection" DisplayName="Phone" Column="1" Row="2" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_EditAPNameAddressSection" DisplayName="Name &amp; Address" Column="0" Row="3" IsExpanded="1" HeaderText="" />
+            <Widget Id="pane_EditAPEmployerSection" DisplayName="Employer" Column="1" Row="3" IsExpanded="1" HeaderText="" />
+          </AvailableWidgets>
+        </CustomizableItem>
+      </Widgets>
+    </CustomizationEditorUiMap>
+  </PageConfiguration>
+  <PageConfiguration Id="ReportMetadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ReportMapping Name="AccountMaintenanceWB.Web" HeaderWorkbookTitle="Account Maintenance Workbook">
+      <Report Id="AMTWB-EditDemo" ReportTitle="Edit Account" HeaderTabTitle="Edit Account" HeaderSubTabTitle="Edit Demographics">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ActStaticHeader" Title="ACCOUNT" Type="Static" LayoutDataIDs="224" ReportDesignFile="ActStaticHeader.rptDesign" PrefName="AMTWB.Info_Demo_Edit" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="ContentWidget" Title="Edit Demographics" Type="DynaStatic" WidgetReportId="EditAccountWidgetPanel" PrefName="AMTWB.Info_Demo_Edit" LayoutDataIDs="224`230`263`281`226`283" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="AMTWB-EditAssociatedPpl" ReportTitle="Edit Account" HeaderTabTitle="Edit Account" HeaderSubTabTitle="Edit Assoc People">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ActStaticHeader" Title="ACCOUNT" Type="Static" LayoutDataIDs="224" ReportDesignFile="ActStaticHeader.rptDesign" PrefName="AMTWB.AssocPeople_AddUpdate" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="ContentWidget" Title="Edit Assoc People" Type="DynaStatic" WidgetReportId="EditAssocPeopleWidgetPanel" PrefName="AMTWB.AssocPeople_AddUpdate" LayoutDataIDs="248" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="AMTWB-ViewDemo" ReportTitle="View Account" HeaderTabTitle="View Account" HeaderSubTabTitle="View Demographics">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ActStaticHeader" Title="ACCOUNT" Type="Static" LayoutDataIDs="224" ReportDesignFile="ActStaticHeader.rptDesign" PrefName="AMTWB.Info_Demo_Edit" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="ContentWidget" Title="Edit Demographics" Type="DynaStatic" WidgetReportId="EditAccountWidgetPanel" PrefName="AMTWB.Info_Demo_Edit" LayoutDataIDs="224`230`263`281`226`283" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="AMTWB-ViewAssociatedPpl" ReportTitle="View Account" HeaderTabTitle="View Account" HeaderSubTabTitle="View Assoc People">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ActStaticHeader" Title="ACCOUNT" Type="Static" LayoutDataIDs="224" ReportDesignFile="ActStaticHeader.rptDesign" PrefName="AMTWB.AssocPeople_AddUpdate" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="1" Name="ContentWidget" Title="Edit Assoc People" Type="DynaStatic" WidgetReportId="EditAssocPeopleWidgetPanel" PrefName="AMTWB.AssocPeople_AddUpdate" LayoutDataIDs="248" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="EditAccountWidgetPanel" ReportTitle="" HeaderTabTitle="" HeaderSubTabTitle="">
+        <Widget Id="pane_AddNameAddressSection" Name="pane_AddNameAddressSection" Title="Name &amp; Address" Column="0" LayoutDataIDs="224" ReportDesignFile="NameAndAddress.rptDesign" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddContactInformationSection" Name="pane_AddContactInformationSection" Title="Contact Information" Column="1" LayoutDataIDs="224" ReportDesignFile="Contact Information.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddAccountDetailsSection" Name="pane_AddAccountDetailsSection" Title="Account Details" Column="0" LayoutDataIDs="224" ReportDesignFile="AccountDetails.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddAccountDetailsContdSection" Name="pane_AddAccountDetailsContdSection" Title="Account Details (cont'd)" Column="1" LayoutDataIDs="224`226`281" ReportDesignFile="AccountDetailsContd.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddPersonalInfoSection" Name="pane_AddPersonalInfoSection" Title="Personal Information" Column="0" LayoutDataIDs="224`226" ReportDesignFile="Personalnformation.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddSpouseInfoSection" Name="pane_AddSpouseInfoSection" Title="Spouse Information" Column="1" LayoutDataIDs="226" ReportDesignFile="SpouseInformation.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddFinancialInfoSection" Name="pane_AddFinancialInfoSection" Title="Financial Information" Column="0" LayoutDataIDs="224`226" ReportDesignFile="FinancialInformation.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddDocumentsSection" Name="pane_AddDocumentsSection" IgnoreErrors="Y" Title="Documents" Column="1" LayoutDataIDs="263`295" ReportDesignFile="Documents.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddTaxInfoSection" Name="pane_AddTaxInfoSection" Title="Tax Information" Column="0" LayoutDataIDs="226" ReportDesignFile="TaxInformation.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddTimeHorizonSection" Name="pane_AddTimeHorizonSection" Title="Time Horizon" Column="1" LayoutDataIDs="226" ReportDesignFile="TimeHorizon.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddAlphaKeysSection" Name="pane_AddAlphaKeysSection" Title="Alpha Keys" Column="0" LayoutDataIDs="224" ReportDesignFile="AlphaKeys.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddLiquidityNeedsSection" Name="pane_AddLiquidityNeedsSection" Title="Liquidity Needs" Column="1" LayoutDataIDs="226" ReportDesignFile="LiquidityNeeds.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddInvestmentExperienceSection" Name="pane_AddInvestmentExperienceSection" Title="Investment Experience" Column="0" LayoutDataIDs="226" ReportDesignFile="InvestmentExperience.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddRelationshipSection" Name="pane_AddRelationshipSection" IgnoreErrors="Y" Title="Accounts Relations" Column="1" LayoutDataIDs="283" ReportDesignFile="AccountRelations.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddNotesSection" Name="pane_AddNotesSection" Title="Notes" Column="0" LayoutDataIDs="226" ReportDesignFile="Notes.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_AddSpecialHandlingSection" Name="pane_AddSpecialHandlingSection" IgnoreErrors="Y" Title="Special Handling Records" Column="1" LayoutDataIDs="230" ReportDesignFile="SpecialHandlingRecords.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+      </Report>
+      <Report Id="EditAssocPeopleWidgetPanel" ReportTitle="" HeaderTabTitle="" HeaderSubTabTitle="">
+        <Widget Id="pane_EditAPEntitySelectionSection" Name="pane_EditAPEntitySelectionSection" Title="Entity Selection" Column="0" LayoutDataIDs="248" ReportDesignFile="APEntitySelection.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_EditAPStatusPanelSection" Name="pane_EditAPStatusPanelSection" Title="Status Panel" Column="1" LayoutDataIDs="248" ReportDesignFile="APStatusPanel.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_EditAPRepAssociationSection" Name="pane_EditAPRepAssociationSection" Title="Association" Column="0" LayoutDataIDs="248" ReportDesignFile="APRepAssociation.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_EditAPFinancialSection" Name="pane_EditAPFinancialSection" Title="Financial" Column="1" LayoutDataIDs="248" ReportDesignFile="APFinancial.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_EditAPIdentificationSection" Name="pane_EditAPIdentificationSection" Title="Identification" Column="0" LayoutDataIDs="248" ReportDesignFile="APIdentification.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_EditAPPhoneSection" Name="pane_EditAPPhoneSection" Title="Phone" Column="1" LayoutDataIDs="248" ReportDesignFile="APPhoneSection.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_EditAPNameAddressSection" Name="pane_EditAPNameAddressSection" Title="Name &amp; Address" Column="0" LayoutDataIDs="248" ReportDesignFile="APNameAddress.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="pane_EditAPEmployerSection" Name="pane_EditAPEmployerSection" Title="Employer" Column="1" LayoutDataIDs="248" ReportDesignFile="APEmployer.rptDesign" ErrorTemplate="ErrorTemplate.rptDesign" />
+      </Report>
+    </ReportMapping>
+  </PageConfiguration>
+  <EntitlementEvaluators>
+    <EntitlementEvaluator Key="Default" Evaluator="AccountMaintenanceWB.Web.Entitlements.EntitlementEvaluator" />
+  </EntitlementEvaluators>
+</WorkBookConfiguration>

@@ -18,7 +18,7 @@
                 <div>
                     @foreach (var prefkvp in apiBasedOnPref.PreferenceApiDetails)
                     {   
-                        <span>Preference:</span><span class="badge" style="background-color:lightcoral">@prefkvp.Key</span>                        
+                        <span>Preference : </span><span class="badge" style="background-color:lightcoral">@prefkvp.Key</span>                        
                         foreach (Api api in prefkvp.Value)
                         {
                             <div class="row">
@@ -29,7 +29,7 @@
                        
                     }
                 </div>
-             }
+            }
         </div>
 
     }

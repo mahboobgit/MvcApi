@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkBookConfiguration Id="ReorgWorkbook" ProductId="WMBetaLink" FeatureId="REORG" DisplayText="Reorg Workbook" ProductVersion="17.11.0" AuditLevel="AUDIT" Listens2Contexts="Account|TTSMessage">
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList Version="2">
+      <Item Name="REORG.OfferGuideList" />
+      <Item Name="REORG.StaticPane" />
+      <Item Name="REORG.OfferDetailInfo" />
+      <Item Name="REORG.OfferOptionInfo" />
+      <Item Name="REORG.OfferRestrictionsInfo" />
+      <Item Name="REORG.AccountListLayout1" />
+      <Item Name="REORG.AccountListLayout2" />
+      <Item Name="REORG.AccountListLayout3" />
+      <Item Name="REORG.AccountListLayout4" />
+      <Item Name="REORG.AccountListLayout5" />
+      <Item Name="REORG.AccountDetails" />
+    </TTSPreferenceList>
+  </PageConfiguration>
+  <PageConfiguration Id="ReOrgRepList" ThomletId="" WbThomletId="" AuditLevel="AUDIT">
+    <Functionals xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <XMLInputFunctionalBase Id="UserInquiry" MessageId="26260008" AsyncMode="false" AllowEmptyDisplayFields="true" BufferedResponse="true" AuditLevel="AUDIT">
+        <InputSequences>
+          <InputSequence Id="1" Optional="false" Primary="true" MultiStep="false" ValidateInput="false" IgnoreResponseData="false" GetAllResultFields="true">
+            <InputParams>
+              <InputParam Name="TranslateResponseData" Value="True" Type="System.Boolean" />
+            </InputParams>
+            <InputFields Allowall="false">
+              <InputField Id="_2121" Override="false" Required="true" />
+              <InputField Id="_3027" Override="false" Required="true" />
+              <InputField Id="_3245" Override="false" Required="true" />
+            </InputFields>
+          </InputSequence>
+        </InputSequences>
+      </XMLInputFunctionalBase>
+    </Functionals>
+    <EntitlementSpecification Name="RequiredEntitlements" Value="J23" Source="ATHENA" FailurePage="NotEntitled.aspx" Type="System.String" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+  </PageConfiguration>
+  <PageConfiguration Id="CustomizationEditorUiMap" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- Valid 'Types' are Field, Static, HeaderFooter-->
+    <!-- 'Id' is the FuncAdmin PrefName for Field and Static editors -->
+    <!-- 'Id' is arbirary for HeaderFooter editor -->
+    <CustomizationEditorUiMap>
+      <Offer_Accounts>
+        <CustomizableItem Type="HeaderFooter" Id="REORG.AccountList" />
+        <Offer_Accounts_1>
+          <CustomizableItem Type="Field" Id="REORG.AccountListLayout1" />
+        </Offer_Accounts_1>
+        <Offer_Accounts_2>
+          <CustomizableItem Type="Field" Id="REORG.AccountListLayout2" />
+        </Offer_Accounts_2>
+        <Offer_Accounts_3>
+          <CustomizableItem Type="Field" Id="REORG.AccountListLayout3" />
+        </Offer_Accounts_3>
+        <Offer_Accounts_4>
+          <CustomizableItem Type="Field" Id="REORG.AccountListLayout4" />
+        </Offer_Accounts_4>
+        <Offer_Accounts_5>
+          <CustomizableItem Type="Field" Id="REORG.AccountListLayout5" />
+        </Offer_Accounts_5>
+      </Offer_Accounts>
+      <!--
+      <Instruct_Dialog>
+        <CustomizableItem Type="Field" Id="REORG.InstructDialog" />
+      </Instruct_Dialog>
+      <Instruct_All_Dialog>
+        <CustomizableItem Type="Field" Id="REORG.InstructDialog" />
+      </Instruct_All_Dialog>
+-->
+      <Offer_Guide>
+        <CustomizableItem Type="Field" Id="REORG.OfferGuideList" />
+      </Offer_Guide>
+      <Offer_Information>
+        <CustomizableItem Type="Static" Id="REORG.OfferDetailInfo" />
+        <CustomizableItem Type="HeaderFooter" Id="REORG.OfferDetailInfo" />
+      </Offer_Information>
+      <Offer_Options>
+        <CustomizableItem Type="Field" Id="REORG.OfferOptionInfo" />
+        <CustomizableItem Type="HeaderFooter" Id="REORG.OfferOptionInfo" />
+      </Offer_Options>
+      <Offer_Restrictions>
+        <CustomizableItem Type="HeaderFooter" Id="REORG.OfferRestrictionsInfo" />
+      </Offer_Restrictions>
+      <Offer_Summary>
+        <CustomizableItem Type="Static" Id="REORG.StaticPane" />
+      </Offer_Summary>
+      <InstructResults>
+        <CustomizableItem Type="HeaderFooter" Id="REORG.InstructResults" />
+      </InstructResults>
+      <InstructAllResults>
+        <CustomizableItem Type="HeaderFooter" Id="REORG.InstructAllResults" />
+      </InstructAllResults>
+    </CustomizationEditorUiMap>
+  </PageConfiguration>
+  <PageConfiguration Id="ReportMetadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ReportMapping Name="ReorgWorkbook.Web" HeaderWorkbookTitle="Reorg Workbook">
+      <Report Id="REORG-1.1" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout1" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="2" Name="ReOrgDynamicResponseHistory" Title="RESPONSE HISTORY" Type="DynaStatic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicResponseHistory.rptDesign" PrefName="REORG.AccountDetails" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-1.10" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout1" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-1.2" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout2" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="2" Name="ReOrgDynamicResponseHistory" Title="RESPONSE HISTORY" Type="DynaStatic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicResponseHistory.rptDesign" PrefName="REORG.AccountDetails" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-1.20" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout2" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-1.3" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout3" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="2" Name="ReOrgDynamicResponseHistory" Title="RESPONSE HISTORY" Type="DynaStatic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicResponseHistory.rptDesign" PrefName="REORG.AccountDetails" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-1.30" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout3" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-1.4" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout4" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="2" Name="ReOrgDynamicResponseHistory" Title="RESPONSE HISTORY" Type="DynaStatic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicResponseHistory.rptDesign" PrefName="REORG.AccountDetails" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-1.40" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout4" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-1.5" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout5" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="2" Name="ReOrgDynamicResponseHistory" Title="RESPONSE HISTORY" Type="DynaStatic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicResponseHistory.rptDesign" PrefName="REORG.AccountDetails" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-1.50" HeaderReportTitle="Offer Accounts" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgAccountsGrid" HeaderFooterIdentifier="REORG.AccountList" Title="ACCOUNT GRID" Type="GRID" LayoutDataIDs="" ReportDesignFile="ReOrgAccountsGrid.rptDesign" PrefName="REORG.AccountListLayout5" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-2" HeaderReportTitle="Offer Information" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgOfferInfo" Title="OFFER INFORMATION" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynaStaticOfferInfo.rptDesign" PrefName="REORG.OfferDetailInfo" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-3" HeaderReportTitle="Offer Options" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgOfferOptions" Title="OFFER OPTIONS" Type="DynaStatic" LayoutDataIDs="" ReportDesignFile="ReOrgDynaStaticOfferOptions.rptDesign" PrefName="REORG.OfferOptionInfo" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="Header" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-4" HeaderReportTitle="Offer Restrictions" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape" DataSourceMode="service">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgOfferRestrictions" Title="OFFER RESTRICTIONS" Type="Static" LayoutDataIDs="" ReportDesignFile="ReOrgDynaStaticOfferRestrictions.rptDesign" PrefName="REORG.OfferRestrictionsInfo" isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-5.1" HeaderReportTitle="Grid Detail" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgAccountDetail" Title="ACCOUNT DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="ReOrgDetailPlayback.rptDesign" PrefName="REORG.AccountListLayout1" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-5.2" HeaderReportTitle="Grid Detail" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgAccountDetail" Title="ACCOUNT DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="ReOrgDetailPlayback.rptDesign" PrefName="REORG.AccountListLayout2" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-5.3" HeaderReportTitle="Grid Detail" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgAccountDetail" Title="ACCOUNT DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="ReOrgDetailPlayback.rptDesign" PrefName="REORG.AccountListLayout3" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-5.4" HeaderReportTitle="Grid Detail" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgAccountDetail" Title="ACCOUNT DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="ReOrgDetailPlayback.rptDesign" PrefName="REORG.AccountListLayout4" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-5.5" HeaderReportTitle="Grid Detail" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgAccountDetail" Title="ACCOUNT DETAIL" Type="Detail" LayoutDataIDs="" ReportDesignFile="ReOrgDetailPlayback.rptDesign" PrefName="REORG.AccountListLayout5" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-6" HeaderReportTitle="Instruct Results" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgInstruct" Title="ACCOUNT GRID" Type="Static" LayoutDataIDs="" ReportDesignFile="ReOrgInstruct.rptDesign" HeaderFooterIdentifier="REORG.InstructResults" PrefName="" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-6-1" HeaderReportTitle="Instruct Results" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgInstruct" Title="ACCOUNT GRID" Type="Static" LayoutDataIDs="" ReportDesignFile="ReOrgInstructErrorWarnings.rptDesign" HeaderFooterIdentifier="REORG.InstructResults" PrefName="" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-7" HeaderReportTitle="Instruct All Results" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgInstruct" Title="ACCOUNT GRID" Type="Static" LayoutDataIDs="" ReportDesignFile="ReOrgInstructAll.rptDesign" HeaderFooterIdentifier="REORG.InstructAllResults" PrefName="" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+      <Report Id="REORG-7-1" HeaderReportTitle="Instruct All Results" HeaderTabTitle="" HeaderSubTabTitle="" Orientation="Landscape">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="0" Name="ReOrgDynamicStaticPane" Title="OFFER SUMMARY" Type="Dynamic" LayoutDataIDs="" ReportDesignFile="ReOrgDynamicStaticPane.rptDesign" PrefName="REORG.StaticPane" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="1" Name="ReOrgInstruct" Title="ACCOUNT GRID" Type="Static" LayoutDataIDs="" ReportDesignFile="ReOrgInstructAllErrorWarnings.rptDesign" HeaderFooterIdentifier="REORG.InstructAllResults" PrefName="" isPreProcessed="N" ErrorTemplate="ErrorTemplate.rptDesign" DataSourceMode="service" />
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate="" />
+        <Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate="" />
+      </Report>
+    </ReportMapping>
+  </PageConfiguration>
+</WorkBookConfiguration>

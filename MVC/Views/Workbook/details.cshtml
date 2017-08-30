@@ -2,6 +2,61 @@
 @using System.Text;
 @using MVC.Models.Viewmodels;
 
+<style>
+
+    #lbloption[data-toggle="active"]{
+
+    }
+
+</style>
+
+@section scripts{
+    <script>
+
+        $(() => {
+            $('#optionapi').prop('checked', true).addClass("active"); 
+            //$('#optionpref').removeClass("active");
+            $('#optionapi')
+
+             
+        });
+       
+        Array.prototype.select = function (closure) {
+            for (var n = 0; n < this.length; n++) {
+                if (closure(this[n])) {
+                    return this[n];
+                }
+            }
+
+            return null;
+        };
+
+        $('#btnSearch').click(function () {
+            var searchString = $("#msg").val();
+            if (searchString) {
+                alert("hello - search click " + searchString);
+                var td = $('table tbody tr td');
+
+                var re = new RegExp(searchString, "i");
+
+                $(td).find("label").each(function () {
+                    //console.log($(this)[0].innerHTML);
+
+                    if ($(this)[0].innerHTML.match(re)) {
+                        console.log("MATCHED: " + $(this)[0].innerHTML);
+                    }
+                });
+
+            }
+            else {
+                alert("Enter search string");
+            }
+            
+            
+        });
+
+    </script>
+}
 @{
 
     string url = "http://localhost:50839";
@@ -14,6 +69,26 @@
 
             <a href="javascript:void(0);" onclick="history.go(-1);">Back to Details</a>
             <br /><br />
+            
+            <div class="row">
+                <div class="btn-group col-lg-2" data-toggle="buttons">
+                    <label id="lbloption" class="btn btn-primary" data-toggle="active">
+                        <input type="radio" name="options" id="optionapi"> Api
+                    </label>
+                    <label id="lbloption" class="btn btn-primary btn-default" data-toggle="na">
+                        <input type="radio" name="options" id="optionpref"> Preference
+                    </label>
+                </div>
+                <div class="input-group col-lg-3 left">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                    <input id="msg" type="text" class="form-control" name="msg" placeholder="search string">
+                </div>
+                <div class="col-lg-3">
+                    <button type="button" id="btnSearch" class="btn btn-primary">Search</button>
+                </div>
+            </div>
+            <br />
+
             <table class="table table-striped">
                 <thead>
                     <tr class="row">
@@ -22,9 +97,6 @@
                     </tr>
                 </thead>
                 <tbody>
-
-
-                        
 
                     @foreach (KeyValuePair<string, string> kvp in Model.WbPreferencesAndApiCalls)
                     {
@@ -80,4 +152,4 @@
             Html.Display("<p>No Data to Display</p>");
         }
     }
-}
+} 

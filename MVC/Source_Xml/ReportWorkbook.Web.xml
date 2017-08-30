@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<WorkBookConfiguration Id="ReportWorkbook" ProductId="WMBetaLink" FeatureId="RPTWB" ProductVersion="17.11.0" DisplayText="ReportWorkbook" AuditLevel="AUDIT" Listens2Contexts="Account|TTSMessage">
+
+  <PageConfiguration Id="PrefList" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <TTSPreferenceList Version="2">
+      <Item Name="RPTWB.PerformanceReportsActivity" />
+      <Item Name="RPTWB.MaturingSecurities" />
+      <Item Name="RPTWB.RepReportsDailyAccountActivity" />
+    </TTSPreferenceList>
+  </PageConfiguration>
+
+  <PageConfiguration Id="CustomizationEditorUiMap" >
+    <CustomizationEditorUiMap>
+      <Portfolio_Reports>
+        <Portfolio_Holdings>
+          <Broad_Tax_Lots_Industry>
+            <CustomizableItem Type="Report" DisplayName="Broad Tax Lot/ Industry" Id="BroadTaxLotsIndustry" />
+          </Broad_Tax_Lots_Industry>
+          <Net_Tax_Lots_Industry>
+            <CustomizableItem Type="Report" Id="NetTaxLotsIndustry" DisplayName="Net Tax Lot/ Industry" />
+          </Net_Tax_Lots_Industry>
+          <Broad_Tax_Lots_Investment>
+            <CustomizableItem Type="Report" Id="BroadTaxLotsInvestment" DisplayName="Broad Tax Lot/ Investment"/>
+          </Broad_Tax_Lots_Investment>
+          <Net_Tax_Lots_Investment>
+            <CustomizableItem Type="Report" Id="NetTaxLotsInvestment" DisplayName="NetTaxLotsInvestment"/>
+          </Net_Tax_Lots_Investment>
+        </Portfolio_Holdings>
+        <Estimated_Monthly_Income>
+          <By_Security_Month_Breakdown>
+            <CustomizableItem Type="Report" Id="PMIBySecurityMonth" DisplayName="By Security w/ Monthly breakdown"/>
+          </By_Security_Month_Breakdown>
+          <By_Month_Security_Breakdown>
+            <CustomizableItem Type="Report" DisplayName="By Month w/ Security breakdown" id="PMIByMonthSecurity" />
+          </By_Month_Security_Breakdown>
+          <Monthly_Summary>
+            <CustomizableItem Type="Report" DisplayName="Monthly Summary" id="PMI_MonthlySummary"/>
+          </Monthly_Summary>
+        </Estimated_Monthly_Income>
+      </Portfolio_Reports>
+      <Performance_Reports>
+        <Summary_Of_Investments_By_Type>
+         <CustomizableItem Type="Report" DisplayName="Summary of Investments by Type" Id="InvestmentSummary" />
+        </Summary_Of_Investments_By_Type>
+        <Closed_Tax_Lots>
+          <CustomizableItem Type="Report" DisplayName="Closed Tax Lots" Id="ClosedHoldings" />
+        </Closed_Tax_Lots>
+        <Schedule_Of_Realized_Gains_Nad_Losses>
+         <CustomizableItem Type="Report" DisplayName="Schedule of Realized Gains and Losses" Id="RealizedGainsLosses"/>
+        </Schedule_Of_Realized_Gains_Nad_Losses>
+        <Todays_Executed_Orders>
+          <CustomizableItem Type="Report" DisplayName="Today's Executed Orders" Id="TodaysExecutedOrders" />
+        </Todays_Executed_Orders>
+        <Activity>
+         <CustomizableItem Type="Report" DisplayName="Activity" Id="Activity" />
+        </Activity>
+      </Performance_Reports>
+      <Rep_Reports>
+        <Accounts_Holding_Security_Net_Tax_Lots>
+          <CustomizableItem Type="Report" DisplayName="Accounts Holding &lt;Security&gt; / Net Tax Lots" Id="AccountHoldingsNet" />
+        </Accounts_Holding_Security_Net_Tax_Lots>
+        <Accounts_Holding_Security_Broad_Tax_Lots>
+         <CustomizableItem Type="Report" DisplayName="Accounts Holding &lt;Security&gt; / Broad Tax Lots" Id="AccountHoldingsBroad" />
+        </Accounts_Holding_Security_Broad_Tax_Lots>
+        <Accounts_W_Funds_Available>
+        <CustomizableItem Type="Report" DisplayName="Accounts w/ Funds Available" Id="FundsAvailable"/>
+        </Accounts_W_Funds_Available>
+        <Accounts_W_Executed_Orders_Today>
+         <CustomizableItem Type="Report" DisplayName="Accounts w/ Executed Orders Today" Id="AccountsExecutedOrders" />
+        </Accounts_W_Executed_Orders_Today>
+        <Daily_Account_Activity_Report>
+         <CustomizableItem Type="Report" DisplayName="Daily Account Activity Report" Id="DailyAccountActivity" />
+        </Daily_Account_Activity_Report>
+      </Rep_Reports>
+      <Maturing_Securities>
+        <By_Account>
+         <CustomizableItem Type="Report" DisplayName="By Account" Id="MATYByAct" />
+        </By_Account>
+        <By_Rep>
+        <CustomizableItem Type="Report" DisplayName="By Rep" Id="MATYByRep" />
+        </By_Rep>
+      </Maturing_Securities>
+    </CustomizationEditorUiMap>
+  </PageConfiguration>
+  <PageConfiguration Id="ReportMetadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ReportMapping Name="ReportWorkbook.Web" HeaderWorkbookTitle="Report Workbook">
+      <Report Id="RPTWB-MaturingSecuritiesByAccount" HeaderReportTitle="Maturing Securities" ReportTitle="By Account" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="MaturingSecuritiesByAccount" Title="BY ACCOUNT" Type="Static" LayoutDataIDs="224`219" ReportDesignFile="MaturingSecuritiesByAccount.rptdesign" PrefName="" HeaderFooterIdentifier="MATYByAct"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-MaturingSecuritiesByRep" HeaderReportTitle="Maturing Securities" ReportTitle="By Rep" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="MaturingSecuritiesByRep" Title="BY REP" Type="Static" LayoutDataIDs="219`214" ReportDesignFile="MaturingSecuritiesByRep.rptDesign" PrefName="" HeaderFooterIdentifier="MATYByRep" isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-ByMonthWithSecurityBreakDown" HeaderReportTitle="Estimated Monthly Income" ReportTitle="By Month w/ Security breakdown" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="ByMonthWithSecurityBreakdown" Title="Estimated Monthly Income" Type="Static" LayoutDataIDs="224`214`601" ReportDesignFile="ByMonthWSecurityBreakdown.rptdesign" PrefName="" isPreProcessed="Y" HeaderFooterIdentifier="PMIByMonthSecurity"  ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-PerformanceReportsTodaysExecutedOrders" HeaderReportTitle="Today's Executed Orders" ReportTitle="Today's Executed Orders" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="PerformanceReportsTodaysExecutedOrders" Title="Today's Executed Orders" Type="Static" LayoutDataIDs="224`214`251`225" ReportDesignFile="PerformanceReportsTodaysExecutedOrders.rptDesign" PrefName="" HeaderFooterIdentifier="TodaysExecutedOrders"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-PerformanceReportsScheduleOfRealizedGl" HeaderReportTitle="Schedule of Realized Gains and Losses" ReportTitle="ScheduleOfRealizedGainAndLosses" Orientation="Landscape">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="PerformanceReportsScheduleOfRealizedGl" Title="Schedule OfR ealized Gain And Losses" Type="Static" LayoutDataIDs="224`214`604" ReportDesignFile="PerformanceReportsScheduleOfRealizedGl.rptDesign" PrefName="" HeaderFooterIdentifier="RealizedGainsLosses"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-PerformanceReportsActivity" HeaderReportTitle="Account Activity" ReportTitle="Activity" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="PerformanceReportsActivity" Title="ACTIVITY" Type="Static" LayoutDataIDs="224`214`017" ReportDesignFile="PerformanceReportsActivity.rptDesign" PrefName="" HeaderFooterIdentifier="Activity"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-PerformanceReportsInvestmentSummary" HeaderReportTitle="Investment Summary" ReportTitle="Investment Summary" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="PerformanceReportsInvestmentSummary" Title="Investment Summary" Type="Static" LayoutDataIDs="224`604`214`017`207`601" ReportDesignFile="PerformanceReportsInvestmentSummary.rptdesign" PrefName="" HeaderFooterIdentifier="InvestmentSummary"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-DailyAccountActivity" HeaderReportTitle="Daily Account Activity" ReportTitle="Daily Account Activity" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="DailyAccountActivity" Title="Daily Account Activity" Type="Static" LayoutDataIDs="214`020`207`206" ReportDesignFile="DailyAccountActivity.rptDesign" PrefName="" HeaderFooterIdentifier="DailyAccountActivity"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-MonthlySummaryReport"  HeaderReportTitle="Estimated Monthly Income" ReportTitle="Estimated Monthly Income" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="MonthlySummary" Title="Estimated Monthly Income" Type="Static" LayoutDataIDs="224`601`214" ReportDesignFile="MonthlySummary.rptdesign" PrefName="" isPreProcessed="Y" HeaderFooterIdentifier="PMI_MonthlySummary" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-BySecurityWithMonthBreakDown" HeaderReportTitle="Estimated Monthly Income" ReportTitle="By Security With Month Breakdown">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="BySecurityWMonthBreakdown" Title="By Security With Month Breakdown" Type="Static" LayoutDataIDs="224`601`214" ReportDesignFile="BySecurityWMonthBreakdown.rptdesign" PrefName="" HeaderFooterIdentifier="PMIBySecurityMonth"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-PerformanceReportsClosedHoldings" HeaderReportTitle="Closed Holdings" ReportTitle="Closed Holdings">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="PerformanceReportsClosedHoldings" Title="Closed Holdings" Type="Static" LayoutDataIDs="224`604`214" ReportDesignFile="PerformanceReportsClosedHoldings.rptdesign" PrefName="" HeaderFooterIdentifier="ClosedHoldings"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-BroadTaxLotsIndustry" HeaderReportTitle="Portfolio Holdings~Detail - Industry Group" ReportTitle="Portfolio Holdings">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="BroadTaxLotsIndustry" Title="Portfolio Holdings" Type="Static" LayoutDataIDs="224`601`214" ReportDesignFile="BroadTaxLotsIndustry.rptdesign" PrefName="" HeaderFooterIdentifier="BroadTaxLotsIndustry" isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-NetTaxLotsIndustry" HeaderReportTitle="Portfolio Holdings~Net - Industry Group" ReportTitle="Portfolio Holdings">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="NetTaxLotsIndustry" Title="Portfolio Holdings" Type="Static" LayoutDataIDs="224`601`214" ReportDesignFile="NetTaxLotsIndustry.rptdesign" PrefName="" isPreProcessed="Y" HeaderFooterIdentifier="NetTaxLotsIndustry"  ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-BroadTaxLotsInvestment" HeaderReportTitle="Portfolio Holdings~Detail - Investment Group" ReportTitle="Portfolio Holdings">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="BroadTaxLotsInvestment" Title="Portfolio Holdings" Type="Static" LayoutDataIDs="224`601`214" ReportDesignFile="BroadTaxLotsInvestment.rptdesign" PrefName="" HeaderFooterIdentifier="BroadTaxLotsInvestment"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-PortfolioReportsNetTaxLotsInvestment" HeaderReportTitle="Portfolio Holdings~Net - Investment Group" ReportTitle="Portfolio Holdings">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="PortfolioReportsNetTaxLotsInvestment" Title="Portfolio Holdings" Type="Static" LayoutDataIDs="224`601`214" ReportDesignFile="PortfolioReportsNetTaxLotsInvestment.rptdesign" PrefName=""  HeaderFooterIdentifier="NetTaxLotsInvestment"  isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-RepReportAccountsHoldingBroadTaxLots" HeaderReportTitle="Accounts Holdings~Detail" ReportTitle="Accounts Holding">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="RepReportAccountsHoldingBroadTaxLots" Title="Accounts Holding" Type="Static" LayoutDataIDs="214`201`601" ReportDesignFile="RepReportAccountsHoldingBroadTaxLots.rptdesign" PrefName="" HeaderFooterIdentifier="AccountHoldingsBroad"  isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-AccountsHoldingNetTaxLots" HeaderReportTitle="Accounts Holdings~Net" ReportTitle="Accounts Holding">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="AccountsHoldingNetTaxLots" Title="Accounts Holding" Type="Static" LayoutDataIDs="214`201`601" ReportDesignFile="AccountsHoldingNetTaxLots.rptdesign" PrefName="" HeaderFooterIdentifier="AccountHoldingsNet"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-RepReportAccountsFundsAvailable" HeaderReportTitle="Accounts with Funds Available" ReportTitle="Accounts with Funds Available" Orientation="Portrait">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="RepReportsAccountsFundsAvailable" Title="Accounts with Funds Available" Type="Static" LayoutDataIDs="214`211" ReportDesignFile="RepReportsAccountsFundsAvailable.rptdesign" PrefName="" HeaderFooterIdentifier="FundsAvailable"  isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+      <Report Id="RPTWB-AccountsExecutedOrdersToday" HeaderReportTitle="Accounts With Executed Orders" ReportTitle="Accounts Holding">
+        <Widget Id="-1" Name="HeaderPage" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="HeaderPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+        <Widget Id="-2" Name="Custom Header" Title="HEADER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="0" Name="AccountsExecutedOrdersToday" Title="Accounts Holding" Type="Static" LayoutDataIDs="214`225`251" ReportDesignFile="AccountsExecutedOrdersToday.rptdesign" PrefName="" HeaderFooterIdentifier="AccountsExecutedOrders" isPreProcessed="Y" ErrorTemplate="ErrorTemplate.rptdesign"/>
+        <Widget Id="-98" Name="Custom Footer" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="CustomHeaderFooter.rptDesign" PrefName="" isPreProcessed="N" ErrorTemplate=""/>
+		<Widget Id="-99" Name="FooterPage" Title="FOOTER" Type="Static" LayoutDataIDs="" ReportDesignFile="FooterPage.rptDesign" PrefName="" isPreProcessed="Y" ErrorTemplate=""/>
+      </Report>
+    </ReportMapping>
+  </PageConfiguration>
+
+</WorkBookConfiguration>
