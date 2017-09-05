@@ -5,19 +5,20 @@ namespace MVC.Models
 
     using System.Collections.Generic;
 
-    public class ApiAllDetails
+    public class ApiTabDetails
     {
         public string Workbook { get; set; }
-        public Dictionary<string,string> WbPreferencesAndApiCalls  { get; set; }
+
+        public List<WorkbookTab> TabList  { get; set; }
         
     }
 
 
 
-    public class ApiAllDetailsResponse : ApiResponseMessage<ApiAllDetails>
+    public class ApiTabDetailsResponse : ApiResponseMessage<ApiTabDetails>
     {
 
-        public ApiAllDetailsResponse()
+        public ApiTabDetailsResponse()
         {
             this.InitializeContent();
         }
@@ -25,7 +26,7 @@ namespace MVC.Models
 
         public override void InitializeContent()
         {
-            base.Content = new List<ApiAllDetails>();
+            base.Content = new List<ApiTabDetails>();
         }
     }
 }
