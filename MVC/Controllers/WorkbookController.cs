@@ -2,6 +2,7 @@
 
 namespace MVC.Controllers
 {
+    using System;
     using MVC.Helper;
     using MVC.Models;
     using MVC.Models.Viewmodels;
@@ -12,32 +13,52 @@ namespace MVC.Controllers
     using System.Web.Mvc;
 
     //[OutputCacheAttribute(VaryByParam = "*", Duration = 0, NoStore = true)]
+    [RoutePrefix("workbook")]
     public class WorkbookController : Controller
     {
+
+
+        [HttpGet, AllowAnonymous, Route("test")]
+        public ActionResult Test()
+        {
+            return Content("Hello World");
+        }
+
 
         [HttpGet, AllowAnonymous, Route("index")]
         public async Task<ActionResult> Index()
         {
             
-            WebHelper helper = new WebHelper();
-            HttpResponseMessage responseMessage = await helper.CallService(IsWebApiCall: true, urlEndpoint: "wbinfo", method: HttpMethod.Get, contentToPassToServer: null);
-
-            if (responseMessage.IsSuccessStatusCode)
+            WebHelper helper = new WebHelper(getUrl());
+            HttpResponseMessage responseMessage = new HttpResponseMessage();
+           
+            try
             {
-                var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-                JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                var workbookInfo = JsonConvert.DeserializeObject<WorkbookInfoResponse>(responseData, settings);
-                Workbook workbook = new Workbook();
-                if (workbookInfo.Content.Count > 0)
+                responseMessage = await helper.CallService(IsWebApiCall: true, urlEndpoint: "wbinfo", method: HttpMethod.Get, contentToPassToServer: null);
+                if (responseMessage.IsSuccessStatusCode)
                 {
-                    workbook = workbookInfo.Content[0];
-                }
+                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
+                    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
+                    var workbookInfo = JsonConvert.DeserializeObject<WorkbookInfoResponse>(responseData, settings);
+                    Workbook workbook = new Workbook();
+                    if (workbookInfo.Content.Count > 0)
+                    {
+                        workbook = workbookInfo.Content[0];
+                    }
 
-                return View(workbook);
+                    return View(workbook);
+                }
+                else
+                {
+                    return ParameterError(responseMessage.Content.ReadAsStringAsync().Result);
+                }
             }
-            return View("Error");
-                        
+            catch (Exception ex)
+            {
+                return ParameterError(ex.Message);
+            }
         }
+        
 
 
         [HttpGet, AllowAnonymous, Route("details")]
@@ -46,7 +67,7 @@ namespace MVC.Controllers
             if (wb != null)
             {
                 
-                WebHelper helper = new WebHelper();
+                WebHelper helper = new WebHelper(getUrl());
                 HttpResponseMessage responseMessage = await helper.CallService(IsWebApiCall: true
                                                                                 , urlEndpoint: "wbinfo/tabs"
                                                                                 , method: HttpMethod.Get
@@ -100,11 +121,10 @@ namespace MVC.Controllers
                     string key = string.Format($"SearchList[{i}]");
                     content.Add(key, apis.SearchList[i]);
                 }
-                
-                
 
 
-                WebHelper helper = new WebHelper();
+
+                WebHelper helper = new WebHelper(getUrl());
                 HttpResponseMessage responseMessage = await helper.CallService(IsWebApiCall: true
                                                                                 , urlEndpoint: urlendpoint
                                                                                 , method: HttpMethod.Post
@@ -159,10 +179,8 @@ namespace MVC.Controllers
                     content.Add(key, apis.SearchList[i]);
                 }
 
-
-
-
-                WebHelper helper = new WebHelper();
+                
+                WebHelper helper = new WebHelper(getUrl());
                 HttpResponseMessage responseMessage = await helper.CallService(IsWebApiCall: true
                                                                                 , urlEndpoint: urlendpoint
                                                                                 , method: HttpMethod.Post
@@ -211,17 +229,34 @@ namespace MVC.Controllers
             }
             else
             {
-                JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                var errorInfo = JsonConvert.DeserializeObject<ErrorResponse>(errorResponse, settings);
-
-                if (errorInfo.Content.Count > 0)
+                ErrorResponse errorInfo = new ErrorResponse();
+                try
                 {
-                    errorList = errorInfo.Content;
+
+                    JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
+                    errorInfo = JsonConvert.DeserializeObject<ErrorResponse>(errorResponse, settings);
+                    if (errorInfo.Content.Count > 0)
+                    {
+                        errorList = errorInfo.Content;
+                    }
                 }
+                catch
+                {
+                    if (!string.IsNullOrEmpty(errorResponse))
+                    {
+                        errorList.Add(new Error { Message = errorResponse , Workbook = "not known"});
+                    }
+                }
+
+                
             }
             return View("Error", errorList);
         }
 
-
+        string getUrl()
+        {
+            string baseUrl = Request.Url.Scheme + "://" + Request.Url.Authority + Request.ApplicationPath.TrimEnd('/') + "/";
+            return baseUrl;
+        }
     }
 }

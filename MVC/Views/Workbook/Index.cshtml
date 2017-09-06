@@ -1,8 +1,6 @@
 ﻿@model MVC.Models.Workbook
 @{
     ViewBag.Title = "WM Api Info";
-    string url = "http://localhost:50839";
-    
 }
 
 
@@ -15,7 +13,7 @@
     <ul class="dropdown-menu">
         @foreach (string wb in Model.Workbooks)
         {
-            <li><a href='@string.Format(@"{0}/workbook/details/{1}", url, wb)'>@wb</a></li>
+            <li><a href='@string.Format(@"workbook/details/{0}", wb)'>@wb</a></li>
         }
     </ul>
 </div>

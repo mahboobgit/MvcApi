@@ -16,12 +16,10 @@ namespace MVC.Helper
 
         string url;
 
-        public WebHelper()
+        public WebHelper(string hostingurl)
         {
             AppSettingsConfigReader appSettingReader = new AppSettingsConfigReader();
-            url = appSettingReader.GetAppSettingValue("WebApiUrl");
-            url = url.Length == 0 ? "http://localhost:50839" : url;
-            
+            url = hostingurl;            
         }
 
         public async Task<HttpResponseMessage> CallService(bool IsWebApiCall, string urlEndpoint, HttpMethod method, Dictionary<string,string> contentToPassToServer = null)
