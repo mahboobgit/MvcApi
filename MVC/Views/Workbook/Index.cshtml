@@ -5,23 +5,20 @@
     
 }
 
-<div>
 
-    <div class="jumbotron dropdown">
-        @Html.Label("Workbooks: ")
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-            Select Workbook..
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-            @foreach (string wb in Model.Workbooks)
-            {
-                <li><a href='@string.Format(@"{0}/workbook/details/{1}", url, wb)'>@wb</a></li>
-            }
-        </ul>
-    </div>
+<div class="jumbotron dropdown">
+    @Html.Label("Workbooks: ")
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+        Select Workbook..
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        @foreach (string wb in Model.Workbooks)
+        {
+            <li><a href='@string.Format(@"{0}/workbook/details/{1}", url, wb)'>@wb</a></li>
+        }
+    </ul>
 </div>
-
 
 @*<div class="row">
     <div class="col-md-6">
