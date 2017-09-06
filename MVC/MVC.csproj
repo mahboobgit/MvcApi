@@ -198,7 +198,6 @@
     </Content>
     <Content Include="Areas\RouteDebugger\Views\Web.config" />
     <Content Include="Areas\RouteDebugger\Views\RouteDebugger\Index.cshtml" />
-    <Content Include="package.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -228,7 +227,6 @@
     <Content Include="Source_Xml\SecurityWorkbook.Web.xml" />
     <Content Include="Source_Xml\SingleOEDialogs.web.xml" />
     <Content Include="Source_Xml\SyndicateWorkbook.Web.xml" />
-    <Content Include="systemjs.config.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -246,8 +244,6 @@
     <Content Include="Views\Workbook\searchapi.cshtml" />
     <Content Include="Views\Workbook\View.cshtml" />
     <Content Include="Views\Workbook\searchpreferences.cshtml" />
-    <Content Include="Views\Workbook\details_old.cshtml" />
-    <Content Include="tsconfig.json" />
     <Content Include="Views\Workbook\details.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -281,11 +277,6 @@
       <Project>{88f6dbc5-8883-488c-9231-ef6fadc4fee7}</Project>
       <Name>MVC.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="app\app.component.ts" />
-    <TypeScriptCompile Include="app\app.module.ts" />
-    <TypeScriptCompile Include="app\main.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
