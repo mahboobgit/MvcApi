@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace MVC.Models.Viewmodels
 {
-    public class SearchCriteria
+    public class SearchCriteria <T> where T : class
     {
+        public SearchCriteria()
+        {
+            SearchList = new List<T>();
+        }
         public string SearchOn { get; set; }
 
         public string Workbook { get; set; }
 
-        public List<string> SearchList { get; set; }
+        public List<T> SearchList { get; set; }
     }
 }

@@ -1,155 +1,252 @@
-﻿@model MVC.Models.ApiAllDetails
+﻿@model MVC.Models.ApiTabDetails
+ 
 @using System.Text;
-@using MVC.Models.Viewmodels;
+@using MVC.Models;
 
 <style>
 
-    #lbloption[data-toggle="active"]{
-
+    [data-tableheader] {
+        background-color: #333333;
+        font-weight: bold;
+        /*color: #999999*/
+        color: goldenrod
     }
+
+    [data-ignore] {
+        background-color: white;
+    }
+
+    [data-tab] {
+        background-color: lightblue;
+        color: black
+    }
+
+
+    [data-subtab] {
+        background-color: powderblue;
+        color: black;
+        /*display: table-row*/
+    }
+    
+   
+
+
+    [data-pref] {
+        background-color: lightsteelblue;
+        color: black;
+        /*display: table-row;*/
+    }
+
+    [data-api] {
+        background-color: aliceblue;
+        color: black;
+        /*display: table-row;*/
+    }
+
+    [data-visibility=hide]{
+        display:none;
+    }
+
+    [data-visibility=show] {
+        display: table-row;        
+    }
+
 
 </style>
 
 @section scripts{
     <script>
 
-        $(() => {
-            $('#optionapi').prop('checked', true).addClass("active"); 
-            //$('#optionpref').removeClass("active");
-            $('#optionapi')
-
-             
-        });
-       
-        Array.prototype.select = function (closure) {
-            for (var n = 0; n < this.length; n++) {
-                if (closure(this[n])) {
-                    return this[n];
-                }
+        function debug(obj) {
+            console.log("Current Selection: " + obj.id);
+            if (obj.dataset.pid != null) {
+                console.log("parentId: " + obj.dataset.pid);
             }
+        }
 
-            return null;
-        };
+        function hideAllChild(obj, hierarchyLevel, tableHandle) {
 
-        $('#btnSearch').click(function () {
-            var searchString = $("#msg").val();
-            if (searchString) {
-                alert("hello - search click " + searchString);
-                var td = $('table tbody tr td');
+            if (hierarchyLevel === "tab") {
+                searchString = '[data-pid*=' + obj.id + ']';
+            }
+            else
+                searchString = '[data-pid*=' + obj.dataset.pid + '-' + obj.id + ']';
 
-                var re = new RegExp(searchString, "i");
+            
+            var childs = tableHandle.querySelectorAll(searchString);
+            if (childs.length > 0) {
+                for (var l = 0; l < childs.length; l++) {
+                    console.log("Choosen child: " + childs[l].id);
 
-                $(td).find("label").each(function () {
-                    //console.log($(this)[0].innerHTML);
+                    //childs[l].dataset.visibility = childs[l].dataset.visibility === 'show' ? "hide" : "show";
 
-                    if ($(this)[0].innerHTML.match(re)) {
-                        console.log("MATCHED: " + $(this)[0].innerHTML);
+                    if (childs[l].dataset.visibility === 'show') {
+                        childs[l].dataset.visibility = "hide";                            
                     }
-                });
-
+                }
+                    
             }
-            else {
-                alert("Enter search string");
-            }
-            
-            
-        });
 
+        }
+
+        function toggle(obj, hierarchyLevel) {  
+
+            debug(obj);
+
+            if (hierarchyLevel) {
+                //Show all SubTabs for the selected Tab
+
+                var id = obj.id.substr(1);
+                var parentid;
+                var toHideAllChild = false;                
+                var tableHandle = document.getElementById("primarytbl");
+                var searchString = '[data-pid=' + obj.id + ']';
+                                
+                var childs = tableHandle.querySelectorAll(searchString);
+                if (childs.length > 0) {
+                    for (var i = 0; i < childs.length; i++) {
+                        //console.log("Choosen child: " + childs[i].id);
+
+                        if (childs[i].dataset.visibility === 'show') {
+                            //Handle all hides seperately
+                            toHideAllChild = true;
+                            break;
+                        }
+                        else {
+                            childs[i].dataset.visibility = "show";
+                        }                        
+                    }
+                }
+                else {
+                    i = 0;
+                    while (true) {
+                        i++;
+                        if (obj.dataset.pid != undefined && obj.dataset.pid != null) {
+                            if (hierarchyLevel == "subtab") {
+                                //searchString = '[data-pid=' + obj.dataset.pid + '-s' + id + ']';
+                                searchString = '[data-pid=' + obj.dataset.pid + '-' + obj.id + ']';
+                            }
+                            if (hierarchyLevel == "pref") {
+                                searchString = '[data-pid*=' + obj.dataset.pid + '-' + obj.id + '-' + i + ']';                                
+                            }
+                        }
+                        else if (i > 15) //Just to avoid accidental infinity loop
+                            break;
+
+                        var childs = tableHandle.querySelectorAll(searchString);
+                        if (childs.length > 0) {
+                            for (var k = 0; k < childs.length; k++) {
+                                console.log("Choosen child: " + childs[k].id);
+
+                                //childs[k].dataset.visibility = childs[k].dataset.visibility === 'show' ? "hide" : "show";
+
+                                if (childs[k].dataset.visibility === 'show') {
+                                    //Handle all hides seperately
+                                    toHideAllChild = true;
+                                    break;
+                                }
+                                else {
+                                    childs[k].dataset.visibility = "show";
+                                }                                
+                            }
+                            if (hierarchyLevel == "subtab")
+                                break;
+                        }
+                        else
+                            break;
+                    }
+                }
+
+                if (toHideAllChild)
+                    hideAllChild(obj, hierarchyLevel, tableHandle);                
+            }
+        }
     </script>
 }
-@{
 
-    string url = "http://localhost:50839";
+    
+@if (Model != null)
+{
+    int  tabCount = 0, subtabCount = 0, prefCount =0, apiCount = 0;
+    <div class="jumbotron dropdown">
+        Workbook Details: <span class=".bg-primary">@Model.Workbook</span>
+    </div>
+    <div class="table-responsive">
+        <table id="primarytbl" class="table">
+            <thead>
+                <tr data-tableheader>
+                    <td>Tab Name</td>
+                    <td>Sub Tab Name</td>
+                    <td>Preference</td>
+                    <td>Api Calls</td>
+                </tr>
+            </thead>
+            <tbody>
+               
+                @foreach (WorkbookTab tab in Model.TabList)
+                {
+                    //Loop through the subtabs for the tab
 
-    if (Model != null)
-    {
-        <h3 class="jumbotron">Workbook Details: <span class=".bg-primary">@Model.Workbook</span></h3>
-        if (Model.WbPreferencesAndApiCalls != null)
-        {
-
-            <a href="javascript:void(0);" onclick="history.go(-1);">Back to Details</a>
-            <br /><br />
-            
-            <div class="row">
-                <div class="btn-group col-lg-2" data-toggle="buttons">
-                    <label id="lbloption" class="btn btn-primary" data-toggle="active">
-                        <input type="radio" name="options" id="optionapi"> Api
-                    </label>
-                    <label id="lbloption" class="btn btn-primary btn-default" data-toggle="na">
-                        <input type="radio" name="options" id="optionpref"> Preference
-                    </label>
-                </div>
-                <div class="input-group col-lg-3 left">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-                    <input id="msg" type="text" class="form-control" name="msg" placeholder="search string">
-                </div>
-                <div class="col-lg-3">
-                    <button type="button" id="btnSearch" class="btn btn-primary">Search</button>
-                </div>
-            </div>
-            <br />
-
-            <table class="table table-striped">
-                <thead>
-                    <tr class="row">
-                        <th class="col-sm-6">Preferences</th>
-                        <th class="col-sm-6">Api Calls</th>
+                    subtabCount = 0;
+                    tabCount++;
+                    var rowPosition = (subtabCount % 2 == 0) ? "even" : "odd";
+                    
+                    <tr>
+                        <td id="t@{@tabCount}" colspan="4" data-tab="tab@{@tabCount}" onclick="toggle(this, 'tab');">@tab.TabName</td>
                     </tr>
-                </thead>
-                <tbody>
 
-                    @foreach (KeyValuePair<string, string> kvp in Model.WbPreferencesAndApiCalls)
+                    foreach (WorkbookSubTab subTab in tab.SubTabDetails)
                     {
-                        <tr class="row">
-                            <td>@Html.Label(kvp.Key, new { @class = "col-sm-6" })</td>
-                            <td>
-                                @if (kvp.Value != null)
+
+                        prefCount = 0;
+                        subtabCount++;
+
+                        <tr data-pid="t@{@tabCount}" id="s@{@subtabCount}" data-subtab="t1" data-visibility="hide" onclick="toggle(this, 'subtab');">
+                            <td data-ignore ></td>
+                            <td colspan="3">@subTab.SubTabName</td>
+                        </tr>
+
+
+                        foreach (Preference preference in subTab.PreferenceDetails)
+                        {
+                            apiCount = 0;
+                            prefCount++;
+
+                            <tr data-pid="t@{@tabCount}-s@{@subtabCount}" id="p@{@prefCount}" data-pref data-visibility="hide" onclick="toggle(this, 'pref');">
+                                <td data-ignore colspan="2"></td>
+                                <td colspan="2">@preference.PreferenceName</td>
+                            </tr>
+
+
+
+                                foreach (Api api in preference.ApiDetails)
                                 {
-                                    List<string> apis = kvp.Value.Split(new char[] { '`' }).ToList();
-                                    StringBuilder sb = new StringBuilder();
-
-
-                                    foreach (string api in apis)
-                                    {
-                                        var criteria = new SearchCriteria
-                                        {
-                                            Workbook = Model.Workbook,
-                                            SearchOn = "api",
-                                            SearchList = new List<string> { { api } }
-                                        };
-                                        <span>&nbsp;</span>
-
-                                        using (Html.BeginForm("searchapi", "workbook", FormMethod.Post, new { @style = "display:inline-block;" }))
-                                        {
-
-                                            @Html.Hidden("workbook", Model.Workbook);
-                                            @Html.Hidden("searchOn", "apicall");
-
-
-                                            for (int i = 0; i < criteria.SearchList.Count; i++)
+                                    apiCount++;
+                                    <tr data-pid="t@{@tabCount}-s@{@subtabCount}-p@{@prefCount}-@apiCount" id="a@{@apiCount}"  data-api data-visibility="hide" onclick="toggle(this, 'api');">
+                                        <td data-ignore colspan="3"></td>
+                                        <td>
+                                            @using (Html.BeginForm("searchapi", "workbook", FormMethod.Post, new { @style = "display:inline-block;" }))
                                             {
-                                                var sApi = criteria.SearchList[i];
-                                                @Html.Hidden("SearchList[" + i + "]", sApi);
+                                                @Html.Hidden("workbook", Model.Workbook);
+                                                @Html.Hidden("searchOn", "apicall");
+                                                
+                                                @Html.Hidden("SearchList[0]", @api.ApiNumber);
+                                                
+                                                <button id="btna@{@apiCount}" type="submit" class="badge" style="background-color:lightcoral; border:none">@api.ApiNumber</button>
                                             }
-
-
-                                            <button type="submit" class="badge" style="background-color:lightcoral; border:none">@api</button>
-                                            //@Html.ActionLink(api, "preferences", criteria, new { @class = "badge", @style = "background-color: lightcoral" });
-                                        }
-                                    }
+                                        </td>
+                                    </tr>
 
                                 }
-
-                            </td>
-                        </tr>
+                            }
+                        }
                     }
-                </tbody>
-            </table>
 
-        }
-        else
-        {
-            Html.Display("<p>No Data to Display</p>");
-        }
+            </tbody>
+        </table>
+    </div>
+    }            else
+    {
+        Html.Display("<p>No Data to Display</p>");
     }
-} 
+

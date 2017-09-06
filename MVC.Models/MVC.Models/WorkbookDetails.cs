@@ -30,6 +30,42 @@ namespace MVC.Models
             return tab != null;
         }
 
+
+        public Dictionary<string, List<string>> GetApiDetail(List<string> apis)
+        {
+            Dictionary<string, List<string>> allPreferenceFortheGivenApi = new Dictionary<string, List<string>>();
+            foreach(string api in apis)
+            {
+                foreach(WorkbookTab tab in this.Tabs)
+                {
+                    foreach(WorkbookSubTab subtab in tab.SubTabDetails)
+                    {
+                        foreach(Preference pref in subtab.PreferenceDetails)
+                        {
+                            if (pref.IsApiExists(api))
+                            {
+                                
+                                if (!allPreferenceFortheGivenApi.Keys.Contains(api))
+                                {
+                                    allPreferenceFortheGivenApi.Add(api, new List<string> { pref.PreferenceName });
+                                }
+                                else
+                                {
+                                    //Check if preference is already added
+                                    if(allPreferenceFortheGivenApi.Where(k => k.Value.Contains(pref.PreferenceName)).Select(k=>k.Value).Count() == 0)
+                                        allPreferenceFortheGivenApi[api].Add(pref.PreferenceName);
+                                }
+                            }                            
+                        }
+                    }
+                }
+            }
+            return allPreferenceFortheGivenApi;
+        } 
+
+
+
+
     }
 
 

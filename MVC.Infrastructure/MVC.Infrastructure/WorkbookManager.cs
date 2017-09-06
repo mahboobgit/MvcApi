@@ -2,6 +2,7 @@
 namespace MVC.Infrastructure
 {
     using MVC.Helper;
+    using MVC.Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -15,7 +16,7 @@ namespace MVC.Infrastructure
         AppSettingsConfigReader appSettingReader;
         CacheManager cacheMgr = CacheManager.GetInstance;
 
-        Dictionary<string, WorkBookDetails> workbookDetails = new Dictionary<string, WorkBookDetails>();
+        Dictionary<string, WorkbookDetails> workbookDetails = new Dictionary<string, WorkbookDetails>();
 
 
         public WorkbookManager()
@@ -25,7 +26,7 @@ namespace MVC.Infrastructure
             if (!cacheMgr.Exists(wbMgrCacheKey))
                 cacheMgr.Add(wbMgrCacheKey, workbookDetails, null, null);
             else
-                workbookDetails = cacheMgr.Get(wbMgrCacheKey) as Dictionary<string, WorkBookDetails>;
+                workbookDetails = cacheMgr.Get(wbMgrCacheKey) as Dictionary<string, WorkbookDetails>;
             
         }
 
@@ -41,9 +42,9 @@ namespace MVC.Infrastructure
             return workbooks;
         }
 
-        WorkBookDetails GetWorkbookDetail(string workbook)
+        async Task<WorkbookDetails> GetWorkbookDetail(string workbook)
         {
-            WorkBookDetails wbDetail;
+            WorkbookDetails wbDetail;
             
             if (workbookDetails.ContainsKey(workbook))
                 wbDetail = workbookDetails[workbook];
@@ -51,7 +52,8 @@ namespace MVC.Infrastructure
             {
                 if (appSettingReader.Contains(workbook))
                 {
-                    wbDetail = new WorkBookDetails(appSettingReader.GetAppSettingValue(workbook));
+                    FetchWorkBookDetails fetchWbDetail = new FetchWorkBookDetails(appSettingReader.GetAppSettingValue(workbook));   
+                    wbDetail = await fetchWbDetail.FetchDetails();
                     workbookDetails.Add(workbook, wbDetail);
                     cacheMgr.Set(wbMgrCacheKey, workbookDetails, null, null);
                 }
@@ -62,25 +64,33 @@ namespace MVC.Infrastructure
             return wbDetail;
         }
 
-        public async Task<Dictionary<string, string>> GetPreferenceDetailAsync(string workbook)
+        //public async Task<Dictionary<string, string>> GetPreferenceDetailAsync(string workbook)
+        //{
+        //    var detail = new Dictionary<string, string>();
+        //    WorkBookDetails wbDetail = GetWorkbookDetail(workbook);
+        //    detail = await wbDetail.GetPreferenceDetailAsync();
+        //    return detail;
+        //}
+
+        public async Task<List<WorkbookTab>> GetTabDetailAsync(string workbook)
         {
-            var detail = new Dictionary<string, string>();
-            WorkBookDetails wbDetail = GetWorkbookDetail(workbook);
-            detail = await wbDetail.GetPreferenceDetailAsync();
-            return detail;
+            WorkbookDetails wbDetail = await GetWorkbookDetail(workbook);
+            return wbDetail.Tabs;
         }
 
-        public async Task<Dictionary<string, string>> GetApiCallForPreferences(string workbook, List<string> preferences)
-        {
-            WorkBookDetails wbDetail = GetWorkbookDetail(workbook);
-            Dictionary<string, string> apicalls_with_preference = await wbDetail.GetApiCallForPreferencesAsync(preferences);
-            return apicalls_with_preference;
-        }
+        //public async Task<Dictionary<string, string>> GetApiCallForPreferences(string workbook, List<string> preferences)
+        //{
+        //    WorkBookDetails wbDetail = GetWorkbookDetail(workbook);
+        //    Dictionary<string, string> apicalls_with_preference = await wbDetail.GetApiCallForPreferencesAsync(preferences);
+        //    return apicalls_with_preference;
+        //}
 
-        public async Task<Dictionary<string,List<string>>> GetPreferencesForApiCall(string workbook, List<string> apiCalls)
+        public async Task<Dictionary<string, List<string>>> GetPreferencesForApiCall(string workbook, List<string> apiCalls)
         {
-            WorkBookDetails wbDetail = GetWorkbookDetail(workbook);
-            Dictionary<string, List<string>> preferences_for_apicalls = await wbDetail.GetPreferencesForApiCallAsync(apiCalls);
+            WorkbookDetails wbDetail = await GetWorkbookDetail(workbook);
+            Dictionary<string, List<string>> preferences_for_apicalls = wbDetail.GetApiDetail(apiCalls);
+            
+
             return preferences_for_apicalls;
         }
 

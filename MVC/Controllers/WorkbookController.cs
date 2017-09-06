@@ -20,7 +20,7 @@ namespace MVC.Controllers
         {
             
             WebHelper helper = new WebHelper();
-            HttpResponseMessage responseMessage = await helper.CallService(IsWebApiCall: true, urlEndpoint: "callinfo", method: HttpMethod.Get, contentToPassToServer: null);
+            HttpResponseMessage responseMessage = await helper.CallService(IsWebApiCall: true, urlEndpoint: "wbinfo", method: HttpMethod.Get, contentToPassToServer: null);
 
             if (responseMessage.IsSuccessStatusCode)
             {
@@ -48,7 +48,7 @@ namespace MVC.Controllers
                 
                 WebHelper helper = new WebHelper();
                 HttpResponseMessage responseMessage = await helper.CallService(IsWebApiCall: true
-                                                                                , urlEndpoint: "callinfo/allpreferences"
+                                                                                , urlEndpoint: "wbinfo/tabs"
                                                                                 , method: HttpMethod.Get
                                                                                 , contentToPassToServer: new Dictionary<string, string> { { "wb", wb } });
 
@@ -57,9 +57,9 @@ namespace MVC.Controllers
                     var responseData = responseMessage.Content.ReadAsStringAsync().Result;
 
                     JsonSerializerSettings settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Include };
-                    var workbookInfo = JsonConvert.DeserializeObject<ApiAllDetailsResponse>(responseData, settings);
+                    var workbookInfo = JsonConvert.DeserializeObject<ApiTabDetailsResponse>(responseData, settings);
 
-                    ApiAllDetails apiAllDetails = new ApiAllDetails();
+                    ApiTabDetails apiAllDetails = new ApiTabDetails();
                     if (workbookInfo.Content.Count > 0)
                     {
                         apiAllDetails = workbookInfo.Content[0];
@@ -78,7 +78,7 @@ namespace MVC.Controllers
 
 
         [AllowAnonymous, HttpPost, Route("searchapi")]
-        public async Task<ActionResult> SearchApi(SearchCriteria apis)
+        public async Task<ActionResult> SearchApi(SearchCriteria<string> apis)
         {
 
             if(apis != null)
@@ -87,18 +87,18 @@ namespace MVC.Controllers
                 Dictionary<string, string> content = new Dictionary<string, string>();
 
                 content.Add("Workbook", apis.Workbook);
-                urlendpoint = "callinfo/apicall";
+                urlendpoint = "wbinfo/apis";
 
                 //if (apis.SearchOn == "apicall")
                 //    urlendpoint = "callinfo/apicall";                
                 //else                
                 //    urlendpoint = "callinfo/preferences";
-                
+
 
                 for (int i = 0; i < apis.SearchList.Count; i++)
-                {
+                {                   
                     string key = string.Format($"SearchList[{i}]");
-                    content.Add(key, apis.SearchList[i]);                   
+                    content.Add(key, apis.SearchList[i]);
                 }
                 
                 
@@ -136,7 +136,7 @@ namespace MVC.Controllers
 
 
         [AllowAnonymous, HttpPost, Route("searchpreferences")]
-        public async Task<ActionResult> searchpreferences(SearchCriteria apis)
+        public async Task<ActionResult> searchpreferences(SearchCriteria<string> apis)
         {
 
             if (apis != null)
@@ -145,7 +145,7 @@ namespace MVC.Controllers
                 Dictionary<string, string> content = new Dictionary<string, string>();
 
                 content.Add("Workbook", apis.Workbook);
-                urlendpoint = "callinfo/preferences";
+                urlendpoint = "wbinfo/preferences";
 
                 //if (apis.SearchOn == "apicall")
                 //    urlendpoint = "callinfo/apicall";
