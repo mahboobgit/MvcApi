@@ -14,7 +14,7 @@ namespace MVC.Controllers
 
     //[OutputCacheAttribute(VaryByParam = "*", Duration = 0, NoStore = true)]
     [RoutePrefix("workbook")]
-    public class WorkbookController : Controller
+    public class WorkbookController : AsyncController
     {
 
 
